@@ -1,64 +1,86 @@
 
-    const composants = [
+    
+const composants = [
   {
-    nom: "💡 Lampe",
+    nom: "Lampe",
+    icon: "💡",
     description: "Produit de la lumière grâce à l'énergie électrique."
   },
   {
-    nom: "🔘 Interrupteur",
+    nom: "Interrupteur",
+    icon: "🔘",
     description: "Permet d'ouvrir ou de fermer un circuit électrique."
   },
   {
-    nom: "🔌 Prise",
+    nom: "Prise",
+    icon: "🔌",
     description: "Permet de brancher un appareil électrique."
   },
   {
-    nom: "⚡ Disjoncteur",
+    nom: "Disjoncteur",
+    icon: "⚡",
     description: "Protège le circuit électrique contre certains défauts."
   },
   {
-    nom: "🔋 Batterie",
+    nom: "Batterie",
+    icon: "🔋",
     description: "Stocke et fournit de l'énergie électrique."
   },
   {
-    nom: "🔧 Résistance",
+    nom: "Résistance",
+    icon: "🔧",
     description: "Limite le courant dans un circuit électrique."
   },
   {
-    nom: "🔄 Relais",
-    description: "Permet de commander un circuit électrique avec un autre circuit."
+    nom: "Relais",
+    icon: "🔄",
+    description: "Permet de commander un circuit avec un autre circuit."
   },
   {
-    nom: "📏 Multimètre",
-    description: "Permet de mesurer la tension, le courant et la résistance."
+    nom: "Multimètre",
+    icon: "📏",
+    description: "Mesure la tension, le courant et la résistance."
   },
   {
-    nom: "🔊 Buzzer",
+    nom: "Buzzer",
+    icon: "🔊",
     description: "Produit un signal sonore avec de l'énergie électrique."
   },
   {
-    nom: "🔌 Transformateur",
+    nom: "Transformateur",
+    icon: "🔌",
     description: "Permet de modifier une tension électrique alternative."
+  },
+  {
+    nom: "Condensateur",
+    icon: "⚙️",
+    description: "Stocke temporairement de l'énergie électrique."
+  },
+  {
+    nom: "Moteur électrique",
+    icon: "🌀",
+    description: "Transforme l'énergie électrique en mouvement."
   }
 ];
 
 const liste = document.getElementById("liste-composants");
 const recherche = document.getElementById("recherche");
 
-function afficherComposants(listeComposants) {
+function afficherComposants(elements) {
   liste.innerHTML = "";
 
-  if (listeComposants.length === 0) {
-    liste.innerHTML = "<p>Aucun composant trouvé.</p>";
+  if (elements.length === 0) {
+    liste.innerHTML =
+      '<div class="empty">🔎 Aucun composant trouvé.<br>Essaie un autre mot.</div>';
     return;
   }
 
-  listeComposants.forEach(function(composant) {
-    const carte = document.createElement("div");
-
+  elements.forEach(function(composant) {
+    const carte = document.createElement("article");
     carte.className = "composant";
 
     carte.innerHTML = `
+      <div class="icon">${composant.icon}</div>
       <h3>${composant.nom}</h3>
       <p>${composant.description}</p>
     `;
@@ -70,7 +92,7 @@ function afficherComposants(listeComposants) {
 afficherComposants(composants);
 
 recherche.addEventListener("input", function() {
-  const texte = recherche.value.toLowerCase();
+  const texte = recherche.value.trim().toLowerCase();
 
   const resultats = composants.filter(function(composant) {
     return (
@@ -81,5 +103,3 @@ recherche.addEventListener("input", function() {
 
   afficherComposants(resultats);
 });
-
-console.log("⚡ Dictionnaire Électricien SK est prêt !");
