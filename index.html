@@ -38,29 +38,29 @@
 
     <section class="categories">
 
-      <a href="#liste-composants" class="category-card">
+      <button class="category-card" id="btn-composants">
         <div class="category-icon">🔌</div>
         <h3>Composants</h3>
         <p>Découvre les composants électriques.</p>
-      </a>
+      </button>
 
-      <div class="category-card">
+      <button class="category-card">
         <div class="category-icon">📐</div>
         <h3>Mesures</h3>
         <p>Tension, courant, résistance et unités.</p>
-      </div>
+      </button>
 
-      <div class="category-card">
+      <button class="category-card">
         <div class="category-icon">🛡️</div>
         <h3>Sécurité</h3>
         <p>Apprends les règles essentielles.</p>
-      </div>
+      </button>
 
-      <div class="category-card">
+      <button class="category-card">
         <div class="category-icon">📚</div>
         <h3>Cours</h3>
         <p>Apprends l'électricité progressivement.</p>
-      </div>
+      </button>
 
     </section>
 
@@ -78,7 +78,7 @@
 
     </section>
 
-    <section>
+    <section id="section-composants">
       <div id="liste-composants"></div>
     </section>
 
@@ -98,5 +98,16 @@
 
   <script src="script.js"></script>
 
+  <script>
+    document.getElementById("btn-composants").addEventListener("click", function() {
+
+      document.getElementById("section-composants").scrollIntoView({
+        behavior: "smooth"
+      });
+
+    });
+  </script>
+
 </body>
 </html>
+   
