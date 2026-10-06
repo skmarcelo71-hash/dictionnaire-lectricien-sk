@@ -1,9 +1,11 @@
 
     
-const composants = [
+
+    const composants = [
   {
     nom: "Lampe",
     icon: "💡",
+    symbole: "⊗",
     description: "Produit de la lumière grâce à l'énergie électrique.",
     role: "Éclaire une pièce ou un espace.",
     unite: "Watt (W)",
@@ -12,6 +14,7 @@ const composants = [
   {
     nom: "Interrupteur",
     icon: "🔘",
+    symbole: "—/—",
     description: "Permet d'ouvrir ou de fermer un circuit électrique.",
     role: "Commande l'allumage ou l'arrêt d'un circuit.",
     unite: "Pas d'unité",
@@ -20,6 +23,7 @@ const composants = [
   {
     nom: "Prise",
     icon: "🔌",
+    symbole: "⏚",
     description: "Permet de brancher un appareil électrique.",
     role: "Fournit l'énergie électrique à un appareil.",
     unite: "Volt (V)",
@@ -28,6 +32,7 @@ const composants = [
   {
     nom: "Disjoncteur",
     icon: "⚡",
+    symbole: "—[ ]—",
     description: "Protège le circuit électrique contre certains défauts.",
     role: "Coupe automatiquement le courant en cas de problème.",
     unite: "Ampère (A)",
@@ -36,14 +41,16 @@ const composants = [
   {
     nom: "Batterie",
     icon: "🔋",
+    symbole: "—| |—",
     description: "Stocke et fournit de l'énergie électrique.",
-    role: "Alimente un circuit sans être directement reliée au réseau.",
+    role: "Alimente un circuit en énergie électrique.",
     unite: "Volt (V)",
     exemple: "Batterie 12 V"
   },
   {
     nom: "Résistance",
     icon: "🔧",
+    symbole: "—/\\/\\—",
     description: "Limite le courant dans un circuit électrique.",
     role: "S'oppose au passage du courant.",
     unite: "Ohm (Ω)",
@@ -52,6 +59,7 @@ const composants = [
   {
     nom: "Relais",
     icon: "🔄",
+    symbole: "K",
     description: "Permet de commander un circuit avec un autre circuit.",
     role: "Commande électriquement un autre circuit.",
     unite: "Volt (V)",
@@ -60,6 +68,7 @@ const composants = [
   {
     nom: "Multimètre",
     icon: "📏",
+    symbole: "V / A / Ω",
     description: "Mesure la tension, le courant et la résistance.",
     role: "Permet de réaliser plusieurs mesures électriques.",
     unite: "V, A et Ω",
@@ -68,6 +77,7 @@ const composants = [
   {
     nom: "Buzzer",
     icon: "🔊",
+    symbole: "BZ",
     description: "Produit un signal sonore avec de l'énergie électrique.",
     role: "Avertit ou signale un événement par un son.",
     unite: "Volt (V)",
@@ -76,6 +86,7 @@ const composants = [
   {
     nom: "Transformateur",
     icon: "🔌",
+    symbole: "))) || ((( ",
     description: "Permet de modifier une tension électrique alternative.",
     role: "Augmente ou diminue une tension alternative.",
     unite: "Volt (V)",
@@ -84,6 +95,7 @@ const composants = [
   {
     nom: "Condensateur",
     icon: "⚙️",
+    symbole: "—| |—",
     description: "Stocke temporairement de l'énergie électrique.",
     role: "Stocke et restitue une charge électrique.",
     unite: "Farad (F)",
@@ -92,6 +104,7 @@ const composants = [
   {
     nom: "Moteur électrique",
     icon: "🌀",
+    symbole: "M",
     description: "Transforme l'énergie électrique en mouvement.",
     role: "Produit un mouvement mécanique grâce à l'électricité.",
     unite: "Watt (W)",
@@ -107,59 +120,4 @@ function afficherComposants(elements) {
 
   if (elements.length === 0) {
     liste.innerHTML =
-      '<div class="empty">🔎 Aucun composant trouvé.<br>Essaie un autre mot.</div>';
-    return;
-  }
-
-  elements.forEach(function(composant) {
-    const carte = document.createElement("article");
-    carte.className = "composant";
-
-    carte.innerHTML = `
-      <div class="icon">${composant.icon}</div>
-      <h3>${composant.nom}</h3>
-      <p>${composant.description}</p>
-
-      <div class="details" style="display:none; margin-top:16px; padding-top:15px; border-top:1px solid #e2e8f0;">
-        <p><strong>🎯 Rôle :</strong> ${composant.role}</p>
-        <p><strong>📐 Unité :</strong> ${composant.unite}</p>
-        <p><strong>💡 Exemple :</strong> ${composant.exemple}</p>
-      </div>
-
-      <p style="margin-top:15px; color:#0f4c81; font-weight:bold;">
-        👆 Appuie pour voir les détails
-      </p>
-    `;
-
-    carte.addEventListener("click", function() {
-      const details = carte.querySelector(".details");
-      const indication = carte.querySelector("p:last-child");
-
-      if (details.style.display === "none") {
-        details.style.display = "block";
-        indication.textContent = "👆 Appuie pour fermer les détails";
-      } else {
-        details.style.display = "none";
-        indication.textContent = "👆 Appuie pour voir les détails";
-      }
-    });
-
-    liste.appendChild(carte);
-  });
-}
-
-afficherComposants(composants);
-
-recherche.addEventListener("input", function() {
-  const texte = recherche.value.trim().toLowerCase();
-
-  const resultats = composants.filter(function(composant) {
-    return (
-      composant.nom.toLowerCase().includes(texte) ||
-      composant.description.toLowerCase().includes(texte) ||
-      composant.role.toLowerCase().includes(texte)
-    );
-  });
-
-  afficherComposants(resultats);
-});
+      '<div class="empty">🔎 Aucun composant trouvé.<br>Essa
