@@ -3,23 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Dictionnaire Électricien SK</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>⚡ Dictionnaire Électricien SK</h1>
 
-  <p>Dictionnaire des composants électriques</p>
+  <header class="hero">
+    <div class="logo">⚡</div>
+    <p class="surtitle">APPRENDRE • COMPRENDRE • PRATIQUER</p>
+    <h1>Dictionnaire Électricien SK</h1>
+    <p class="subtitle">Ton guide simple et pratique de l'électricité</p>
+  </header>
 
-  <h2>Composants</h2>
+  <main class="container">
 
-  <ul>
-    <li>💡 Lampe — produit de la lumière</li>
-    <li>🔘 Interrupteur — ouvre ou ferme un circuit</li>
-    <li>🔌 Prise — permet de brancher un appareil</li>
-    <li>⚡ Disjoncteur — protège le circuit électrique</li>
-    <li>🔋 Batterie — fournit de l'énergie électrique</li>
-    <li>🔧 Résistance — limite le courant électrique</li>
-  </ul>
+    <section class="welcome">
+      <span class="badge">⚡ ÉLECTRICITÉ</span>
+      <h2>Les composants électriques</h2>
+      <p>Recherche un composant pour découvrir rapidement son rôle.</p>
+    </section>
+
+    <section class="search-card">
+      <label for="recherche">🔍 Rechercher un composant</label>
+
+      <input
+        type="search"
+        id="recherche"
+        placeholder="Ex. lampe, résistance, relais..."
+      >
+    </section>
+
+    <section>
+      <div id="liste-composants"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>⚡</div>
+    <strong>Dictionnaire Électricien SK</strong>
+    <p>Apprendre l'électricité simplement.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
