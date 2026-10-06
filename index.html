@@ -31,8 +31,7 @@
       <h2>Bienvenue 👋</h2>
 
       <p>
-        Découvre les composants électriques,
-        leur rôle et leur fonctionnement.
+        Découvre les composants et les principales grandeurs électriques.
       </p>
     </section>
 
@@ -44,10 +43,10 @@
         <p>Découvre les composants électriques.</p>
       </button>
 
-      <button class="category-card">
+      <button class="category-card" id="btn-mesures">
         <div class="category-icon">📐</div>
         <h3>Mesures</h3>
-        <p>Tension, courant, résistance et unités.</p>
+        <p>Tension, courant, résistance et puissance.</p>
       </button>
 
       <button class="category-card">
@@ -78,6 +77,93 @@
 
     </section>
 
+    <section id="section-mesures" style="display:none;">
+
+      <div class="welcome">
+        <span class="badge">📐 MESURES</span>
+
+        <h2>Les grandeurs électriques</h2>
+
+        <p>Les quatre notions essentielles à connaître.</p>
+      </div>
+
+      <div class="composant">
+
+        <div class="icon">⚡</div>
+
+        <h3>Tension électrique</h3>
+
+        <p>
+          La tension représente la différence de potentiel électrique
+          entre deux points.
+        </p>
+
+        <div class="details" style="display:block; margin-top:16px;">
+          <p><strong>📐 Unité :</strong> Volt (V)</p>
+          <p><strong>🔤 Symbole :</strong> U</p>
+          <p><strong>💡 Exemple :</strong> Une batterie peut fournir 12 V.</p>
+        </div>
+
+      </div>
+
+      <div class="composant">
+
+        <div class="icon">🔌</div>
+
+        <h3>Courant électrique</h3>
+
+        <p>
+          Le courant représente le déplacement des charges électriques
+          dans un circuit.
+        </p>
+
+        <div class="details" style="display:block; margin-top:16px;">
+          <p><strong>📐 Unité :</strong> Ampère (A)</p>
+          <p><strong>🔤 Symbole :</strong> I</p>
+          <p><strong>💡 Exemple :</strong> Un circuit peut être parcouru par 2 A.</p>
+        </div>
+
+      </div>
+
+      <div class="composant">
+
+        <div class="icon">🧱</div>
+
+        <h3>Résistance électrique</h3>
+
+        <p>
+          La résistance s'oppose au passage du courant électrique.
+        </p>
+
+        <div class="details" style="display:block; margin-top:16px;">
+          <p><strong>📐 Unité :</strong> Ohm (Ω)</p>
+          <p><strong>🔤 Symbole :</strong> R</p>
+          <p><strong>💡 Exemple :</strong> Une résistance peut avoir une valeur de 100 Ω.</p>
+        </div>
+
+      </div>
+
+      <div class="composant">
+
+        <div class="icon">💡</div>
+
+        <h3>Puissance électrique</h3>
+
+        <p>
+          La puissance indique la quantité d'énergie électrique
+          utilisée ou fournie par unité de temps.
+        </p>
+
+        <div class="details" style="display:block; margin-top:16px;">
+          <p><strong>📐 Unité :</strong> Watt (W)</p>
+          <p><strong>🔤 Symbole :</strong> P</p>
+          <p><strong>💡 Exemple :</strong> Une lampe peut avoir une puissance de 10 W.</p>
+        </div>
+
+      </div>
+
+    </section>
+
     <section id="section-composants">
       <div id="liste-composants"></div>
     </section>
@@ -99,15 +185,24 @@
   <script src="script.js"></script>
 
   <script>
-    document.getElementById("btn-composants").addEventListener("click", function() {
 
-      document.getElementById("section-composants").scrollIntoView({
+    const boutonMesures =
+      document.getElementById("btn-mesures");
+
+    const sectionMesures =
+      document.getElementById("section-mesures");
+
+    boutonMesures.addEventListener("click", function() {
+
+      sectionMesures.style.display = "block";
+
+      sectionMesures.scrollIntoView({
         behavior: "smooth"
       });
 
     });
+
   </script>
 
 </body>
 </html>
-   
