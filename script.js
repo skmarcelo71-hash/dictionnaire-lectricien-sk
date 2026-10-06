@@ -29,7 +29,7 @@ const composants = [
   {
     nom: "Disjoncteur",
     icon: "⚡",
-    symbole: "—[ ]—",
+    symbole: "—[DJ]—",
     description: "Protège le circuit électrique contre certains défauts.",
     role: "Coupe automatiquement le courant en cas de problème.",
     unite: "Ampère (A)",
@@ -47,7 +47,7 @@ const composants = [
   {
     nom: "Résistance",
     icon: "🔧",
-    symbole: "—/\\/\\—",
+    symbole: "—[R]—",
     description: "Limite le courant dans un circuit électrique.",
     role: "S'oppose au passage du courant.",
     unite: "Ohm (Ω)",
@@ -83,7 +83,7 @@ const composants = [
   {
     nom: "Transformateur",
     icon: "🔌",
-    symbole: "))) || ((( ",
+    symbole: "TR",
     description: "Permet de modifier une tension électrique alternative.",
     role: "Augmente ou diminue une tension alternative.",
     unite: "Volt (V)",
@@ -136,14 +136,49 @@ function afficherComposants(elements) {
         style="display:none; margin-top:16px; padding-top:15px; border-top:1px solid #e2e8f0;">
 
         <p><strong>⚡ Symbole :</strong> ${composant.symbole}</p>
-
         <p><strong>🎯 Rôle :</strong> ${composant.role}</p>
+        <p><strong>📐 Unité :</strong> ${composant.unite}</p>
+        <p><strong>💡 Exemple :</strong> ${composant.exemple}</p>
 
-        <p><strong>📐 Unité :</strong> ${composant.unite
-    
+      </div>
 
-    
-  
-    
+      <p class="indication"
+        style="margin-top:15px; color:#0f4c81; font-weight:bold;">
+        👆 Appuie pour voir les détails
+      </p>
+    `;
 
-  
+    carte.addEventListener("click", function() {
+      const details = carte.querySelector(".details");
+      const indication = carte.querySelector(".indication");
+
+      if (details.style.display === "none") {
+        details.style.display = "block";
+        indication.textContent = "👆 Appuie pour fermer les détails";
+      } else {
+        details.style.display = "none";
+        indication.textContent = "👆 Appuie pour voir les détails";
+      }
+    });
+
+    liste.appendChild(carte);
+  });
+}
+
+afficherComposants(composants);
+
+recherche.addEventListener("input", function() {
+  const texte = recherche.value.trim().toLowerCase();
+
+  const resultats = composants.filter(function(composant) {
+    return (
+      composant.nom.toLowerCase().includes(texte) ||
+      composant.description.toLowerCase().includes(texte) ||
+      composant.role.toLowerCase().includes(texte)
+    );
+  });
+
+  afficherComposants(resultats);
+});
+    
+       
