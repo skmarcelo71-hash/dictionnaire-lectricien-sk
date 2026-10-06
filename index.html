@@ -1,30 +1,386 @@
-<div class="composant" onclick="this.querySelector('.details').style.display =
-  this.querySelector('.details').style.display === 'block' ? 'none' : 'block';">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="icon">⚡</div>
+  <title>Dictionnaire Électricien SK</title>
 
-  <h3>Tension électrique</h3>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <p>
-    La tension représente la différence de potentiel électrique
-    entre deux points.
-  </p>
+<body>
 
-  <div class="details" style="display:none; margin-top:16px;">
+  <header class="hero">
+    <div class="logo">⚡</div>
 
-    <p><strong>📐 Unité :</strong> Volt (V)</p>
+    <p class="surtitle">APPRENDRE • COMPRENDRE • PRATIQUER</p>
 
-    <p><strong>🔤 Symbole :</strong> U</p>
+    <h1>Dictionnaire Électricien SK</h1>
 
-    <p><strong>💡 Exemple :</strong>
-      Une batterie peut fournir une tension de 12 V.
+    <p class="subtitle">
+      Ton guide simple et pratique de l'électricité
+    </p>
+  </header>
+
+  <main class="container">
+
+    <section class="welcome">
+      <span class="badge">⚡ ÉLECTRICITÉ</span>
+
+      <h2>Bienvenue 👋</h2>
+
+      <p>
+        Découvre les composants et les principales grandeurs électriques.
+      </p>
+    </section>
+
+    <section class="categories">
+
+      <button class="category-card" id="btn-composants">
+        <div class="category-icon">🔌</div>
+        <h3>Composants</h3>
+        <p>Découvre les composants électriques.</p>
+      </button>
+
+      <button class="category-card" id="btn-mesures">
+        <div class="category-icon">📐</div>
+        <h3>Mesures</h3>
+        <p>Tension, courant, résistance et puissance.</p>
+      </button>
+
+      <button class="category-card" id="btn-securite">
+        <div class="category-icon">🛡️</div>
+        <h3>Sécurité</h3>
+        <p>Apprends les règles essentielles.</p>
+      </button>
+
+      <button class="category-card" id="btn-cours">
+        <div class="category-icon">📚</div>
+        <h3>Cours</h3>
+        <p>Apprends l'électricité progressivement.</p>
+      </button>
+
+    </section>
+
+    <section class="search-card">
+
+      <label for="recherche">
+        🔍 Rechercher un composant
+      </label>
+
+      <input
+        type="search"
+        id="recherche"
+        placeholder="Ex. lampe, résistance, relais..."
+      >
+
+    </section>
+
+    <!-- MESURES -->
+
+    <section id="section-mesures" style="display:none;">
+
+      <div class="welcome">
+        <span class="badge">📐 MESURES</span>
+
+        <h2>Les grandeurs électriques</h2>
+
+        <p>
+          Les quatre notions essentielles à connaître.
+        </p>
+      </div>
+
+      <!-- TENSION -->
+
+      <div class="composant">
+
+        <div class="icon">⚡</div>
+
+        <h3>Tension électrique</h3>
+
+        <p>
+          La tension représente la différence de potentiel électrique
+          entre deux points.
+        </p>
+
+        <div
+          class="details"
+          style="display:none; margin-top:16px;"
+        >
+
+          <p>
+            <strong>📐 Unité :</strong>
+            Volt (V)
+          </p>
+
+          <p>
+            <strong>🔤 Symbole :</strong>
+            U
+          </p>
+
+          <p>
+            <strong>💡 Exemple :</strong>
+            Une batterie peut fournir une tension de 12 V.
+          </p>
+
+          <p>
+            <strong>📚 À retenir :</strong>
+            La tension est ce qui permet de faire circuler le courant
+            dans un circuit.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- COURANT -->
+
+      <div class="composant">
+
+        <div class="icon">🔌</div>
+
+        <h3>Courant électrique</h3>
+
+        <p>
+          Le courant représente le déplacement des charges électriques
+          dans un circuit.
+        </p>
+
+        <div
+          class="details"
+          style="display:none; margin-top:16px;"
+        >
+
+          <p>
+            <strong>📐 Unité :</strong>
+            Ampère (A)
+          </p>
+
+          <p>
+            <strong>🔤 Symbole :</strong>
+            I
+          </p>
+
+          <p>
+            <strong>💡 Exemple :</strong>
+            Un circuit peut être parcouru par un courant de 2 A.
+          </p>
+
+          <p>
+            <strong>📚 À retenir :</strong>
+            Le courant correspond au déplacement des charges électriques.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- RESISTANCE -->
+
+      <div class="composant">
+
+        <div class="icon">🧱</div>
+
+        <h3>Résistance électrique</h3>
+
+        <p>
+          La résistance s'oppose au passage du courant électrique.
+        </p>
+
+        <div
+          class="details"
+          style="display:none; margin-top:16px;"
+        >
+
+          <p>
+            <strong>📐 Unité :</strong>
+            Ohm (Ω)
+          </p>
+
+          <p>
+            <strong>🔤 Symbole :</strong>
+            R
+          </p>
+
+          <p>
+            <strong>💡 Exemple :</strong>
+            Une résistance peut avoir une valeur de 100 Ω.
+          </p>
+
+          <p>
+            <strong>📚 À retenir :</strong>
+            Plus la résistance est grande, plus elle s'oppose au courant.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- PUISSANCE -->
+
+      <div class="composant">
+
+        <div class="icon">💡</div>
+
+        <h3>Puissance électrique</h3>
+
+        <p>
+          La puissance indique la quantité d'énergie électrique
+          utilisée ou fournie par unité de temps.
+        </p>
+
+        <div
+          class="details"
+          style="display:none; margin-top:16px;"
+        >
+
+          <p>
+            <strong>📐 Unité :</strong>
+            Watt (W)
+          </p>
+
+          <p>
+            <strong>🔤 Symbole :</strong>
+            P
+          </p>
+
+          <p>
+            <strong>💡 Exemple :</strong>
+            Une lampe peut avoir une puissance de 10 W.
+          </p>
+
+          <p>
+            <strong>📚 À retenir :</strong>
+            La puissance indique la quantité d'énergie utilisée par unité
+            de temps.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMPOSANTS -->
+
+    <section id="section-composants">
+
+      <div id="liste-composants"></div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div>⚡</div>
+
+    <strong>Dictionnaire Électricien SK</strong>
+
+    <p>
+      Apprendre l'électricité simplement.
     </p>
 
-    <p><strong>📚 À retenir :</strong>
-      Plus la tension est élevée, plus elle peut pousser le courant
-      dans un circuit.
-    </p>
+  </footer>
 
-  </div>
 
-</div>
+  <!-- SCRIPT PRINCIPAL -->
+
+  <script src="script.js"></script>
+
+
+  <!-- COMMANDES DES BOUTONS -->
+
+  <script>
+
+    // Bouton COMPOSANTS
+
+    document
+      .getElementById("btn-composants")
+      .addEventListener("click", function() {
+
+        document
+          .getElementById("section-composants")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
+
+      });
+
+
+    // Bouton MESURES
+
+    document
+      .getElementById("btn-mesures")
+      .addEventListener("click", function() {
+
+        const section =
+          document.getElementById("section-mesures");
+
+        section.style.display = "grid";
+
+        section.scrollIntoView({
+          behavior: "smooth"
+        });
+
+      });
+
+
+    // Ouvrir / fermer les fiches de mesures
+
+    document
+      .querySelectorAll("#section-mesures .composant")
+      .forEach(function(card) {
+
+        card.addEventListener("click", function() {
+
+          const details =
+            card.querySelector(".details");
+
+          if (details.style.display === "block") {
+
+            details.style.display = "none";
+
+          } else {
+
+            details.style.display = "block";
+
+          }
+
+        });
+
+      });
+
+
+    // Bouton SÉCURITÉ
+
+    document
+      .getElementById("btn-securite")
+      .addEventListener("click", function() {
+
+        alert(
+          "🛡️ La sécurité électrique sera bientôt disponible."
+        );
+
+      });
+
+
+    // Bouton COURS
+
+    document
+      .getElementById("btn-cours")
+      .addEventListener("click", function() {
+
+        alert(
+          "📚 Les cours d'électricité seront bientôt disponibles."
+        );
+
+      });
+
+  </script>
+
+</body>
+</html>
