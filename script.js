@@ -4,62 +4,98 @@ const composants = [
   {
     nom: "Lampe",
     icon: "💡",
-    description: "Produit de la lumière grâce à l'énergie électrique."
+    description: "Produit de la lumière grâce à l'énergie électrique.",
+    role: "Éclaire une pièce ou un espace.",
+    unite: "Watt (W)",
+    exemple: "Lampe LED de 10 W"
   },
   {
     nom: "Interrupteur",
     icon: "🔘",
-    description: "Permet d'ouvrir ou de fermer un circuit électrique."
+    description: "Permet d'ouvrir ou de fermer un circuit électrique.",
+    role: "Commande l'allumage ou l'arrêt d'un circuit.",
+    unite: "Pas d'unité",
+    exemple: "Interrupteur mural"
   },
   {
     nom: "Prise",
     icon: "🔌",
-    description: "Permet de brancher un appareil électrique."
+    description: "Permet de brancher un appareil électrique.",
+    role: "Fournit l'énergie électrique à un appareil.",
+    unite: "Volt (V)",
+    exemple: "Prise domestique 230 V"
   },
   {
     nom: "Disjoncteur",
     icon: "⚡",
-    description: "Protège le circuit électrique contre certains défauts."
+    description: "Protège le circuit électrique contre certains défauts.",
+    role: "Coupe automatiquement le courant en cas de problème.",
+    unite: "Ampère (A)",
+    exemple: "Disjoncteur 16 A"
   },
   {
     nom: "Batterie",
     icon: "🔋",
-    description: "Stocke et fournit de l'énergie électrique."
+    description: "Stocke et fournit de l'énergie électrique.",
+    role: "Alimente un circuit sans être directement reliée au réseau.",
+    unite: "Volt (V)",
+    exemple: "Batterie 12 V"
   },
   {
     nom: "Résistance",
     icon: "🔧",
-    description: "Limite le courant dans un circuit électrique."
+    description: "Limite le courant dans un circuit électrique.",
+    role: "S'oppose au passage du courant.",
+    unite: "Ohm (Ω)",
+    exemple: "Résistance de 100 Ω"
   },
   {
     nom: "Relais",
     icon: "🔄",
-    description: "Permet de commander un circuit avec un autre circuit."
+    description: "Permet de commander un circuit avec un autre circuit.",
+    role: "Commande électriquement un autre circuit.",
+    unite: "Volt (V)",
+    exemple: "Relais 12 V"
   },
   {
     nom: "Multimètre",
     icon: "📏",
-    description: "Mesure la tension, le courant et la résistance."
+    description: "Mesure la tension, le courant et la résistance.",
+    role: "Permet de réaliser plusieurs mesures électriques.",
+    unite: "V, A et Ω",
+    exemple: "Mesurer une tension de 230 V"
   },
   {
     nom: "Buzzer",
     icon: "🔊",
-    description: "Produit un signal sonore avec de l'énergie électrique."
+    description: "Produit un signal sonore avec de l'énergie électrique.",
+    role: "Avertit ou signale un événement par un son.",
+    unite: "Volt (V)",
+    exemple: "Buzzer 5 V"
   },
   {
     nom: "Transformateur",
     icon: "🔌",
-    description: "Permet de modifier une tension électrique alternative."
+    description: "Permet de modifier une tension électrique alternative.",
+    role: "Augmente ou diminue une tension alternative.",
+    unite: "Volt (V)",
+    exemple: "Transformateur 230 V / 12 V"
   },
   {
     nom: "Condensateur",
     icon: "⚙️",
-    description: "Stocke temporairement de l'énergie électrique."
+    description: "Stocke temporairement de l'énergie électrique.",
+    role: "Stocke et restitue une charge électrique.",
+    unite: "Farad (F)",
+    exemple: "Condensateur 100 µF"
   },
   {
     nom: "Moteur électrique",
     icon: "🌀",
-    description: "Transforme l'énergie électrique en mouvement."
+    description: "Transforme l'énergie électrique en mouvement.",
+    role: "Produit un mouvement mécanique grâce à l'électricité.",
+    unite: "Watt (W)",
+    exemple: "Moteur électrique 500 W"
   }
 ];
 
@@ -83,7 +119,30 @@ function afficherComposants(elements) {
       <div class="icon">${composant.icon}</div>
       <h3>${composant.nom}</h3>
       <p>${composant.description}</p>
+
+      <div class="details" style="display:none; margin-top:16px; padding-top:15px; border-top:1px solid #e2e8f0;">
+        <p><strong>🎯 Rôle :</strong> ${composant.role}</p>
+        <p><strong>📐 Unité :</strong> ${composant.unite}</p>
+        <p><strong>💡 Exemple :</strong> ${composant.exemple}</p>
+      </div>
+
+      <p style="margin-top:15px; color:#0f4c81; font-weight:bold;">
+        👆 Appuie pour voir les détails
+      </p>
     `;
+
+    carte.addEventListener("click", function() {
+      const details = carte.querySelector(".details");
+      const indication = carte.querySelector("p:last-child");
+
+      if (details.style.display === "none") {
+        details.style.display = "block";
+        indication.textContent = "👆 Appuie pour fermer les détails";
+      } else {
+        details.style.display = "none";
+        indication.textContent = "👆 Appuie pour voir les détails";
+      }
+    });
 
     liste.appendChild(carte);
   });
@@ -97,7 +156,8 @@ recherche.addEventListener("input", function() {
   const resultats = composants.filter(function(composant) {
     return (
       composant.nom.toLowerCase().includes(texte) ||
-      composant.description.toLowerCase().includes(texte)
+      composant.description.toLowerCase().includes(texte) ||
+      composant.role.toLowerCase().includes(texte)
     );
   });
 
