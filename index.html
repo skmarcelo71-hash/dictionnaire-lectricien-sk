@@ -12,28 +12,41 @@
 <body>
 
   <header class="hero">
+
     <div class="logo">⚡</div>
 
-    <p class="surtitle">APPRENDRE • COMPRENDRE • PRATIQUER</p>
+    <p class="surtitle">
+      APPRENDRE • COMPRENDRE • PRATIQUER
+    </p>
 
     <h1>Dictionnaire Électricien SK</h1>
 
     <p class="subtitle">
       Ton guide simple et pratique de l'électricité
     </p>
+
   </header>
+
 
   <main class="container">
 
-    <section class="welcome">
-      <span class="badge">⚡ ÉLECTRICITÉ</span>
+    <!-- ACCUEIL -->
 
-      <h2>Bienvenue 👋</h2>
+    <section class="welcome">
+
+      <span class="badge">
+        ⚡ ÉLECTRICITÉ
+      </span>
+
+      <h2>
+        Bienvenue 👋
+      </h2>
 
       <p>
-        Découvre les composants, les mesures et les cours
-        essentiels de l'électricité.
+        Apprends l'électricité progressivement avec des cours,
+        des exemples et des exercices.
       </p>
+
     </section>
 
 
@@ -42,27 +55,70 @@
     <section class="categories">
 
       <button class="category-card" id="btn-composants">
-        <div class="category-icon">🔌</div>
-        <h3>Composants</h3>
-        <p>Découvre les composants électriques.</p>
+
+        <div class="category-icon">
+          🔌
+        </div>
+
+        <h3>
+          Composants
+        </h3>
+
+        <p>
+          Découvre les composants électriques.
+        </p>
+
       </button>
+
 
       <button class="category-card" id="btn-mesures">
-        <div class="category-icon">📐</div>
-        <h3>Mesures</h3>
-        <p>Tension, courant, résistance et puissance.</p>
+
+        <div class="category-icon">
+          📐
+        </div>
+
+        <h3>
+          Mesures
+        </h3>
+
+        <p>
+          Tension, courant, résistance et puissance.
+        </p>
+
       </button>
+
 
       <button class="category-card" id="btn-securite">
-        <div class="category-icon">🛡️</div>
-        <h3>Sécurité</h3>
-        <p>Apprends les règles essentielles.</p>
+
+        <div class="category-icon">
+          🛡️
+        </div>
+
+        <h3>
+          Sécurité
+        </h3>
+
+        <p>
+          Apprends les règles essentielles.
+        </p>
+
       </button>
 
+
       <button class="category-card" id="btn-cours">
-        <div class="category-icon">📚</div>
-        <h3>Cours</h3>
-        <p>Apprends l'électricité progressivement.</p>
+
+        <div class="category-icon">
+          📚
+        </div>
+
+        <h3>
+          Cours
+        </h3>
+
+        <p>
+          Apprends l'électricité progressivement.
+        </p>
+
       </button>
 
     </section>
@@ -85,22 +141,33 @@
     </section>
 
 
-    <!-- COURS -->
+    <!-- ====================== -->
+    <!-- SECTION COURS -->
+    <!-- ====================== -->
 
-    <section id="section-cours" style="display:none;">
+    <section
+      id="section-cours"
+      style="display:none;"
+    >
 
       <div class="welcome">
 
-        <span class="badge">📚 COURS</span>
+        <span class="badge">
+          📚 FORMATION
+        </span>
 
-        <h2>Mes cours d'électricité</h2>
+        <h2>
+          Mes cours d'électricité
+        </h2>
 
         <p>
-          Choisis un cours pour apprendre progressivement.
+          Choisis une leçon pour commencer ton apprentissage.
         </p>
 
       </div>
 
+
+      <!-- LISTE DES COURS -->
 
       <div id="liste-cours">
 
@@ -109,39 +176,25 @@
 
         <article class="composant">
 
-          <div class="icon">⚡</div>
+          <div class="icon">
+            ⚡
+          </div>
 
-          <h3>Cours 1 — Introduction à l'électricité</h3>
+          <h3>
+            Cours 1 — Introduction à l'électricité
+          </h3>
 
           <p>
-            Découvre ce qu'est l'électricité et à quoi elle sert.
+            Découvre les bases de l'électricité.
           </p>
 
-          <div class="details" style="display:none; margin-top:16px;">
-
-            <p>
-              <strong>📘 Leçon :</strong>
-              L'électricité est liée à la présence et au déplacement
-              des charges électriques.
-            </p>
-
-            <p>
-              <strong>💡 Exemple :</strong>
-              Une pile peut fournir de l'énergie électrique
-              à une petite lampe.
-            </p>
-
-            <p>
-              <strong>📝 Exercice :</strong>
-              Cite deux appareils qui utilisent l'électricité.
-            </p>
-
-            <p>
-              <strong>✅ Correction :</strong>
-              Par exemple : une lampe et un téléphone.
-            </p>
-
-          </div>
+          <button
+            class="category-card"
+            style="margin-top:15px;"
+            onclick="ouvrirCours1(event)"
+          >
+            ▶️ Commencer le cours
+          </button>
 
         </article>
 
@@ -150,42 +203,25 @@
 
         <article class="composant">
 
-          <div class="icon">🔋</div>
+          <div class="icon">
+            🔋
+          </div>
 
-          <h3>Cours 2 — Tension, courant et résistance</h3>
+          <h3>
+            Cours 2 — Tension, courant et résistance
+          </h3>
 
           <p>
-            Comprends les trois notions fondamentales.
+            Comprends les trois grandes notions électriques.
           </p>
 
-          <div class="details" style="display:none; margin-top:16px;">
-
-            <p>
-              <strong>📘 Tension :</strong>
-              elle se mesure en volts (V).
-            </p>
-
-            <p>
-              <strong>🔌 Courant :</strong>
-              il se mesure en ampères (A).
-            </p>
-
-            <p>
-              <strong>🧱 Résistance :</strong>
-              elle se mesure en ohms (Ω).
-            </p>
-
-            <p>
-              <strong>📝 Exercice :</strong>
-              Quelle est l'unité de la résistance ?
-            </p>
-
-            <p>
-              <strong>✅ Correction :</strong>
-              L'ohm (Ω).
-            </p>
-
-          </div>
+          <button
+            class="category-card"
+            style="margin-top:15px;"
+            onclick="alert('📚 Ce cours sera bientôt développé.')"
+          >
+            ▶️ Bientôt disponible
+          </button>
 
         </article>
 
@@ -194,44 +230,25 @@
 
         <article class="composant">
 
-          <div class="icon">📐</div>
+          <div class="icon">
+            📐
+          </div>
 
-          <h3>Cours 3 — La loi d'Ohm</h3>
+          <h3>
+            Cours 3 — La loi d'Ohm
+          </h3>
 
           <p>
-            Apprends le lien entre tension, courant et résistance.
+            Apprends la relation entre U, R et I.
           </p>
 
-          <div class="details" style="display:none; margin-top:16px;">
-
-            <p>
-              <strong>📘 Formule :</strong>
-              U = R × I
-            </p>
-
-            <p>
-              <strong>📖 Explication :</strong>
-              La tension U est égale à la résistance R
-              multipliée par le courant I.
-            </p>
-
-            <p>
-              <strong>💡 Exemple :</strong>
-              R = 5 Ω et I = 2 A.
-              Donc U = 5 × 2 = 10 V.
-            </p>
-
-            <p>
-              <strong>📝 Exercice :</strong>
-              R = 4 Ω et I = 3 A. Calcule U.
-            </p>
-
-            <p>
-              <strong>✅ Correction :</strong>
-              U = 4 × 3 = 12 V.
-            </p>
-
-          </div>
+          <button
+            class="category-card"
+            style="margin-top:15px;"
+            onclick="alert('📚 Ce cours sera bientôt développé.')"
+          >
+            ▶️ Bientôt disponible
+          </button>
 
         </article>
 
@@ -240,43 +257,25 @@
 
         <article class="composant">
 
-          <div class="icon">💡</div>
+          <div class="icon">
+            💡
+          </div>
 
-          <h3>Cours 4 — La puissance électrique</h3>
+          <h3>
+            Cours 4 — La puissance électrique
+          </h3>
 
           <p>
-            Découvre comment calculer la puissance.
+            Comprends la puissance des appareils électriques.
           </p>
 
-          <div class="details" style="display:none; margin-top:16px;">
-
-            <p>
-              <strong>📘 Formule :</strong>
-              P = U × I
-            </p>
-
-            <p>
-              <strong>📖 Unité :</strong>
-              Watt (W)
-            </p>
-
-            <p>
-              <strong>💡 Exemple :</strong>
-              U = 12 V et I = 2 A.
-              Donc P = 12 × 2 = 24 W.
-            </p>
-
-            <p>
-              <strong>📝 Exercice :</strong>
-              U = 10 V et I = 3 A. Calcule P.
-            </p>
-
-            <p>
-              <strong>✅ Correction :</strong>
-              P = 30 W.
-            </p>
-
-          </div>
+          <button
+            class="category-card"
+            style="margin-top:15px;"
+            onclick="alert('📚 Ce cours sera bientôt développé.')"
+          >
+            ▶️ Bientôt disponible
+          </button>
 
         </article>
 
@@ -285,38 +284,25 @@
 
         <article class="composant">
 
-          <div class="icon">🔌</div>
+          <div class="icon">
+            🔌
+          </div>
 
-          <h3>Cours 5 — Les circuits électriques</h3>
+          <h3>
+            Cours 5 — Les circuits électriques
+          </h3>
 
           <p>
-            Comprends les circuits ouverts et fermés.
+            Découvre les circuits ouverts et fermés.
           </p>
 
-          <div class="details" style="display:none; margin-top:16px;">
-
-            <p>
-              <strong>📘 Leçon :</strong>
-              Dans un circuit fermé, le courant peut circuler.
-              Dans un circuit ouvert, le chemin est interrompu.
-            </p>
-
-            <p>
-              <strong>💡 Schéma :</strong>
-              Pile → interrupteur → lampe → retour à la pile.
-            </p>
-
-            <p>
-              <strong>📝 Exercice :</strong>
-              Que se passe-t-il si l'interrupteur est ouvert ?
-            </p>
-
-            <p>
-              <strong>✅ Correction :</strong>
-              Le circuit est interrompu et la lampe s'éteint.
-            </p>
-
-          </div>
+          <button
+            class="category-card"
+            style="margin-top:15px;"
+            onclick="alert('📚 Ce cours sera bientôt développé.')"
+          >
+            ▶️ Bientôt disponible
+          </button>
 
         </article>
 
@@ -325,60 +311,307 @@
 
         <article class="composant">
 
-          <div class="icon">🛡️</div>
+          <div class="icon">
+            🛡️
+          </div>
 
-          <h3>Cours 6 — Sécurité électrique</h3>
+          <h3>
+            Cours 6 — Sécurité électrique
+          </h3>
 
           <p>
-            Apprends les règles essentielles de sécurité.
+            Apprends à travailler avec prudence.
           </p>
 
-          <div class="details" style="display:none; margin-top:16px;">
-
-            <p>
-              <strong>📘 Règles :</strong>
-              Ne touche jamais un fil dénudé ou une installation
-              électrique endommagée.
-            </p>
-
-            <p>
-              <strong>⚠️ Important :</strong>
-              Les travaux électriques doivent être réalisés avec
-              l'alimentation coupée et avec l'aide d'une personne
-              formée ou d'un professionnel.
-            </p>
-
-            <p>
-              <strong>📝 Exercice :</strong>
-              Est-il prudent de toucher une prise avec les mains mouillées ?
-            </p>
-
-            <p>
-              <strong>✅ Correction :</strong>
-              Non, c'est dangereux.
-            </p>
-
-          </div>
+          <button
+            class="category-card"
+            style="margin-top:15px;"
+            onclick="alert('📚 Ce cours sera bientôt développé.')"
+          >
+            ▶️ Bientôt disponible
+          </button>
 
         </article>
 
       </div>
 
+
+      <!-- ====================== -->
+      <!-- VRAI COURS 1 -->
+      <!-- ====================== -->
+
+      <section
+        id="cours-1"
+        style="display:none; margin-top:25px;"
+      >
+
+        <div class="search-card">
+
+          <span class="badge">
+            ⚡ COURS 1
+          </span>
+
+          <h2>
+            Introduction à l'électricité
+          </h2>
+
+          <p>
+            Bienvenue dans ton premier cours d'électricité.
+          </p>
+
+        </div>
+
+
+        <!-- OBJECTIF -->
+
+        <div class="composant">
+
+          <div class="icon">
+            🎯
+          </div>
+
+          <h3>
+            Objectif du cours
+          </h3>
+
+          <p>
+            À la fin de cette leçon, tu dois comprendre
+            ce qu'est l'électricité et connaître quelques
+            exemples de son utilisation.
+          </p>
+
+        </div>
+
+
+        <!-- LEÇON -->
+
+        <div class="composant">
+
+          <div class="icon">
+            📖
+          </div>
+
+          <h3>
+            1. Qu'est-ce que l'électricité ?
+          </h3>
+
+          <p>
+            L'électricité est liée aux charges électriques
+            et à leur déplacement.
+          </p>
+
+          <p>
+            Elle permet de faire fonctionner de nombreux
+            appareils que nous utilisons chaque jour.
+          </p>
+
+          <p>
+            Par exemple :
+          </p>
+
+          <p>
+            💡 Lampes<br>
+            📱 Téléphones<br>
+            📺 Télévisions<br>
+            🌀 Ventilateurs<br>
+            💻 Ordinateurs
+          </p>
+
+        </div>
+
+
+        <!-- EXEMPLE -->
+
+        <div class="composant">
+
+          <div class="icon">
+            💡
+          </div>
+
+          <h3>
+            2. Exemple simple
+          </h3>
+
+          <p>
+            Imagine une petite lampe reliée à une pile
+            avec des fils et un interrupteur.
+          </p>
+
+          <p>
+            Lorsque le circuit est fermé, les conditions
+            permettent au courant de circuler et la lampe
+            peut s'allumer.
+          </p>
+
+          <p>
+            Lorsque le circuit est ouvert, le chemin est
+            interrompu et la lampe s'éteint.
+          </p>
+
+        </div>
+
+
+        <!-- SCHÉMA -->
+
+        <div class="composant">
+
+          <div class="icon">
+            🔌
+          </div>
+
+          <h3>
+            3. Schéma simple
+          </h3>
+
+          <p style="font-family:monospace; font-size:16px;">
+
+            🔋 Pile
+            ↓
+            🔘 Interrupteur
+            ↓
+            💡 Lampe
+            ↓
+            🔋 Retour à la pile
+
+          </p>
+
+        </div>
+
+
+        <!-- À RETENIR -->
+
+        <div class="composant">
+
+          <div class="icon">
+            🧠
+          </div>
+
+          <h3>
+            4. À retenir
+          </h3>
+
+          <p>
+            ⚡ L'électricité est utilisée partout autour de nous.
+          </p>
+
+          <p>
+            🔌 Un circuit électrique permet de faire circuler
+            le courant dans les conditions appropriées.
+          </p>
+
+          <p>
+            💡 Les appareils électriques utilisent l'énergie
+            électrique pour fonctionner.
+          </p>
+
+        </div>
+
+
+        <!-- EXERCICE -->
+
+        <div class="composant">
+
+          <div class="icon">
+            📝
+          </div>
+
+          <h3>
+            5. Exercice
+          </h3>
+
+          <p>
+            <strong>Question :</strong>
+          </p>
+
+          <p>
+            Cite trois appareils électriques que tu utilises
+            dans la vie quotidienne.
+          </p>
+
+          <p>
+            Prends quelques secondes pour réfléchir avant
+            de regarder la correction.
+          </p>
+
+        </div>
+
+
+        <!-- CORRECTION -->
+
+        <div class="composant">
+
+          <div class="icon">
+            ✅
+          </div>
+
+          <h3>
+            6. Correction
+          </h3>
+
+          <p>
+            Exemples de bonnes réponses :
+          </p>
+
+          <p>
+            📱 Téléphone<br>
+            💡 Lampe<br>
+            📺 Télévision
+          </p>
+
+          <p>
+            Il existe beaucoup d'autres réponses possibles.
+          </p>
+
+        </div>
+
+
+        <!-- FIN -->
+
+        <div class="search-card">
+
+          <h3>
+            🎉 Bravo !
+          </h3>
+
+          <p>
+            Tu viens de terminer le premier cours.
+          </p>
+
+          <button
+            class="category-card"
+            onclick="fermerCours1()"
+          >
+            🔙 Retour aux cours
+          </button>
+
+        </div>
+
+      </section>
+
     </section>
 
 
+    <!-- ====================== -->
     <!-- MESURES -->
+    <!-- ====================== -->
 
-    <section id="section-mesures" style="display:none;">
+    <section
+      id="section-mesures"
+      style="display:none;"
+    >
 
       <div class="welcome">
 
-        <span class="badge">📐 MESURES</span>
+        <span class="badge">
+          📐 MESURES
+        </span>
 
-        <h2>Les grandeurs électriques</h2>
+        <h2>
+          Les grandeurs électriques
+        </h2>
 
         <p>
-          Les quatre notions essentielles à connaître.
+          Les principales grandeurs à connaître.
         </p>
 
       </div>
@@ -386,16 +619,23 @@
 
       <div class="composant">
 
-        <div class="icon">⚡</div>
+        <div class="icon">
+          ⚡
+        </div>
 
-        <h3>Tension électrique</h3>
+        <h3>
+          Tension électrique
+        </h3>
 
         <p>
-          La tension représente la différence de potentiel électrique
-          entre deux points.
+          La tension représente la différence de potentiel
+          électrique entre deux points.
         </p>
 
-        <div class="details" style="display:none; margin-top:16px;">
+        <div
+          class="details"
+          style="display:none;"
+        >
 
           <p>
             <strong>📐 Unité :</strong>
@@ -409,7 +649,7 @@
 
           <p>
             <strong>💡 Exemple :</strong>
-            Une batterie peut fournir une tension de 12 V.
+            Une batterie peut fournir 12 V.
           </p>
 
         </div>
@@ -419,15 +659,23 @@
 
       <div class="composant">
 
-        <div class="icon">🔌</div>
+        <div class="icon">
+          🔌
+        </div>
 
-        <h3>Courant électrique</h3>
+        <h3>
+          Courant électrique
+        </h3>
 
         <p>
-          Le courant représente le déplacement des charges électriques.
+          Le courant représente le déplacement des charges
+          électriques.
         </p>
 
-        <div class="details" style="display:none; margin-top:16px;">
+        <div
+          class="details"
+          style="display:none;"
+        >
 
           <p>
             <strong>📐 Unité :</strong>
@@ -439,11 +687,6 @@
             I
           </p>
 
-          <p>
-            <strong>💡 Exemple :</strong>
-            Un circuit peut être parcouru par un courant de 2 A.
-          </p>
-
         </div>
 
       </div>
@@ -451,15 +694,22 @@
 
       <div class="composant">
 
-        <div class="icon">🧱</div>
+        <div class="icon">
+          🧱
+        </div>
 
-        <h3>Résistance électrique</h3>
+        <h3>
+          Résistance électrique
+        </h3>
 
         <p>
           La résistance s'oppose au passage du courant.
         </p>
 
-        <div class="details" style="display:none; margin-top:16px;">
+        <div
+          class="details"
+          style="display:none;"
+        >
 
           <p>
             <strong>📐 Unité :</strong>
@@ -471,11 +721,6 @@
             R
           </p>
 
-          <p>
-            <strong>💡 Exemple :</strong>
-            Une résistance peut avoir une valeur de 100 Ω.
-          </p>
-
         </div>
 
       </div>
@@ -483,16 +728,23 @@
 
       <div class="composant">
 
-        <div class="icon">💡</div>
+        <div class="icon">
+          💡
+        </div>
 
-        <h3>Puissance électrique</h3>
+        <h3>
+          Puissance électrique
+        </h3>
 
         <p>
           La puissance indique la quantité d'énergie utilisée
           par unité de temps.
         </p>
 
-        <div class="details" style="display:none; margin-top:16px;">
+        <div
+          class="details"
+          style="display:none;"
+        >
 
           <p>
             <strong>📐 Unité :</strong>
@@ -504,11 +756,6 @@
             P
           </p>
 
-          <p>
-            <strong>💡 Exemple :</strong>
-            Une lampe peut avoir une puissance de 10 W.
-          </p>
-
         </div>
 
       </div>
@@ -516,7 +763,9 @@
     </section>
 
 
+    <!-- ====================== -->
     <!-- COMPOSANTS -->
+    <!-- ====================== -->
 
     <section id="section-composants">
 
@@ -527,11 +776,17 @@
   </main>
 
 
+  <!-- PIED DE PAGE -->
+
   <footer>
 
-    <div>⚡</div>
+    <div>
+      ⚡
+    </div>
 
-    <strong>Dictionnaire Électricien SK</strong>
+    <strong>
+      Dictionnaire Électricien SK
+    </strong>
 
     <p>
       Apprendre l'électricité simplement.
@@ -540,8 +795,12 @@
   </footer>
 
 
+  <!-- SCRIPT DES COMPOSANTS -->
+
   <script src="script.js"></script>
 
+
+  <!-- COMMANDES -->
 
   <script>
 
@@ -596,33 +855,43 @@
       });
 
 
-    // OUVRIR LES FICHES DE COURS
+    // OUVRIR LE COURS 1
 
-    document
-      .querySelectorAll("#liste-cours .composant")
-      .forEach(function(card) {
+    function ouvrirCours1(event) {
 
-        card.addEventListener("click", function() {
+      event.stopPropagation();
 
-          const details =
-            card.querySelector(".details");
+      const cours =
+        document.getElementById("cours-1");
 
-          if (details.style.display === "block") {
+      cours.style.display = "block";
 
-            details.style.display = "none";
-
-          } else {
-
-            details.style.display = "block";
-
-          }
-
-        });
-
+      cours.scrollIntoView({
+        behavior: "smooth"
       });
 
+    }
 
-    // OUVRIR LES FICHES DE MESURES
+
+    // FERMER LE COURS 1
+
+    function fermerCours1() {
+
+      const cours =
+        document.getElementById("cours-1");
+
+      cours.style.display = "none";
+
+      document
+        .getElementById("section-cours")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+    // OUVRIR LES MESURES
 
     document
       .querySelectorAll("#section-mesures .composant")
@@ -632,6 +901,8 @@
 
           const details =
             card.querySelector(".details");
+
+          if (!details) return;
 
           if (details.style.display === "block") {
 
@@ -655,7 +926,7 @@
       .addEventListener("click", function() {
 
         alert(
-          "🛡️ Respecte toujours les règles de sécurité électrique."
+          "🛡️ La sécurité électrique sera développée dans les prochains cours."
         );
 
       });
