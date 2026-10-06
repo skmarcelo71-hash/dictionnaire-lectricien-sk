@@ -13,6 +13,7 @@
   --background: #f4f7fb;
   --white: #ffffff;
   --border: #e2e8f0;
+  --green: #16834b;
 }
 
 html {
@@ -27,24 +28,26 @@ body {
   line-height: 1.5;
 }
 
+/* EN-TÊTE */
+
 .hero {
   background: linear-gradient(135deg, var(--blue-dark), var(--blue));
   color: white;
   text-align: center;
-  padding: 32px 18px 38px;
+  padding: 34px 18px 40px;
   box-shadow: 0 8px 24px rgba(8, 52, 90, 0.18);
 }
 
 .logo {
-  width: 68px;
-  height: 68px;
+  width: 70px;
+  height: 70px;
   display: grid;
   place-items: center;
   margin: 0 auto 14px;
   background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.25);
   border-radius: 20px;
-  font-size: 38px;
+  font-size: 40px;
 }
 
 .surtitle {
@@ -67,18 +70,20 @@ h1 {
   font-size: 15px;
 }
 
+/* CONTENU */
+
 .container {
   width: min(900px, calc(100% - 28px));
   margin: 28px auto 45px;
 }
 
 .welcome {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .badge {
   display: inline-block;
-  padding: 6px 10px;
+  padding: 7px 11px;
   border-radius: 999px;
   background: var(--blue-light);
   color: var(--blue);
@@ -97,9 +102,58 @@ h1 {
   color: var(--muted);
 }
 
+/* CATÉGORIES */
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.category-card {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  text-align: left;
+  text-decoration: none;
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+
+.category-card:hover {
+  transform: translateY(-3px);
+  border-color: #bfd5e8;
+  box-shadow: 0 12px 28px rgba(15, 76, 129, 0.12);
+}
+
+.category-icon {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.category-card h3 {
+  margin: 0 0 5px;
+  color: var(--blue-dark);
+  font-size: 18px;
+}
+
+.category-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* RECHERCHE */
+
 .search-card {
   background: var(--white);
-  padding: 18px;
+  padding: 19px;
   border: 1px solid var(--border);
   border-radius: 18px;
   box-shadow: 0 8px 25px rgba(15, 76, 129, 0.07);
@@ -129,6 +183,8 @@ h1 {
   box-shadow: 0 0 0 4px rgba(15,76,129,.10);
 }
 
+/* COMPOSANTS */
+
 #liste-composants {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -141,6 +197,7 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 18px;
   box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+  cursor: pointer;
   transition: transform .2s, box-shadow .2s, border-color .2s;
 }
 
@@ -151,14 +208,14 @@ h1 {
 }
 
 .icon {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
   margin-bottom: 13px;
-  border-radius: 14px;
+  border-radius: 15px;
   background: var(--blue-light);
-  font-size: 28px;
+  font-size: 29px;
 }
 
 .composant h3 {
@@ -167,11 +224,37 @@ h1 {
   font-size: 19px;
 }
 
-.composant p {
+.composant > p {
   margin: 0;
   color: var(--muted);
   font-size: 14px;
 }
+
+/* FICHE DÉTAILLÉE */
+
+.details {
+  animation: apparition .25s ease;
+}
+
+.details p {
+  padding: 9px 0;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.details p:last-child {
+  border-bottom: none;
+}
+
+.details strong {
+  color: var(--blue-dark);
+}
+
+.indication {
+  border-top: 1px solid #eef2f7;
+  padding-top: 13px;
+}
+
+/* MESSAGE VIDE */
 
 .empty {
   grid-column: 1 / -1;
@@ -182,6 +265,8 @@ h1 {
   border-radius: 18px;
   color: var(--muted);
 }
+
+/* PIED DE PAGE */
 
 footer {
   padding: 32px 18px;
@@ -205,7 +290,24 @@ footer p {
   font-size: 13px;
 }
 
+/* ANIMATION */
+
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TÉLÉPHONE */
+
 @media (max-width: 650px) {
+
   .hero {
     padding: 27px 15px 31px;
   }
@@ -219,6 +321,10 @@ footer p {
 
   .welcome h2 {
     font-size: 24px;
+  }
+
+  .categories {
+    grid-template-columns: 1fr;
   }
 
   #liste-composants {
