@@ -1,7 +1,4 @@
-
-    
-
-    const composants = [
+const composants = [
   {
     nom: "Lampe",
     icon: "💡",
@@ -120,4 +117,33 @@ function afficherComposants(elements) {
 
   if (elements.length === 0) {
     liste.innerHTML =
-      '<div class="empty">🔎 Aucun composant trouvé.<br>Essa
+      '<div class="empty">🔎 Aucun composant trouvé.<br>Essaie un autre mot.</div>';
+    return;
+  }
+
+  elements.forEach(function(composant) {
+    const carte = document.createElement("article");
+    carte.className = "composant";
+
+    carte.innerHTML = `
+      <div class="icon">${composant.icon}</div>
+
+      <h3>${composant.nom}</h3>
+
+      <p>${composant.description}</p>
+
+      <div class="details"
+        style="display:none; margin-top:16px; padding-top:15px; border-top:1px solid #e2e8f0;">
+
+        <p><strong>⚡ Symbole :</strong> ${composant.symbole}</p>
+
+        <p><strong>🎯 Rôle :</strong> ${composant.role}</p>
+
+        <p><strong>📐 Unité :</strong> ${composant.unite
+    
+
+    
+  
+    
+
+  
