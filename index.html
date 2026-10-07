@@ -1,92 +1,83 @@
-<!-- COURS 6 -->
+<!-- COURS 7 -->
 
 <div class="course-card">
 
-  <h3>🔋 Cours 6 — L'énergie électrique et la consommation</h3>
+  <h3>🔗 Cours 7 — Les circuits en série</h3>
 
   <p>
-    Découvre la différence entre puissance et énergie électrique,
-    ainsi que l'utilisation du kWh.
+    Découvre comment fonctionnent les composants branchés les uns à la suite des autres.
   </p>
 
-  <button class="course-button" onclick="ouvrirCours('cours6')">
+  <button class="course-button" onclick="ouvrirCours('cours7')">
     ▶️ Commencer le cours
   </button>
 
-  <div id="cours6" class="course-content">
+  <div id="cours7" class="course-content">
 
     <div class="lesson">
 
-      <h4>⚡ Qu'est-ce que l'énergie électrique ?</h4>
+      <h4>🔗 Qu'est-ce qu'un circuit en série ?</h4>
 
       <p>
-        L'énergie électrique correspond à la quantité d'énergie
-        consommée ou fournie par un appareil pendant une durée.
+        Dans un circuit en série, les composants sont branchés
+        les uns à la suite des autres sur le même chemin électrique.
       </p>
 
-      <p>
-        Elle peut être mesurée en <strong>Wh</strong> (watt-heure)
-        ou en <strong>kWh</strong> (kilowatt-heure).
-      </p>
-
-    </div>
-
-    <div class="lesson">
-
-      <h4>📐 La formule</h4>
-
-      <div class="formula">
-        E = P × t
+      <div class="schema">
+        🔋 ─── 💡 ─── 💡 ─── 🔘 ───
+        <br>
+        └──────────────────────────┘
       </div>
 
+    </div>
+
+    <div class="lesson">
+
+      <h4>🔌 Le courant dans un circuit en série</h4>
+
       <p>
-        <strong>E</strong> = énergie en Wh
+        Dans un circuit en série, le même courant traverse
+        successivement tous les composants.
       </p>
 
       <p>
-        <strong>P</strong> = puissance en W
-      </p>
-
-      <p>
-        <strong>t</strong> = durée en heures
+        Si un composant ou une connexion est interrompu,
+        le courant ne peut plus circuler dans le circuit.
       </p>
 
     </div>
 
     <div class="lesson">
 
-      <h4>💡 Exemple</h4>
+      <h4>🧱 Résistance totale</h4>
 
       <p>
-        Une lampe de 100 W fonctionne pendant 5 heures.
+        Pour des résistances montées en série, la résistance totale
+        est égale à la somme des résistances.
       </p>
 
       <div class="formula">
-        E = 100 × 5 = 500 Wh
+        Rtotal = R1 + R2 + R3
       </div>
 
       <p>
-        La lampe consomme donc <strong>500 Wh</strong>,
-        soit <strong>0,5 kWh</strong>.
+        Exemple : R1 = 2 Ω et R2 = 3 Ω.
       </p>
+
+      <div class="formula">
+        Rtotal = 2 + 3 = 5 Ω
+      </div>
 
     </div>
 
     <div class="lesson">
 
-      <h4>🔋 À retenir</h4>
+      <h4>💡 Exemple pratique</h4>
 
       <p>
-        <strong>Puissance (W)</strong> → indique la puissance de l'appareil.
-      </p>
-
-      <p>
-        <strong>Énergie (Wh ou kWh)</strong> → dépend de la puissance
-        et du temps d'utilisation.
-      </p>
-
-      <p>
-        <strong>1 kWh = 1000 Wh</strong>.
+        Deux lampes sont branchées en série.
+        Si le circuit est ouvert entre les deux lampes,
+        le courant ne circule plus dans le circuit.
       </p>
 
     </div>
@@ -96,17 +87,17 @@
       <strong>📝 Exercice 1</strong>
 
       <p>
-        Une lampe de 60 W fonctionne pendant 5 heures.
-        Quelle énergie consomme-t-elle ?
+        Deux résistances de 4 Ω et 6 Ω sont montées en série.
+        Quelle est leur résistance totale ?
       </p>
 
       <button class="answer-button"
-              onclick="afficherReponse('rep61')">
+              onclick="afficherReponse('rep71')">
         Voir la réponse
       </button>
 
-      <div id="rep61" class="answer">
-        E = 60 × 5 = 300 Wh.
+      <div id="rep71" class="answer">
+        Rtotal = 4 + 6 = 10 Ω.
       </div>
 
     </div>
@@ -116,17 +107,17 @@
       <strong>📝 Exercice 2</strong>
 
       <p>
-        Un appareil de 1000 W fonctionne pendant 2 heures.
-        Quelle énergie consomme-t-il ?
+        Trois résistances de 2 Ω, 3 Ω et 5 Ω sont montées en série.
+        Quelle est la résistance totale ?
       </p>
 
       <button class="answer-button"
-              onclick="afficherReponse('rep62')">
+              onclick="afficherReponse('rep72')">
         Voir la réponse
       </button>
 
-      <div id="rep62" class="answer">
-        E = 1000 × 2 = 2000 Wh = 2 kWh.
+      <div id="rep72" class="answer">
+        Rtotal = 2 + 3 + 5 = 10 Ω.
       </div>
 
     </div>
@@ -136,17 +127,17 @@
       <strong>📝 Exercice 3</strong>
 
       <p>
-        Un appareil consomme 500 Wh en 5 heures.
-        Quelle est sa puissance ?
+        Que se passe-t-il si une connexion est coupée dans
+        un circuit en série ?
       </p>
 
       <button class="answer-button"
-              onclick="afficherReponse('rep63')">
+              onclick="afficherReponse('rep73')">
         Voir la réponse
       </button>
 
-      <div id="rep63" class="answer">
-        P = E ÷ t = 500 ÷ 5 = 100 W.
+      <div id="rep73" class="answer">
+        Le circuit est interrompu et le courant ne circule plus.
       </div>
 
     </div>
