@@ -1,104 +1,133 @@
-<!-- COURS 8 -->
+<!-- COURS 9 -->
 
 <div class="course-card">
 
-  <h3>🔀 Cours 8 — Les circuits en parallèle</h3>
+  <h3>📏 Cours 9 — Utiliser un multimètre</h3>
 
   <p>
-    Découvre comment fonctionnent les composants branchés sur plusieurs branches.
+    Apprends à utiliser un multimètre pour mesurer les principales
+    grandeurs électriques.
   </p>
 
-  <button class="course-button" onclick="ouvrirCours('cours8')">
+  <button class="course-button" onclick="ouvrirCours('cours9')">
     ▶️ Commencer le cours
   </button>
 
-  <div id="cours8" class="course-content">
+  <div id="cours9" class="course-content">
 
     <div class="lesson">
 
-      <h4>🔀 Qu'est-ce qu'un circuit en parallèle ?</h4>
+      <h4>📏 Qu'est-ce qu'un multimètre ?</h4>
 
       <p>
-        Dans un circuit en parallèle, les composants sont placés
-        sur plusieurs branches reliées aux mêmes points du circuit.
+        Un multimètre est un appareil de mesure utilisé pour vérifier
+        différentes grandeurs électriques.
+      </p>
+
+      <p>Il peut notamment mesurer :</p>
+
+      <p>⚡ La tension (V)</p>
+      <p>🔌 Le courant (A)</p>
+      <p>🧱 La résistance (Ω)</p>
+
+    </div>
+
+    <div class="lesson">
+
+      <h4>⚡ Mesurer une tension</h4>
+
+      <p>
+        Pour mesurer une tension, on utilise le mode voltmètre.
+        Le multimètre se branche en parallèle avec le circuit ou
+        le composant à mesurer.
       </p>
 
       <div class="schema">
-        🔋 ────┬──── 💡 ────┬────
+        🔋 ─────── 💡 ───────
         <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──── 💡 ────┤
+        &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│
         <br>
-        └──────┴────────────┴────
+        &nbsp;&nbsp;&nbsp;&nbsp;└── 📏 V ──┘
       </div>
 
-    </div>
-
-    <div class="lesson">
-
-      <h4>⚡ La tension</h4>
-
       <p>
-        Dans un circuit en parallèle, la tension est la même
-        aux bornes des différentes branches.
-      </p>
-
-      <p>
-        Exemple : si la source fournit 12 V, chaque branche
-        reçoit 12 V.
+        Exemple : une batterie indique environ 12 V.
       </p>
 
     </div>
 
     <div class="lesson">
 
-      <h4>🔌 Le courant</h4>
+      <h4>🧱 Mesurer une résistance</h4>
 
       <p>
-        Le courant se partage entre les différentes branches
-        du circuit.
-      </p>
-
-      <div class="formula">
-        Itotal = I1 + I2 + I3
-      </div>
-
-    </div>
-
-    <div class="lesson">
-
-      <h4>💡 Exemple pratique</h4>
-
-      <p>
-        Dans une maison, plusieurs lampes peuvent fonctionner
-        indépendamment grâce au branchement en parallèle.
+        Pour mesurer une résistance, on utilise le mode Ω.
       </p>
 
       <p>
-        Si une lampe tombe en panne, les autres peuvent continuer
-        à fonctionner.
+        ⚠️ Le circuit doit être hors tension avant de mesurer
+        une résistance.
+      </p>
+
+      <p>
+        Exemple : une résistance peut mesurer 100 Ω.
       </p>
 
     </div>
 
     <div class="lesson">
 
-      <h4>🧱 Résistance en parallèle</h4>
+      <h4>🔌 Mesurer un courant</h4>
 
       <p>
-        Pour deux résistances en parallèle :
+        Pour mesurer un courant, on utilise le mode ampèremètre.
+        Le multimètre doit être placé en série dans le circuit.
       </p>
-
-      <div class="formula">
-        R = (R1 × R2) ÷ (R1 + R2)
-      </div>
 
       <p>
-        Exemple : R1 = 6 Ω et R2 = 3 Ω.
+        ⚠️ Il faut toujours choisir le bon branchement et le bon
+        calibre avant une mesure.
       </p>
 
-      <div class="formula">
-        R = (6 × 3) ÷ (6 + 3) = 2 Ω
-      </div>
+    </div>
+
+    <div class="lesson">
+
+      <h4>🔢 Les principaux symboles</h4>
+
+      <p>
+        <strong>V</strong> → tension
+      </p>
+
+      <p>
+        <strong>A</strong> → courant
+      </p>
+
+      <p>
+        <strong>Ω</strong> → résistance
+      </p>
+
+      <p>
+        <strong>⏚</strong> → borne commune selon le modèle
+      </p>
+
+    </div>
+
+    <div class="lesson">
+
+      <h4>🧠 À retenir</h4>
+
+      <p>
+        📏 Tension → mesure en parallèle.
+      </p>
+
+      <p>
+        🔌 Courant → mesure en série.
+      </p>
+
+      <p>
+        🧱 Résistance → circuit hors tension.
+      </p>
 
     </div>
 
@@ -107,17 +136,16 @@
       <strong>📝 Exercice 1</strong>
 
       <p>
-        Une source fournit 12 V à deux lampes en parallèle.
-        Quelle tension reçoit chaque lampe ?
+        Quelle unité utilise-t-on pour mesurer une résistance ?
       </p>
 
       <button class="answer-button"
-              onclick="afficherReponse('rep81')">
+              onclick="afficherReponse('rep91')">
         Voir la réponse
       </button>
 
-      <div id="rep81" class="answer">
-        Chaque lampe reçoit 12 V.
+      <div id="rep91" class="answer">
+        La résistance se mesure en ohms (Ω).
       </div>
 
     </div>
@@ -127,17 +155,17 @@
       <strong>📝 Exercice 2</strong>
 
       <p>
-        Deux branches ont des courants de 2 A et 3 A.
-        Quel est le courant total ?
+        Pour mesurer une tension, le multimètre se branche-t-il
+        en série ou en parallèle ?
       </p>
 
       <button class="answer-button"
-              onclick="afficherReponse('rep82')">
+              onclick="afficherReponse('rep92')">
         Voir la réponse
       </button>
 
-      <div id="rep82" class="answer">
-        Itotal = 2 + 3 = 5 A.
+      <div id="rep92" class="answer">
+        Il se branche en parallèle.
       </div>
 
     </div>
@@ -147,21 +175,20 @@
       <strong>📝 Exercice 3</strong>
 
       <p>
-        Deux résistances de 6 Ω et 3 Ω sont en parallèle.
-        Quelle est leur résistance équivalente ?
+        Peut-on mesurer une résistance sur un circuit sous tension ?
       </p>
 
       <button class="answer-button"
-              onclick="afficherReponse('rep83')">
+              onclick="afficherReponse('rep93')">
         Voir la réponse
       </button>
 
-      <div id="rep83" class="answer">
-        R = (6 × 3) ÷ (6 + 3) = 2 Ω.
+      <div id="rep93" class="answer">
+        Non. Pour une mesure de résistance, le circuit doit être hors tension.
       </div>
 
     </div>
 
   </div>
 
-</div>
+  </div>
