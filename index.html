@@ -36,10 +36,6 @@
       margin-top: 12px;
     }
 
-    .course-btn:hover {
-      background: #08345a;
-    }
-
     .lesson {
       padding: 14px;
       margin: 10px 0;
@@ -60,6 +56,18 @@
       margin-top: 10px;
       font-weight: bold;
       color: #16834b;
+    }
+
+    .schema {
+      margin: 15px 0;
+      padding: 18px;
+      background: #172033;
+      color: white;
+      border-radius: 12px;
+      text-align: center;
+      font-family: monospace;
+      line-height: 2;
+      font-size: 15px;
     }
   </style>
 </head>
@@ -113,101 +121,69 @@
   </section>
 
 
-  <!-- COURS -->
   <section id="cours" class="search-card">
 
     <span class="badge">📚 COURS D'ÉLECTRICITÉ</span>
 
     <h2>Apprendre l'électricité</h2>
 
-    <p>
-      Choisis un cours pour commencer.
-    </p>
+    <p>Choisis un cours pour commencer.</p>
 
 
     <!-- COURS 1 -->
+
     <div class="course-box">
 
       <div class="category-icon">⚡</div>
 
       <h3>Cours 1 — Introduction à l'électricité</h3>
 
-      <p>
-        Découvre les bases de l'électricité.
-      </p>
+      <p>Découvre les bases de l'électricité.</p>
 
       <button class="course-btn"
         onclick="ouvrirCours('cours1')">
         ▶️ Commencer le cours
       </button>
 
-
       <div id="cours1" class="course-content">
 
         <div class="lesson">
           <h3>1️⃣ Qu'est-ce que l'électricité ?</h3>
-
           <p>
             L'électricité est une forme d'énergie
             qui permet de faire fonctionner de nombreux appareils.
           </p>
-
-          <p>
-            Exemple : lampes, téléphones, moteurs,
-            télévisions et ordinateurs.
-          </p>
         </div>
-
 
         <div class="lesson">
           <h3>2️⃣ La tension électrique</h3>
-
           <p>
-            La tension représente la différence de potentiel
-            qui permet au courant électrique de circuler.
+            La tension permet au courant électrique
+            de circuler dans un circuit.
           </p>
-
-          <p>
-            Son unité est le <strong>volt (V)</strong>.
-          </p>
+          <p>Unité : <strong>volt (V)</strong>.</p>
         </div>
-
 
         <div class="lesson">
           <h3>3️⃣ Le courant électrique</h3>
-
           <p>
-            Le courant électrique correspond au déplacement
-            des charges électriques dans un circuit.
+            Le courant correspond au déplacement
+            des charges électriques.
           </p>
-
-          <p>
-            Son unité est l'<strong>ampère (A)</strong>.
-          </p>
+          <p>Unité : <strong>ampère (A)</strong>.</p>
         </div>
-
 
         <div class="lesson">
           <h3>4️⃣ La résistance</h3>
-
           <p>
-            La résistance s'oppose au passage du courant
-            électrique.
+            La résistance s'oppose au passage du courant.
           </p>
-
-          <p>
-            Son unité est l'<strong>ohm (Ω)</strong>.
-          </p>
+          <p>Unité : <strong>ohm (Ω)</strong>.</p>
         </div>
 
-
         <div class="exercise">
-
           <h3>🧠 Petit exercice</h3>
-
-          <p>
-            Quelle est l'unité de la tension électrique ?
-          </p>
+          <p>Quelle est l'unité de la tension ?</p>
 
           <button class="course-btn"
             onclick="afficherReponse('rep1')">
@@ -217,15 +193,14 @@
           <p id="rep1" class="answer">
             ✅ Le volt (V).
           </p>
-
         </div>
 
       </div>
-
     </div>
 
 
     <!-- COURS 2 -->
+
     <div class="course-box">
 
       <div class="category-icon">🔋</div>
@@ -242,55 +217,35 @@
         ▶️ Commencer le cours
       </button>
 
-
       <div id="cours2" class="course-content">
 
         <div class="lesson">
           <h3>⚡ La tension</h3>
-
           <p>
             La tension se mesure avec un voltmètre.
           </p>
-
-          <p>
-            Unité : <strong>volt (V)</strong>.
-          </p>
+          <p>Unité : <strong>volt (V)</strong>.</p>
         </div>
-
 
         <div class="lesson">
           <h3>🔌 Le courant</h3>
-
           <p>
             Le courant se mesure avec un ampèremètre.
           </p>
-
-          <p>
-            Unité : <strong>ampère (A)</strong>.
-          </p>
+          <p>Unité : <strong>ampère (A)</strong>.</p>
         </div>
-
 
         <div class="lesson">
           <h3>Ω La résistance</h3>
-
           <p>
             La résistance limite le passage du courant.
           </p>
-
-          <p>
-            Unité : <strong>ohm (Ω)</strong>.
-          </p>
+          <p>Unité : <strong>ohm (Ω)</strong>.</p>
         </div>
 
-
         <div class="exercise">
-
           <h3>🧠 Petit exercice</h3>
-
-          <p>
-            Quelle est l'unité de la résistance ?
-          </p>
+          <p>Quelle est l'unité de la résistance ?</p>
 
           <button class="course-btn"
             onclick="afficherReponse('rep2')">
@@ -299,6 +254,156 @@
 
           <p id="rep2" class="answer">
             ✅ L'ohm (Ω).
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- COURS 3 -->
+
+    <div class="course-box">
+
+      <div class="category-icon">🔌</div>
+
+      <h3>Cours 3 — Les circuits électriques</h3>
+
+      <p>
+        Découvre comment les composants sont reliés
+        pour former un circuit électrique.
+      </p>
+
+      <button class="course-btn"
+        onclick="ouvrirCours('cours3')">
+        ▶️ Commencer le cours
+      </button>
+
+      <div id="cours3" class="course-content">
+
+        <div class="lesson">
+
+          <h3>1️⃣ Qu'est-ce qu'un circuit électrique ?</h3>
+
+          <p>
+            Un circuit électrique est un ensemble de composants
+            reliés entre eux par des conducteurs.
+          </p>
+
+          <p>
+            Pour que le courant circule, le circuit doit
+            généralement former un chemin fermé.
+          </p>
+
+        </div>
+
+
+        <div class="lesson">
+
+          <h3>2️⃣ Les éléments d'un circuit</h3>
+
+          <p>Un circuit simple peut contenir :</p>
+
+          <p>🔋 <strong>Générateur</strong> : fournit l'énergie.</p>
+
+          <p>🔌 <strong>Fils</strong> : permettent la connexion.</p>
+
+          <p>💡 <strong>Récepteur</strong> : utilise l'énergie.</p>
+
+          <p>🎛️ <strong>Interrupteur</strong> : ouvre ou ferme le circuit.</p>
+
+        </div>
+
+
+        <div class="lesson">
+
+          <h3>3️⃣ Circuit fermé</h3>
+
+          <p>
+            Dans un circuit fermé, le chemin électrique
+            est complet et le courant peut circuler.
+          </p>
+
+          <div class="schema">
+            🔋 ─── 🎛️ ─── 💡<br>
+            │             │<br>
+            └─────────────┘<br>
+            <br>
+            Circuit fermé ✅
+          </div>
+
+        </div>
+
+
+        <div class="lesson">
+
+          <h3>4️⃣ Circuit ouvert</h3>
+
+          <p>
+            Dans un circuit ouvert, le chemin est interrompu.
+            Le courant ne peut donc pas circuler.
+          </p>
+
+          <div class="schema">
+            🔋 ─── 🎛️   💡<br>
+            │             │<br>
+            └─────────────┘<br>
+            <br>
+            Circuit ouvert ❌
+          </div>
+
+        </div>
+
+
+        <div class="lesson">
+
+          <h3>5️⃣ Exemple simple</h3>
+
+          <p>
+            Une pile est reliée à une lampe avec des fils.
+            Lorsque l'interrupteur est fermé, la lampe peut
+            s'allumer.
+          </p>
+
+        </div>
+
+
+        <div class="exercise">
+
+          <h3>🧠 Exercice 1</h3>
+
+          <p>
+            Dans quel type de circuit le courant peut-il circuler ?
+          </p>
+
+          <button class="course-btn"
+            onclick="afficherReponse('rep3')">
+            Voir la réponse
+          </button>
+
+          <p id="rep3" class="answer">
+            ✅ Dans un circuit fermé.
+          </p>
+
+        </div>
+
+
+        <div class="exercise">
+
+          <h3>🧠 Exercice 2</h3>
+
+          <p>
+            Quel composant permet d'ouvrir ou de fermer
+            un circuit ?
+          </p>
+
+          <button class="course-btn"
+            onclick="afficherReponse('rep4')">
+            Voir la réponse
+          </button>
+
+          <p id="rep4" class="answer">
+            ✅ L'interrupteur.
           </p>
 
         </div>
@@ -311,6 +416,7 @@
 
 
   <!-- MESURES -->
+
   <section id="mesures" class="search-card">
 
     <span class="badge">📏 MESURES ÉLECTRIQUES</span>
@@ -319,25 +425,13 @@
 
     <div class="details" style="display:block;">
 
-      <p>
-        <strong>⚡ Tension :</strong>
-        volt (V)
-      </p>
+      <p><strong>⚡ Tension :</strong> volt (V)</p>
 
-      <p>
-        <strong>🔌 Courant :</strong>
-        ampère (A)
-      </p>
+      <p><strong>🔌 Courant :</strong> ampère (A)</p>
 
-      <p>
-        <strong>Ω Résistance :</strong>
-        ohm (Ω)
-      </p>
+      <p><strong>Ω Résistance :</strong> ohm (Ω)</p>
 
-      <p>
-        <strong>💡 Puissance :</strong>
-        watt (W)
-      </p>
+      <p><strong>💡 Puissance :</strong> watt (W)</p>
 
     </div>
 
@@ -345,6 +439,7 @@
 
 
   <!-- COMPOSANTS -->
+
   <section id="composants">
 
     <div class="search-card">
@@ -367,6 +462,7 @@
 
 
   <!-- CONSEILS -->
+
   <section id="conseils" class="search-card">
 
     <span class="badge">💡 CONSEILS</span>
@@ -399,9 +495,7 @@
 
   <strong>Dictionnaire Électricien SK</strong>
 
-  <p>
-    Apprendre l'électricité simplement.
-  </p>
+  <p>Apprendre l'électricité simplement.</p>
 
 </footer>
 
@@ -451,4 +545,4 @@ function afficherReponse(id) {
 </script>
 
 </body>
-  </html>
+</html>
