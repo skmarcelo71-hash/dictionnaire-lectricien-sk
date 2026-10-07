@@ -1,71 +1,65 @@
-<!-- COURS 7 -->
+<!-- COURS 8 -->
 
 <div class="course-card">
 
-  <h3>🔗 Cours 7 — Les circuits en série</h3>
+  <h3>🔀 Cours 8 — Les circuits en parallèle</h3>
 
   <p>
-    Découvre comment fonctionnent les composants branchés les uns à la suite des autres.
+    Découvre comment fonctionnent les composants branchés sur plusieurs branches.
   </p>
 
-  <button class="course-button" onclick="ouvrirCours('cours7')">
+  <button class="course-button" onclick="ouvrirCours('cours8')">
     ▶️ Commencer le cours
   </button>
 
-  <div id="cours7" class="course-content">
+  <div id="cours8" class="course-content">
 
     <div class="lesson">
 
-      <h4>🔗 Qu'est-ce qu'un circuit en série ?</h4>
+      <h4>🔀 Qu'est-ce qu'un circuit en parallèle ?</h4>
 
       <p>
-        Dans un circuit en série, les composants sont branchés
-        les uns à la suite des autres sur le même chemin électrique.
+        Dans un circuit en parallèle, les composants sont placés
+        sur plusieurs branches reliées aux mêmes points du circuit.
       </p>
 
       <div class="schema">
-        🔋 ─── 💡 ─── 💡 ─── 🔘 ───
+        🔋 ────┬──── 💡 ────┬────
         <br>
-        └──────────────────────────┘
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──── 💡 ────┤
+        <br>
+        └──────┴────────────┴────
       </div>
 
     </div>
 
     <div class="lesson">
 
-      <h4>🔌 Le courant dans un circuit en série</h4>
+      <h4>⚡ La tension</h4>
 
       <p>
-        Dans un circuit en série, le même courant traverse
-        successivement tous les composants.
+        Dans un circuit en parallèle, la tension est la même
+        aux bornes des différentes branches.
       </p>
 
       <p>
-        Si un composant ou une connexion est interrompu,
-        le courant ne peut plus circuler dans le circuit.
+        Exemple : si la source fournit 12 V, chaque branche
+        reçoit 12 V.
       </p>
 
     </div>
 
     <div class="lesson">
 
-      <h4>🧱 Résistance totale</h4>
+      <h4>🔌 Le courant</h4>
 
       <p>
-        Pour des résistances montées en série, la résistance totale
-        est égale à la somme des résistances.
+        Le courant se partage entre les différentes branches
+        du circuit.
       </p>
 
       <div class="formula">
-        Rtotal = R1 + R2 + R3
-      </div>
-
-      <p>
-        Exemple : R1 = 2 Ω et R2 = 3 Ω.
-      </p>
-
-      <div class="formula">
-        Rtotal = 2 + 3 = 5 Ω
+        Itotal = I1 + I2 + I3
       </div>
 
     </div>
@@ -75,10 +69,36 @@
       <h4>💡 Exemple pratique</h4>
 
       <p>
-        Deux lampes sont branchées en série.
-        Si le circuit est ouvert entre les deux lampes,
-        le courant ne circule plus dans le circuit.
+        Dans une maison, plusieurs lampes peuvent fonctionner
+        indépendamment grâce au branchement en parallèle.
       </p>
+
+      <p>
+        Si une lampe tombe en panne, les autres peuvent continuer
+        à fonctionner.
+      </p>
+
+    </div>
+
+    <div class="lesson">
+
+      <h4>🧱 Résistance en parallèle</h4>
+
+      <p>
+        Pour deux résistances en parallèle :
+      </p>
+
+      <div class="formula">
+        R = (R1 × R2) ÷ (R1 + R2)
+      </div>
+
+      <p>
+        Exemple : R1 = 6 Ω et R2 = 3 Ω.
+      </p>
+
+      <div class="formula">
+        R = (6 × 3) ÷ (6 + 3) = 2 Ω
+      </div>
 
     </div>
 
@@ -87,17 +107,17 @@
       <strong>📝 Exercice 1</strong>
 
       <p>
-        Deux résistances de 4 Ω et 6 Ω sont montées en série.
-        Quelle est leur résistance totale ?
+        Une source fournit 12 V à deux lampes en parallèle.
+        Quelle tension reçoit chaque lampe ?
       </p>
 
       <button class="answer-button"
-              onclick="afficherReponse('rep71')">
+              onclick="afficherReponse('rep81')">
         Voir la réponse
       </button>
 
-      <div id="rep71" class="answer">
-        Rtotal = 4 + 6 = 10 Ω.
+      <div id="rep81" class="answer">
+        Chaque lampe reçoit 12 V.
       </div>
 
     </div>
@@ -107,17 +127,17 @@
       <strong>📝 Exercice 2</strong>
 
       <p>
-        Trois résistances de 2 Ω, 3 Ω et 5 Ω sont montées en série.
-        Quelle est la résistance totale ?
+        Deux branches ont des courants de 2 A et 3 A.
+        Quel est le courant total ?
       </p>
 
       <button class="answer-button"
-              onclick="afficherReponse('rep72')">
+              onclick="afficherReponse('rep82')">
         Voir la réponse
       </button>
 
-      <div id="rep72" class="answer">
-        Rtotal = 2 + 3 + 5 = 10 Ω.
+      <div id="rep82" class="answer">
+        Itotal = 2 + 3 = 5 A.
       </div>
 
     </div>
@@ -127,17 +147,17 @@
       <strong>📝 Exercice 3</strong>
 
       <p>
-        Que se passe-t-il si une connexion est coupée dans
-        un circuit en série ?
+        Deux résistances de 6 Ω et 3 Ω sont en parallèle.
+        Quelle est leur résistance équivalente ?
       </p>
 
       <button class="answer-button"
-              onclick="afficherReponse('rep73')">
+              onclick="afficherReponse('rep83')">
         Voir la réponse
       </button>
 
-      <div id="rep73" class="answer">
-        Le circuit est interrompu et le courant ne circule plus.
+      <div id="rep83" class="answer">
+        R = (6 × 3) ÷ (6 + 3) = 2 Ω.
       </div>
 
     </div>
