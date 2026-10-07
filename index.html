@@ -3,226 +3,452 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Dictionnaire Électricien SK</title>
-
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .course-box {
+      margin-top: 15px;
+      padding: 18px;
+      background: #f8fbff;
+      border: 1px solid #dbe8f5;
+      border-radius: 16px;
+    }
+
+    .course-content {
+      display: none;
+      margin-top: 18px;
+    }
+
+    .course-content.active {
+      display: block;
+      animation: apparition .25s ease;
+    }
+
+    .course-btn {
+      border: none;
+      background: #0f4c81;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    .course-btn:hover {
+      background: #08345a;
+    }
+
+    .lesson {
+      padding: 14px;
+      margin: 10px 0;
+      background: white;
+      border-left: 4px solid #0f4c81;
+      border-radius: 10px;
+    }
+
+    .exercise {
+      margin-top: 18px;
+      padding: 16px;
+      background: #eaf4ff;
+      border-radius: 12px;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #16834b;
+    }
+  </style>
 </head>
 
 <body>
 
-  <header class="hero">
-    <div class="logo">⚡</div>
+<header class="hero">
+  <div class="logo">⚡</div>
+  <p class="surtitle">APPRENDRE • COMPRENDRE • PRATIQUER</p>
+  <h1>Dictionnaire Électricien SK</h1>
+  <p class="subtitle">Ton guide simple et pratique de l'électricité</p>
+</header>
 
-    <p class="surtitle">
-      APPRENDRE • COMPRENDRE • PRATIQUER
+<main class="container">
+
+  <section class="welcome">
+    <span class="badge">FORMATION ÉLECTRIQUE</span>
+    <h2>Bienvenue 👋</h2>
+    <p>
+      Apprends l'électricité étape par étape,
+      avec des cours simples et pratiques.
     </p>
+  </section>
 
-    <h1>Dictionnaire Électricien SK</h1>
+  <section class="categories">
 
-    <p class="subtitle">
-      Ton guide simple et pratique de l'électricité
-    </p>
-  </header>
+    <a href="#cours" class="category-card">
+      <div class="category-icon">📚</div>
+      <h3>Cours</h3>
+      <p>Apprends l'électricité étape par étape.</p>
+    </a>
 
+    <a href="#composants" class="category-card">
+      <div class="category-icon">🔧</div>
+      <h3>Composants</h3>
+      <p>Découvre les principaux composants électriques.</p>
+    </a>
 
-  <main class="container">
+    <a href="#mesures" class="category-card">
+      <div class="category-icon">📏</div>
+      <h3>Mesures</h3>
+      <p>Comprends les grandeurs électriques.</p>
+    </a>
 
-    <section class="welcome">
-      <span class="badge">FORMATION ÉLECTRIQUE</span>
+    <a href="#conseils" class="category-card">
+      <div class="category-icon">💡</div>
+      <h3>Conseils</h3>
+      <p>Quelques règles importantes.</p>
+    </a>
 
-      <h2>Bienvenue 👋</h2>
+  </section>
 
-      <p>
-        Découvre les composants électriques, leurs rôles,
-        leurs symboles et leur fonctionnement.
-      </p>
-    </section>
 
+  <!-- COURS -->
+  <section id="cours" class="search-card">
 
-    <section class="categories">
+    <span class="badge">📚 COURS D'ÉLECTRICITÉ</span>
 
-      <a href="#cours" class="category-card">
-        <div class="category-icon">📚</div>
-        <h3>Cours</h3>
-        <p>Apprends l'électricité étape par étape.</p>
-      </a>
-
-      <a href="#composants" class="category-card">
-        <div class="category-icon">🔧</div>
-        <h3>Composants</h3>
-        <p>Découvre les principaux composants électriques.</p>
-      </a>
-
-      <a href="#mesures" class="category-card">
-        <div class="category-icon">📏</div>
-        <h3>Mesures</h3>
-        <p>Comprends les grandeurs électriques.</p>
-      </a>
-
-      <a href="#conseils" class="category-card">
-        <div class="category-icon">💡</div>
-        <h3>Conseils</h3>
-        <p>Quelques règles importantes pour apprendre.</p>
-      </a>
-
-    </section>
-
-
-    <section id="cours" class="search-card">
-
-      <span class="badge">📚 COURS D'ÉLECTRICITÉ</span>
-
-      <h2>Commencer à apprendre</h2>
-
-      <p>
-        Des cours simples pour progresser petit à petit.
-      </p>
-
-      <div class="category-card" style="margin-top:15px;">
-        <div class="category-icon">⚡</div>
-
-        <h3>Cours 1 — Introduction à l'électricité</h3>
-
-        <p>
-          Découvre ce qu'est l'électricité, à quoi elle sert
-          et les notions essentielles.
-        </p>
-
-        <div class="details" style="display:block; margin-top:15px;">
-          <p><strong>1.</strong> Qu'est-ce que l'électricité ?</p>
-          <p><strong>2.</strong> La tension électrique</p>
-          <p><strong>3.</strong> Le courant électrique</p>
-          <p><strong>4.</strong> La résistance électrique</p>
-        </div>
-      </div>
-
-
-      <div class="category-card" style="margin-top:15px;">
-        <div class="category-icon">🔋</div>
-
-        <h3>Cours 2 — Tension, courant et résistance</h3>
-
-        <p>
-          Comprends les trois notions fondamentales
-          utilisées dans les circuits électriques.
-        </p>
-
-        <div class="details" style="display:block; margin-top:15px;">
-          <p><strong>Tension :</strong> elle se mesure en volts (V).</p>
-          <p><strong>Courant :</strong> il se mesure en ampères (A).</p>
-          <p><strong>Résistance :</strong> elle se mesure en ohms (Ω).</p>
-        </div>
-      </div>
-
-    </section>
-
-
-    <section id="mesures" class="search-card">
-
-      <span class="badge">📏 MESURES ÉLECTRIQUES</span>
-
-      <h2>Les grandeurs essentielles</h2>
-
-      <div class="details" style="display:block;">
-
-        <p>
-          <strong>⚡ Tension :</strong>
-          unité : volt (V)
-        </p>
-
-        <p>
-          <strong>🔌 Courant :</strong>
-          unité : ampère (A)
-        </p>
-
-        <p>
-          <strong>Ω Résistance :</strong>
-          unité : ohm (Ω)
-        </p>
-
-        <p>
-          <strong>💡 Puissance :</strong>
-          unité : watt (W)
-        </p>
-
-        <p>
-          <strong>⏱️ Énergie :</strong>
-          unité : watt-heure (Wh)
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <section id="composants">
-
-      <div class="search-card">
-
-        <label for="recherche">
-          🔎 Rechercher un composant
-        </label>
-
-        <input
-          type="search"
-          id="recherche"
-          placeholder="Exemple : lampe, moteur, résistance..."
-        >
-
-      </div>
-
-      <div id="liste-composants"></div>
-
-    </section>
-
-
-    <section id="conseils" class="search-card">
-
-      <span class="badge">💡 CONSEILS</span>
-
-      <h2>À retenir</h2>
-
-      <div class="details" style="display:block;">
-
-        <p>
-          🔹 Apprends d'abord les notions fondamentales.
-        </p>
-
-        <p>
-          🔹 Comprends toujours le rôle d'un composant avant de l'utiliser.
-        </p>
-
-        <p>
-          🔹 Respecte toujours les règles de sécurité électrique.
-        </p>
-
-        <p>
-          🔹 Pratique progressivement avec des circuits adaptés
-          à ton niveau et sous supervision d'un adulte ou d'un professionnel.
-        </p>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <footer>
-
-    <div>⚡</div>
-
-    <strong>Dictionnaire Électricien SK</strong>
+    <h2>Apprendre l'électricité</h2>
 
     <p>
-      Apprendre l'électricité simplement.
+      Choisis un cours pour commencer.
     </p>
 
-  </footer>
+
+    <!-- COURS 1 -->
+    <div class="course-box">
+
+      <div class="category-icon">⚡</div>
+
+      <h3>Cours 1 — Introduction à l'électricité</h3>
+
+      <p>
+        Découvre les bases de l'électricité.
+      </p>
+
+      <button class="course-btn"
+        onclick="ouvrirCours('cours1')">
+        ▶️ Commencer le cours
+      </button>
 
 
-  <script src="script.js"></script>
+      <div id="cours1" class="course-content">
+
+        <div class="lesson">
+          <h3>1️⃣ Qu'est-ce que l'électricité ?</h3>
+
+          <p>
+            L'électricité est une forme d'énergie
+            qui permet de faire fonctionner de nombreux appareils.
+          </p>
+
+          <p>
+            Exemple : lampes, téléphones, moteurs,
+            télévisions et ordinateurs.
+          </p>
+        </div>
+
+
+        <div class="lesson">
+          <h3>2️⃣ La tension électrique</h3>
+
+          <p>
+            La tension représente la différence de potentiel
+            qui permet au courant électrique de circuler.
+          </p>
+
+          <p>
+            Son unité est le <strong>volt (V)</strong>.
+          </p>
+        </div>
+
+
+        <div class="lesson">
+          <h3>3️⃣ Le courant électrique</h3>
+
+          <p>
+            Le courant électrique correspond au déplacement
+            des charges électriques dans un circuit.
+          </p>
+
+          <p>
+            Son unité est l'<strong>ampère (A)</strong>.
+          </p>
+        </div>
+
+
+        <div class="lesson">
+          <h3>4️⃣ La résistance</h3>
+
+          <p>
+            La résistance s'oppose au passage du courant
+            électrique.
+          </p>
+
+          <p>
+            Son unité est l'<strong>ohm (Ω)</strong>.
+          </p>
+        </div>
+
+
+        <div class="exercise">
+
+          <h3>🧠 Petit exercice</h3>
+
+          <p>
+            Quelle est l'unité de la tension électrique ?
+          </p>
+
+          <button class="course-btn"
+            onclick="afficherReponse('rep1')">
+            Voir la réponse
+          </button>
+
+          <p id="rep1" class="answer">
+            ✅ Le volt (V).
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- COURS 2 -->
+    <div class="course-box">
+
+      <div class="category-icon">🔋</div>
+
+      <h3>Cours 2 — Tension, courant et résistance</h3>
+
+      <p>
+        Comprends les trois grandeurs fondamentales
+        d'un circuit électrique.
+      </p>
+
+      <button class="course-btn"
+        onclick="ouvrirCours('cours2')">
+        ▶️ Commencer le cours
+      </button>
+
+
+      <div id="cours2" class="course-content">
+
+        <div class="lesson">
+          <h3>⚡ La tension</h3>
+
+          <p>
+            La tension se mesure avec un voltmètre.
+          </p>
+
+          <p>
+            Unité : <strong>volt (V)</strong>.
+          </p>
+        </div>
+
+
+        <div class="lesson">
+          <h3>🔌 Le courant</h3>
+
+          <p>
+            Le courant se mesure avec un ampèremètre.
+          </p>
+
+          <p>
+            Unité : <strong>ampère (A)</strong>.
+          </p>
+        </div>
+
+
+        <div class="lesson">
+          <h3>Ω La résistance</h3>
+
+          <p>
+            La résistance limite le passage du courant.
+          </p>
+
+          <p>
+            Unité : <strong>ohm (Ω)</strong>.
+          </p>
+        </div>
+
+
+        <div class="exercise">
+
+          <h3>🧠 Petit exercice</h3>
+
+          <p>
+            Quelle est l'unité de la résistance ?
+          </p>
+
+          <button class="course-btn"
+            onclick="afficherReponse('rep2')">
+            Voir la réponse
+          </button>
+
+          <p id="rep2" class="answer">
+            ✅ L'ohm (Ω).
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MESURES -->
+  <section id="mesures" class="search-card">
+
+    <span class="badge">📏 MESURES ÉLECTRIQUES</span>
+
+    <h2>Les grandeurs essentielles</h2>
+
+    <div class="details" style="display:block;">
+
+      <p>
+        <strong>⚡ Tension :</strong>
+        volt (V)
+      </p>
+
+      <p>
+        <strong>🔌 Courant :</strong>
+        ampère (A)
+      </p>
+
+      <p>
+        <strong>Ω Résistance :</strong>
+        ohm (Ω)
+      </p>
+
+      <p>
+        <strong>💡 Puissance :</strong>
+        watt (W)
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- COMPOSANTS -->
+  <section id="composants">
+
+    <div class="search-card">
+
+      <label for="recherche">
+        🔎 Rechercher un composant
+      </label>
+
+      <input
+        type="search"
+        id="recherche"
+        placeholder="Exemple : lampe, moteur, résistance..."
+      >
+
+    </div>
+
+    <div id="liste-composants"></div>
+
+  </section>
+
+
+  <!-- CONSEILS -->
+  <section id="conseils" class="search-card">
+
+    <span class="badge">💡 CONSEILS</span>
+
+    <h2>À retenir</h2>
+
+    <div class="details" style="display:block;">
+
+      <p>🔹 Apprends progressivement.</p>
+
+      <p>🔹 Comprends le rôle de chaque composant.</p>
+
+      <p>🔹 Respecte les règles de sécurité électrique.</p>
+
+      <p>
+        🔹 Pour les manipulations électriques,
+        travaille avec un adulte ou un professionnel.
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div>⚡</div>
+
+  <strong>Dictionnaire Électricien SK</strong>
+
+  <p>
+    Apprendre l'électricité simplement.
+  </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+
+function ouvrirCours(id) {
+
+  const cours = document.getElementById(id);
+
+  if (cours.classList.contains("active")) {
+
+    cours.classList.remove("active");
+
+  } else {
+
+    cours.classList.add("active");
+
+    cours.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+
+  }
+
+}
+
+
+function afficherReponse(id) {
+
+  const reponse = document.getElementById(id);
+
+  if (reponse.style.display === "block") {
+
+    reponse.style.display = "none";
+
+  } else {
+
+    reponse.style.display = "block";
+
+  }
+
+}
+
+</script>
 
 </body>
-</html>
+  </html>
