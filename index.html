@@ -1,754 +1,156 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dictionnaire Électricien SK</title>
+<!-- COURS 6 -->
 
-  <link rel="stylesheet" href="style.css">
+<div class="course-card">
 
-  <style>
-    .course-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 18px;
-      padding: 20px;
-      margin-bottom: 16px;
-      box-shadow: 0 6px 20px rgba(15,23,42,.06);
-    }
-
-    .course-card h3 {
-      color: #08345a;
-      margin-top: 0;
-    }
-
-    .course-button,
-    .answer-button {
-      border: none;
-      border-radius: 10px;
-      padding: 12px 16px;
-      background: #0f4c81;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .course-content {
-      display: none;
-      margin-top: 18px;
-    }
-
-    .course-content.active {
-      display: block;
-    }
-
-    .lesson {
-      background: #eaf4ff;
-      padding: 15px;
-      border-radius: 12px;
-      margin: 12px 0;
-    }
-
-    .formula {
-      background: #08345a;
-      color: white;
-      padding: 18px;
-      border-radius: 14px;
-      text-align: center;
-      font-size: 25px;
-      font-weight: bold;
-      margin: 15px 0;
-    }
-
-    .exercise {
-      border: 1px solid #dbe4ee;
-      border-radius: 12px;
-      padding: 15px;
-      margin: 12px 0;
-    }
-
-    .answer {
-      display: none;
-      margin-top: 10px;
-      padding: 12px;
-      background: #e8f7ef;
-      border-radius: 10px;
-      color: #16834b;
-      font-weight: bold;
-    }
-
-    .schema {
-      background: #172033;
-      color: white;
-      padding: 18px;
-      border-radius: 12px;
-      overflow-x: auto;
-      font-family: monospace;
-      text-align: center;
-    }
-  </style>
-</head>
-
-<body>
-
-<header class="hero">
-  <div class="logo">⚡</div>
-  <p class="surtitle">DICTIONNAIRE POUR ÉLECTRICIEN</p>
-  <h1>Dictionnaire Électricien SK</h1>
-  <p class="subtitle">Apprendre l'électricité simplement</p>
-</header>
-
-<main class="container">
-
-  <section class="welcome">
-    <span class="badge">FORMATION ÉLECTRIQUE</span>
-    <h2>Bienvenue 👋</h2>
-    <p>
-      Apprends les bases de l'électricité grâce à des cours simples,
-      des exemples et des exercices.
-    </p>
-  </section>
-
-  <section class="categories">
-
-    <a class="category-card" href="#cours">
-      <div class="category-icon">📚</div>
-      <h3>Cours</h3>
-      <p>Apprends l'électricité étape par étape.</p>
-    </a>
-
-    <a class="category-card" href="#mesures">
-      <div class="category-icon">📏</div>
-      <h3>Mesures</h3>
-      <p>Découvre les principales mesures électriques.</p>
-    </a>
-
-    <a class="category-card" href="#composants">
-      <div class="category-icon">🔌</div>
-      <h3>Composants</h3>
-      <p>Découvre les composants électriques.</p>
-    </a>
-
-    <a class="category-card" href="#conseils">
-      <div class="category-icon">💡</div>
-      <h3>Conseils</h3>
-      <p>Quelques conseils pour progresser.</p>
-    </a>
-
-  </section>
-
-
-  <!-- COURS -->
-
-  <section id="cours">
-
-    <h2>📚 Cours d'électricité</h2>
-
-    <!-- COURS 1 -->
-
-    <div class="course-card">
-
-      <h3>⚡ Cours 1 — Introduction à l'électricité</h3>
-
-      <p>
-        Découvre les bases de l'électricité et les notions essentielles.
-      </p>
-
-      <button class="course-button" onclick="ouvrirCours('cours1')">
-        ▶️ Commencer le cours
-      </button>
-
-      <div id="cours1" class="course-content">
-
-        <div class="lesson">
-          <h4>🔹 Qu'est-ce que l'électricité ?</h4>
-
-          <p>
-            L'électricité est une forme d'énergie liée au déplacement
-            des charges électriques.
-          </p>
-        </div>
-
-        <div class="lesson">
-          <h4>🔹 Les trois notions importantes</h4>
-
-          <p>⚡ Tension : elle pousse le courant.</p>
-          <p>🔌 Courant : c'est le déplacement des charges électriques.</p>
-          <p>🧱 Résistance : elle s'oppose au passage du courant.</p>
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- COURS 2 -->
-
-    <div class="course-card">
-
-      <h3>🔋 Cours 2 — Tension, courant et résistance</h3>
-
-      <p>
-        Comprends les trois grandeurs fondamentales de l'électricité.
-      </p>
-
-      <button class="course-button" onclick="ouvrirCours('cours2')">
-        ▶️ Commencer le cours
-      </button>
-
-      <div id="cours2" class="course-content">
-
-        <div class="lesson">
-
-          <h4>⚡ La tension</h4>
-
-          <p>
-            La tension électrique se mesure en volts (V).
-          </p>
-
-          <p>
-            Exemple : une batterie peut fournir 12 V.
-          </p>
-
-        </div>
-
-        <div class="lesson">
-
-          <h4>🔌 Le courant</h4>
-
-          <p>
-            Le courant se mesure en ampères (A).
-          </p>
-
-        </div>
-
-        <div class="lesson">
-
-          <h4>🧱 La résistance</h4>
-
-          <p>
-            La résistance se mesure en ohms (Ω).
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- COURS 3 -->
-
-    <div class="course-card">
-
-      <h3>🔌 Cours 3 — Les circuits électriques</h3>
-
-      <p>
-        Découvre comment fonctionne un circuit électrique.
-      </p>
-
-      <button class="course-button" onclick="ouvrirCours('cours3')">
-        ▶️ Commencer le cours
-      </button>
-
-      <div id="cours3" class="course-content">
-
-        <div class="lesson">
-
-          <h4>🔹 Qu'est-ce qu'un circuit ?</h4>
-
-          <p>
-            Un circuit électrique est un ensemble de composants
-            reliés permettant au courant de circuler.
-          </p>
-
-        </div>
-
-        <div class="lesson">
-
-          <h4>🔹 Circuit fermé</h4>
-
-          <p>
-            Lorsque le circuit est fermé, le courant peut circuler.
-          </p>
-
-        </div>
-
-        <div class="lesson">
-
-          <h4>🔹 Circuit ouvert</h4>
-
-          <p>
-            Lorsque le circuit est ouvert, le courant ne circule pas.
-          </p>
-
-        </div>
-
-        <div class="schema">
-
-          Batterie 🔋
-          <br>
-          ─────── Interrupteur ─────── 💡
-          <br>
-          └───────────────────────────┘
-
-        </div>
-
-        <div class="exercise">
-
-          <strong>Exercice 1</strong>
-
-          <p>
-            Que se passe-t-il lorsqu'un interrupteur ouvre le circuit ?
-          </p>
-
-          <button class="answer-button"
-                  onclick="afficherReponse('rep31')">
-            Voir la réponse
-          </button>
-
-          <div id="rep31" class="answer">
-            Le courant ne peut plus circuler.
-          </div>
-
-        </div>
-
-        <div class="exercise">
-
-          <strong>Exercice 2</strong>
-
-          <p>
-            Dans un circuit fermé, le courant peut-il circuler ?
-          </p>
-
-          <button class="answer-button"
-                  onclick="afficherReponse('rep32')">
-            Voir la réponse
-          </button>
-
-          <div id="rep32" class="answer">
-            Oui, le courant peut circuler.
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- COURS 4 -->
-
-    <div class="course-card">
-
-      <h3>📐 Cours 4 — La loi d'Ohm</h3>
-
-      <p>
-        Apprends la relation entre tension, courant et résistance.
-      </p>
-
-      <button class="course-button" onclick="ouvrirCours('cours4')">
-        ▶️ Commencer le cours
-      </button>
-
-      <div id="cours4" class="course-content">
-
-        <div class="lesson">
-
-          <h4>📐 La formule</h4>
-
-          <div class="formula">
-            U = R × I
-          </div>
-
-          <p>
-            <strong>U</strong> = tension en volts (V)
-          </p>
-
-          <p>
-            <strong>R</strong> = résistance en ohms (Ω)
-          </p>
-
-          <p>
-            <strong>I</strong> = courant en ampères (A)
-          </p>
-
-        </div>
-
-        <div class="lesson">
-
-          <h4>💡 Exemple</h4>
-
-          <p>
-            Une résistance de 10 Ω est traversée par un courant de 2 A.
-          </p>
-
-          <div class="formula">
-            U = 10 × 2 = 20 V
-          </div>
-
-        </div>
-
-        <div class="exercise">
-
-          <strong>Exercice 1</strong>
-
-          <p>
-            R = 5 Ω et I = 2 A. Trouve U.
-          </p>
-
-          <button class="answer-button"
-                  onclick="afficherReponse('rep41')">
-            Voir la réponse
-          </button>
-
-          <div id="rep41" class="answer">
-            U = 5 × 2 = 10 V.
-          </div>
-
-        </div>
-
-        <div class="exercise">
-
-          <strong>Exercice 2</strong>
-
-          <p>
-            U = 12 V et R = 6 Ω. Trouve I.
-          </p>
-
-          <button class="answer-button"
-                  onclick="afficherReponse('rep42')">
-            Voir la réponse
-          </button>
-
-          <div id="rep42" class="answer">
-            I = 12 ÷ 6 = 2 A.
-          </div>
-
-        </div>
-
-        <div class="exercise">
-
-          <strong>Exercice 3</strong>
-
-          <p>
-            U = 20 V et I = 4 A. Trouve R.
-          </p>
-
-          <button class="answer-button"
-                  onclick="afficherReponse('rep43')">
-            Voir la réponse
-          </button>
-
-          <div id="rep43" class="answer">
-            R = 20 ÷ 4 = 5 Ω.
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- COURS 5 -->
-
-    <div class="course-card">
-
-      <h3>💡 Cours 5 — La puissance électrique</h3>
-
-      <p>
-        Découvre ce qu'est la puissance électrique et comment la calculer.
-      </p>
-
-      <button class="course-button" onclick="ouvrirCours('cours5')">
-        ▶️ Commencer le cours
-      </button>
-
-      <div id="cours5" class="course-content">
-
-        <div class="lesson">
-
-          <h4>⚡ Qu'est-ce que la puissance électrique ?</h4>
-
-          <p>
-            La puissance électrique indique la quantité d'énergie
-            électrique utilisée ou fournie par un appareil pendant
-            un certain temps.
-          </p>
-
-          <p>
-            Elle se mesure en <strong>watts (W)</strong>.
-          </p>
-
-        </div>
-
-
-        <div class="lesson">
-
-          <h4>📐 La formule de la puissance</h4>
-
-          <div class="formula">
-            P = U × I
-          </div>
-
-          <p>
-            <strong>P</strong> = puissance en watts (W)
-          </p>
-
-          <p>
-            <strong>U</strong> = tension en volts (V)
-          </p>
-
-          <p>
-            <strong>I</strong> = courant en ampères (A)
-          </p>
-
-        </div>
-
-
-        <div class="lesson">
-
-          <h4>💡 Exemple 1</h4>
-
-          <p>
-            Une lampe fonctionne sous 12 V et consomme 2 A.
-          </p>
-
-          <div class="formula">
-            P = 12 × 2 = 24 W
-          </div>
-
-          <p>
-            La puissance de la lampe est donc de <strong>24 W</strong>.
-          </p>
-
-        </div>
-
-
-        <div class="lesson">
-
-          <h4>💡 Exemple 2</h4>
-
-          <p>
-            Un appareil fonctionne sous 20 V avec un courant de 3 A.
-          </p>
-
-          <div class="formula">
-            P = 20 × 3 = 60 W
-          </div>
-
-          <p>
-            Sa puissance est de <strong>60 W</strong>.
-          </p>
-
-        </div>
-
-
-        <div class="exercise">
-
-          <strong>📝 Exercice 1</strong>
-
-          <p>
-            Une lampe fonctionne sous 10 V et utilise 2 A.
-            Quelle est sa puissance ?
-          </p>
-
-          <button class="answer-button"
-                  onclick="afficherReponse('rep51')">
-            Voir la réponse
-          </button>
-
-          <div id="rep51" class="answer">
-            P = 10 × 2 = 20 W.
-          </div>
-
-        </div>
-
-
-        <div class="exercise">
-
-          <strong>📝 Exercice 2</strong>
-
-          <p>
-            Un moteur fonctionne sous 12 V et utilise 5 A.
-            Quelle est sa puissance ?
-          </p>
-
-          <button class="answer-button"
-                  onclick="afficherReponse('rep52')">
-            Voir la réponse
-          </button>
-
-          <div id="rep52" class="answer">
-            P = 12 × 5 = 60 W.
-          </div>
-
-        </div>
-
-
-        <div class="exercise">
-
-          <strong>📝 Exercice 3</strong>
-
-          <p>
-            Un appareil possède une tension de 24 V et une puissance
-            de 48 W. Quel courant utilise-t-il ?
-          </p>
-
-          <button class="answer-button"
-                  onclick="afficherReponse('rep53')">
-            Voir la réponse
-          </button>
-
-          <div id="rep53" class="answer">
-            I = P ÷ U = 48 ÷ 24 = 2 A.
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- MESURES -->
-
-  <section id="mesures">
-
-    <h2>📏 Mesures électriques</h2>
-
-    <div class="lesson">
-
-      <p>
-        ⚡ Tension → volt (V)
-      </p>
-
-      <p>
-        🔌 Courant → ampère (A)
-      </p>
-
-      <p>
-        🧱 Résistance → ohm (Ω)
-      </p>
-
-      <p>
-        💡 Puissance → watt (W)
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- COMPOSANTS -->
-
-  <section id="composants">
-
-    <h2>🔎 Recherche des composants</h2>
-
-    <div class="search-card">
-
-      <label for="recherche">
-        Rechercher un composant
-      </label>
-
-      <input
-        type="text"
-        id="recherche"
-        placeholder="Exemple : lampe, moteur, résistance..."
-      >
-
-    </div>
-
-    <div id="liste-composants"></div>
-
-  </section>
-
-
-  <!-- CONSEILS -->
-
-  <section id="conseils">
-
-    <h2>💡 Conseils pour apprendre</h2>
-
-    <div class="lesson">
-
-      <p>📚 Étudie régulièrement.</p>
-
-      <p>🧠 Comprends les formules avant de les mémoriser.</p>
-
-      <p>📝 Fais beaucoup d'exercices.</p>
-
-      <p>⚡ Apprends toujours les règles de sécurité électrique.</p>
-
-      <p>🔧 Observe et comprends les composants électriques.</p>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-<footer>
-
-  <div>⚡</div>
-
-  <strong>Dictionnaire Électricien SK</strong>
+  <h3>🔋 Cours 6 — L'énergie électrique et la consommation</h3>
 
   <p>
-    Apprendre • Comprendre • Pratiquer
+    Découvre la différence entre puissance et énergie électrique,
+    ainsi que l'utilisation du kWh.
   </p>
 
-</footer>
+  <button class="course-button" onclick="ouvrirCours('cours6')">
+    ▶️ Commencer le cours
+  </button>
 
+  <div id="cours6" class="course-content">
 
-<script src="script.js"></script>
+    <div class="lesson">
 
-<script>
+      <h4>⚡ Qu'est-ce que l'énergie électrique ?</h4>
 
-function ouvrirCours(id) {
+      <p>
+        L'énergie électrique correspond à la quantité d'énergie
+        consommée ou fournie par un appareil pendant une durée.
+      </p>
 
-  const cours = document.getElementById(id);
+      <p>
+        Elle peut être mesurée en <strong>Wh</strong> (watt-heure)
+        ou en <strong>kWh</strong> (kilowatt-heure).
+      </p>
 
-  if (cours.classList.contains("active")) {
+    </div>
 
-    cours.classList.remove("active");
+    <div class="lesson">
 
-  } else {
+      <h4>📐 La formule</h4>
 
-    cours.classList.add("active");
+      <div class="formula">
+        E = P × t
+      </div>
 
-    cours.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest"
-    });
+      <p>
+        <strong>E</strong> = énergie en Wh
+      </p>
 
-  }
+      <p>
+        <strong>P</strong> = puissance en W
+      </p>
 
-}
+      <p>
+        <strong>t</strong> = durée en heures
+      </p>
 
+    </div>
 
-function afficherReponse(id) {
+    <div class="lesson">
 
-  const reponse = document.getElementById(id);
+      <h4>💡 Exemple</h4>
 
-  if (reponse.style.display === "block") {
+      <p>
+        Une lampe de 100 W fonctionne pendant 5 heures.
+      </p>
 
-    reponse.style.display = "none";
+      <div class="formula">
+        E = 100 × 5 = 500 Wh
+      </div>
 
-  } else {
+      <p>
+        La lampe consomme donc <strong>500 Wh</strong>,
+        soit <strong>0,5 kWh</strong>.
+      </p>
 
-    reponse.style.display = "block";
+    </div>
 
-  }
+    <div class="lesson">
 
-}
+      <h4>🔋 À retenir</h4>
 
-</script>
+      <p>
+        <strong>Puissance (W)</strong> → indique la puissance de l'appareil.
+      </p>
 
-</body>
-          </html> 
+      <p>
+        <strong>Énergie (Wh ou kWh)</strong> → dépend de la puissance
+        et du temps d'utilisation.
+      </p>
+
+      <p>
+        <strong>1 kWh = 1000 Wh</strong>.
+      </p>
+
+    </div>
+
+    <div class="exercise">
+
+      <strong>📝 Exercice 1</strong>
+
+      <p>
+        Une lampe de 60 W fonctionne pendant 5 heures.
+        Quelle énergie consomme-t-elle ?
+      </p>
+
+      <button class="answer-button"
+              onclick="afficherReponse('rep61')">
+        Voir la réponse
+      </button>
+
+      <div id="rep61" class="answer">
+        E = 60 × 5 = 300 Wh.
+      </div>
+
+    </div>
+
+    <div class="exercise">
+
+      <strong>📝 Exercice 2</strong>
+
+      <p>
+        Un appareil de 1000 W fonctionne pendant 2 heures.
+        Quelle énergie consomme-t-il ?
+      </p>
+
+      <button class="answer-button"
+              onclick="afficherReponse('rep62')">
+        Voir la réponse
+      </button>
+
+      <div id="rep62" class="answer">
+        E = 1000 × 2 = 2000 Wh = 2 kWh.
+      </div>
+
+    </div>
+
+    <div class="exercise">
+
+      <strong>📝 Exercice 3</strong>
+
+      <p>
+        Un appareil consomme 500 Wh en 5 heures.
+        Quelle est sa puissance ?
+      </p>
+
+      <button class="answer-button"
+              onclick="afficherReponse('rep63')">
+        Voir la réponse
+      </button>
+
+      <div id="rep63" class="answer">
+        P = E ÷ t = 500 ÷ 5 = 100 W.
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
