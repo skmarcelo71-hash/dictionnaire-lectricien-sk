@@ -44,6 +44,17 @@
       border-radius: 10px;
     }
 
+    .formula {
+      margin: 15px 0;
+      padding: 18px;
+      background: #172033;
+      color: white;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
     .exercise {
       margin-top: 18px;
       padding: 16px;
@@ -67,7 +78,6 @@
       text-align: center;
       font-family: monospace;
       line-height: 2;
-      font-size: 15px;
     }
   </style>
 </head>
@@ -181,20 +191,6 @@
           <p>Unité : <strong>ohm (Ω)</strong>.</p>
         </div>
 
-        <div class="exercise">
-          <h3>🧠 Petit exercice</h3>
-          <p>Quelle est l'unité de la tension ?</p>
-
-          <button class="course-btn"
-            onclick="afficherReponse('rep1')">
-            Voir la réponse
-          </button>
-
-          <p id="rep1" class="answer">
-            ✅ Le volt (V).
-          </p>
-        </div>
-
       </div>
     </div>
 
@@ -243,20 +239,6 @@
           <p>Unité : <strong>ohm (Ω)</strong>.</p>
         </div>
 
-        <div class="exercise">
-          <h3>🧠 Petit exercice</h3>
-          <p>Quelle est l'unité de la résistance ?</p>
-
-          <button class="course-btn"
-            onclick="afficherReponse('rep2')">
-            Voir la réponse
-          </button>
-
-          <p id="rep2" class="answer">
-            ✅ L'ohm (Ω).
-          </p>
-        </div>
-
       </div>
     </div>
 
@@ -282,74 +264,136 @@
       <div id="cours3" class="course-content">
 
         <div class="lesson">
-
-          <h3>1️⃣ Qu'est-ce qu'un circuit électrique ?</h3>
+          <h3>1️⃣ Le circuit électrique</h3>
 
           <p>
             Un circuit électrique est un ensemble de composants
             reliés entre eux par des conducteurs.
           </p>
 
-          <p>
-            Pour que le courant circule, le circuit doit
-            généralement former un chemin fermé.
-          </p>
-
-        </div>
-
-
-        <div class="lesson">
-
-          <h3>2️⃣ Les éléments d'un circuit</h3>
-
-          <p>Un circuit simple peut contenir :</p>
-
-          <p>🔋 <strong>Générateur</strong> : fournit l'énergie.</p>
-
-          <p>🔌 <strong>Fils</strong> : permettent la connexion.</p>
-
-          <p>💡 <strong>Récepteur</strong> : utilise l'énergie.</p>
-
-          <p>🎛️ <strong>Interrupteur</strong> : ouvre ou ferme le circuit.</p>
-
-        </div>
-
-
-        <div class="lesson">
-
-          <h3>3️⃣ Circuit fermé</h3>
-
-          <p>
-            Dans un circuit fermé, le chemin électrique
-            est complet et le courant peut circuler.
-          </p>
-
           <div class="schema">
             🔋 ─── 🎛️ ─── 💡<br>
             │             │<br>
             └─────────────┘<br>
-            <br>
             Circuit fermé ✅
           </div>
-
         </div>
 
-
         <div class="lesson">
-
-          <h3>4️⃣ Circuit ouvert</h3>
+          <h3>2️⃣ Circuit ouvert</h3>
 
           <p>
-            Dans un circuit ouvert, le chemin est interrompu.
-            Le courant ne peut donc pas circuler.
+            Lorsque le circuit est interrompu,
+            le courant ne peut pas circuler.
           </p>
 
           <div class="schema">
             🔋 ─── 🎛️   💡<br>
             │             │<br>
             └─────────────┘<br>
-            <br>
             Circuit ouvert ❌
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- COURS 4 -->
+
+    <div class="course-box">
+
+      <div class="category-icon">🧮</div>
+
+      <h3>Cours 4 — La loi d'Ohm</h3>
+
+      <p>
+        Apprends la relation entre la tension,
+        le courant et la résistance.
+      </p>
+
+      <button class="course-btn"
+        onclick="ouvrirCours('cours4')">
+        ▶️ Commencer le cours
+      </button>
+
+
+      <div id="cours4" class="course-content">
+
+        <div class="lesson">
+
+          <h3>1️⃣ Qu'est-ce que la loi d'Ohm ?</h3>
+
+          <p>
+            La loi d'Ohm permet de calculer la tension,
+            le courant ou la résistance dans un circuit
+            électrique simple.
+          </p>
+
+        </div>
+
+
+        <div class="lesson">
+
+          <h3>2️⃣ La formule</h3>
+
+          <div class="formula">
+            U = R × I
+          </div>
+
+          <p>
+            <strong>U</strong> = tension en volts (V)
+          </p>
+
+          <p>
+            <strong>R</strong> = résistance en ohms (Ω)
+          </p>
+
+          <p>
+            <strong>I</strong> = courant en ampères (A)
+          </p>
+
+        </div>
+
+
+        <div class="lesson">
+
+          <h3>3️⃣ Exemple</h3>
+
+          <p>
+            Une résistance de <strong>10 Ω</strong>
+            est traversée par un courant de
+            <strong>2 A</strong>.
+          </p>
+
+          <p>
+            Pour trouver la tension :
+          </p>
+
+          <div class="formula">
+            U = R × I<br>
+            U = 10 × 2<br>
+            U = 20 V
+          </div>
+
+          <p>
+            ✅ La tension est donc de <strong>20 V</strong>.
+          </p>
+
+        </div>
+
+
+        <div class="lesson">
+
+          <h3>4️⃣ Trouver le courant</h3>
+
+          <p>
+            Si on connaît la tension et la résistance,
+            on peut calculer le courant :
+          </p>
+
+          <div class="formula">
+            I = U ÷ R
           </div>
 
         </div>
@@ -357,13 +401,16 @@
 
         <div class="lesson">
 
-          <h3>5️⃣ Exemple simple</h3>
+          <h3>5️⃣ Trouver la résistance</h3>
 
           <p>
-            Une pile est reliée à une lampe avec des fils.
-            Lorsque l'interrupteur est fermé, la lampe peut
-            s'allumer.
+            Si on connaît la tension et le courant,
+            on peut calculer la résistance :
           </p>
+
+          <div class="formula">
+            R = U ÷ I
+          </div>
 
         </div>
 
@@ -373,16 +420,18 @@
           <h3>🧠 Exercice 1</h3>
 
           <p>
-            Dans quel type de circuit le courant peut-il circuler ?
+            Une résistance de 5 Ω est traversée
+            par un courant de 2 A.
+            Quelle est la tension ?
           </p>
 
           <button class="course-btn"
-            onclick="afficherReponse('rep3')">
+            onclick="afficherReponse('rep5')">
             Voir la réponse
           </button>
 
-          <p id="rep3" class="answer">
-            ✅ Dans un circuit fermé.
+          <p id="rep5" class="answer">
+            ✅ U = R × I = 5 × 2 = 10 V.
           </p>
 
         </div>
@@ -393,17 +442,39 @@
           <h3>🧠 Exercice 2</h3>
 
           <p>
-            Quel composant permet d'ouvrir ou de fermer
-            un circuit ?
+            Une tension de 12 V est appliquée
+            à une résistance de 6 Ω.
+            Quel est le courant ?
           </p>
 
           <button class="course-btn"
-            onclick="afficherReponse('rep4')">
+            onclick="afficherReponse('rep6')">
             Voir la réponse
           </button>
 
-          <p id="rep4" class="answer">
-            ✅ L'interrupteur.
+          <p id="rep6" class="answer">
+            ✅ I = U ÷ R = 12 ÷ 6 = 2 A.
+          </p>
+
+        </div>
+
+
+        <div class="exercise">
+
+          <h3>🧠 Exercice 3</h3>
+
+          <p>
+            Une tension de 20 V produit un courant
+            de 4 A. Quelle est la résistance ?
+          </p>
+
+          <button class="course-btn"
+            onclick="afficherReponse('rep7')">
+            Voir la réponse
+          </button>
+
+          <p id="rep7" class="answer">
+            ✅ R = U ÷ I = 20 ÷ 4 = 5 Ω.
           </p>
 
         </div>
@@ -545,4 +616,4 @@ function afficherReponse(id) {
 </script>
 
 </body>
-</html>
+  </html> 
