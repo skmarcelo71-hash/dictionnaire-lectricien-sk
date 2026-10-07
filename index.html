@@ -4,15 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dictionnaire Électricien SK</title>
+
   <link rel="stylesheet" href="style.css">
 
   <style>
-    .course-box {
-      margin-top: 15px;
-      padding: 18px;
-      background: #f8fbff;
-      border: 1px solid #dbe8f5;
-      border-radius: 16px;
+    .course-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 20px rgba(15,23,42,.06);
+    }
+
+    .course-card h3 {
+      color: #08345a;
+      margin-top: 0;
+    }
+
+    .course-button,
+    .answer-button {
+      border: none;
+      border-radius: 10px;
+      padding: 12px 16px;
+      background: #0f4c81;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     .course-content {
@@ -22,62 +40,51 @@
 
     .course-content.active {
       display: block;
-      animation: apparition .25s ease;
-    }
-
-    .course-btn {
-      border: none;
-      background: #0f4c81;
-      color: white;
-      padding: 12px 16px;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 12px;
     }
 
     .lesson {
-      padding: 14px;
-      margin: 10px 0;
-      background: white;
-      border-left: 4px solid #0f4c81;
-      border-radius: 10px;
+      background: #eaf4ff;
+      padding: 15px;
+      border-radius: 12px;
+      margin: 12px 0;
     }
 
     .formula {
-      margin: 15px 0;
-      padding: 18px;
-      background: #172033;
+      background: #08345a;
       color: white;
-      border-radius: 12px;
+      padding: 18px;
+      border-radius: 14px;
       text-align: center;
-      font-size: 24px;
+      font-size: 25px;
       font-weight: bold;
+      margin: 15px 0;
     }
 
     .exercise {
-      margin-top: 18px;
-      padding: 16px;
-      background: #eaf4ff;
+      border: 1px solid #dbe4ee;
       border-radius: 12px;
+      padding: 15px;
+      margin: 12px 0;
     }
 
     .answer {
       display: none;
       margin-top: 10px;
-      font-weight: bold;
+      padding: 12px;
+      background: #e8f7ef;
+      border-radius: 10px;
       color: #16834b;
+      font-weight: bold;
     }
 
     .schema {
-      margin: 15px 0;
-      padding: 18px;
       background: #172033;
       color: white;
+      padding: 18px;
       border-radius: 12px;
-      text-align: center;
+      overflow-x: auto;
       font-family: monospace;
-      line-height: 2;
+      text-align: center;
     }
   </style>
 </head>
@@ -86,9 +93,9 @@
 
 <header class="hero">
   <div class="logo">⚡</div>
-  <p class="surtitle">APPRENDRE • COMPRENDRE • PRATIQUER</p>
+  <p class="surtitle">DICTIONNAIRE POUR ÉLECTRICIEN</p>
   <h1>Dictionnaire Électricien SK</h1>
-  <p class="subtitle">Ton guide simple et pratique de l'électricité</p>
+  <p class="subtitle">Apprendre l'électricité simplement</p>
 </header>
 
 <main class="container">
@@ -97,245 +104,258 @@
     <span class="badge">FORMATION ÉLECTRIQUE</span>
     <h2>Bienvenue 👋</h2>
     <p>
-      Apprends l'électricité étape par étape,
-      avec des cours simples et pratiques.
+      Apprends les bases de l'électricité grâce à des cours simples,
+      des exemples et des exercices.
     </p>
   </section>
 
   <section class="categories">
 
-    <a href="#cours" class="category-card">
+    <a class="category-card" href="#cours">
       <div class="category-icon">📚</div>
       <h3>Cours</h3>
       <p>Apprends l'électricité étape par étape.</p>
     </a>
 
-    <a href="#composants" class="category-card">
-      <div class="category-icon">🔧</div>
-      <h3>Composants</h3>
-      <p>Découvre les principaux composants électriques.</p>
-    </a>
-
-    <a href="#mesures" class="category-card">
+    <a class="category-card" href="#mesures">
       <div class="category-icon">📏</div>
       <h3>Mesures</h3>
-      <p>Comprends les grandeurs électriques.</p>
+      <p>Découvre les principales mesures électriques.</p>
     </a>
 
-    <a href="#conseils" class="category-card">
+    <a class="category-card" href="#composants">
+      <div class="category-icon">🔌</div>
+      <h3>Composants</h3>
+      <p>Découvre les composants électriques.</p>
+    </a>
+
+    <a class="category-card" href="#conseils">
       <div class="category-icon">💡</div>
       <h3>Conseils</h3>
-      <p>Quelques règles importantes.</p>
+      <p>Quelques conseils pour progresser.</p>
     </a>
 
   </section>
 
 
-  <section id="cours" class="search-card">
+  <!-- COURS -->
 
-    <span class="badge">📚 COURS D'ÉLECTRICITÉ</span>
+  <section id="cours">
 
-    <h2>Apprendre l'électricité</h2>
-
-    <p>Choisis un cours pour commencer.</p>
-
+    <h2>📚 Cours d'électricité</h2>
 
     <!-- COURS 1 -->
 
-    <div class="course-box">
+    <div class="course-card">
 
-      <div class="category-icon">⚡</div>
+      <h3>⚡ Cours 1 — Introduction à l'électricité</h3>
 
-      <h3>Cours 1 — Introduction à l'électricité</h3>
+      <p>
+        Découvre les bases de l'électricité et les notions essentielles.
+      </p>
 
-      <p>Découvre les bases de l'électricité.</p>
-
-      <button class="course-btn"
-        onclick="ouvrirCours('cours1')">
+      <button class="course-button" onclick="ouvrirCours('cours1')">
         ▶️ Commencer le cours
       </button>
 
       <div id="cours1" class="course-content">
 
         <div class="lesson">
-          <h3>1️⃣ Qu'est-ce que l'électricité ?</h3>
-          <p>
-            L'électricité est une forme d'énergie
-            qui permet de faire fonctionner de nombreux appareils.
-          </p>
-        </div>
+          <h4>🔹 Qu'est-ce que l'électricité ?</h4>
 
-        <div class="lesson">
-          <h3>2️⃣ La tension électrique</h3>
           <p>
-            La tension permet au courant électrique
-            de circuler dans un circuit.
-          </p>
-          <p>Unité : <strong>volt (V)</strong>.</p>
-        </div>
-
-        <div class="lesson">
-          <h3>3️⃣ Le courant électrique</h3>
-          <p>
-            Le courant correspond au déplacement
+            L'électricité est une forme d'énergie liée au déplacement
             des charges électriques.
           </p>
-          <p>Unité : <strong>ampère (A)</strong>.</p>
         </div>
 
         <div class="lesson">
-          <h3>4️⃣ La résistance</h3>
-          <p>
-            La résistance s'oppose au passage du courant.
-          </p>
-          <p>Unité : <strong>ohm (Ω)</strong>.</p>
+          <h4>🔹 Les trois notions importantes</h4>
+
+          <p>⚡ Tension : elle pousse le courant.</p>
+          <p>🔌 Courant : c'est le déplacement des charges électriques.</p>
+          <p>🧱 Résistance : elle s'oppose au passage du courant.</p>
         </div>
 
       </div>
+
     </div>
 
 
     <!-- COURS 2 -->
 
-    <div class="course-box">
+    <div class="course-card">
 
-      <div class="category-icon">🔋</div>
-
-      <h3>Cours 2 — Tension, courant et résistance</h3>
+      <h3>🔋 Cours 2 — Tension, courant et résistance</h3>
 
       <p>
-        Comprends les trois grandeurs fondamentales
-        d'un circuit électrique.
+        Comprends les trois grandeurs fondamentales de l'électricité.
       </p>
 
-      <button class="course-btn"
-        onclick="ouvrirCours('cours2')">
+      <button class="course-button" onclick="ouvrirCours('cours2')">
         ▶️ Commencer le cours
       </button>
 
       <div id="cours2" class="course-content">
 
         <div class="lesson">
-          <h3>⚡ La tension</h3>
+
+          <h4>⚡ La tension</h4>
+
           <p>
-            La tension se mesure avec un voltmètre.
+            La tension électrique se mesure en volts (V).
           </p>
-          <p>Unité : <strong>volt (V)</strong>.</p>
+
+          <p>
+            Exemple : une batterie peut fournir 12 V.
+          </p>
+
         </div>
 
         <div class="lesson">
-          <h3>🔌 Le courant</h3>
+
+          <h4>🔌 Le courant</h4>
+
           <p>
-            Le courant se mesure avec un ampèremètre.
+            Le courant se mesure en ampères (A).
           </p>
-          <p>Unité : <strong>ampère (A)</strong>.</p>
+
         </div>
 
         <div class="lesson">
-          <h3>Ω La résistance</h3>
+
+          <h4>🧱 La résistance</h4>
+
           <p>
-            La résistance limite le passage du courant.
+            La résistance se mesure en ohms (Ω).
           </p>
-          <p>Unité : <strong>ohm (Ω)</strong>.</p>
+
         </div>
 
       </div>
+
     </div>
 
 
     <!-- COURS 3 -->
 
-    <div class="course-box">
+    <div class="course-card">
 
-      <div class="category-icon">🔌</div>
-
-      <h3>Cours 3 — Les circuits électriques</h3>
+      <h3>🔌 Cours 3 — Les circuits électriques</h3>
 
       <p>
-        Découvre comment les composants sont reliés
-        pour former un circuit électrique.
+        Découvre comment fonctionne un circuit électrique.
       </p>
 
-      <button class="course-btn"
-        onclick="ouvrirCours('cours3')">
+      <button class="course-button" onclick="ouvrirCours('cours3')">
         ▶️ Commencer le cours
       </button>
 
       <div id="cours3" class="course-content">
 
         <div class="lesson">
-          <h3>1️⃣ Le circuit électrique</h3>
+
+          <h4>🔹 Qu'est-ce qu'un circuit ?</h4>
 
           <p>
             Un circuit électrique est un ensemble de composants
-            reliés entre eux par des conducteurs.
+            reliés permettant au courant de circuler.
           </p>
 
-          <div class="schema">
-            🔋 ─── 🎛️ ─── 💡<br>
-            │             │<br>
-            └─────────────┘<br>
-            Circuit fermé ✅
-          </div>
         </div>
 
         <div class="lesson">
-          <h3>2️⃣ Circuit ouvert</h3>
+
+          <h4>🔹 Circuit fermé</h4>
 
           <p>
-            Lorsque le circuit est interrompu,
-            le courant ne peut pas circuler.
+            Lorsque le circuit est fermé, le courant peut circuler.
           </p>
 
-          <div class="schema">
-            🔋 ─── 🎛️   💡<br>
-            │             │<br>
-            └─────────────┘<br>
-            Circuit ouvert ❌
+        </div>
+
+        <div class="lesson">
+
+          <h4>🔹 Circuit ouvert</h4>
+
+          <p>
+            Lorsque le circuit est ouvert, le courant ne circule pas.
+          </p>
+
+        </div>
+
+        <div class="schema">
+
+          Batterie 🔋
+          <br>
+          ─────── Interrupteur ─────── 💡
+          <br>
+          └───────────────────────────┘
+
+        </div>
+
+        <div class="exercise">
+
+          <strong>Exercice 1</strong>
+
+          <p>
+            Que se passe-t-il lorsqu'un interrupteur ouvre le circuit ?
+          </p>
+
+          <button class="answer-button"
+                  onclick="afficherReponse('rep31')">
+            Voir la réponse
+          </button>
+
+          <div id="rep31" class="answer">
+            Le courant ne peut plus circuler.
           </div>
+
+        </div>
+
+        <div class="exercise">
+
+          <strong>Exercice 2</strong>
+
+          <p>
+            Dans un circuit fermé, le courant peut-il circuler ?
+          </p>
+
+          <button class="answer-button"
+                  onclick="afficherReponse('rep32')">
+            Voir la réponse
+          </button>
+
+          <div id="rep32" class="answer">
+            Oui, le courant peut circuler.
+          </div>
+
         </div>
 
       </div>
+
     </div>
 
 
     <!-- COURS 4 -->
 
-    <div class="course-box">
+    <div class="course-card">
 
-      <div class="category-icon">🧮</div>
-
-      <h3>Cours 4 — La loi d'Ohm</h3>
+      <h3>📐 Cours 4 — La loi d'Ohm</h3>
 
       <p>
-        Apprends la relation entre la tension,
-        le courant et la résistance.
+        Apprends la relation entre tension, courant et résistance.
       </p>
 
-      <button class="course-btn"
-        onclick="ouvrirCours('cours4')">
+      <button class="course-button" onclick="ouvrirCours('cours4')">
         ▶️ Commencer le cours
       </button>
-
 
       <div id="cours4" class="course-content">
 
         <div class="lesson">
 
-          <h3>1️⃣ Qu'est-ce que la loi d'Ohm ?</h3>
-
-          <p>
-            La loi d'Ohm permet de calculer la tension,
-            le courant ou la résistance dans un circuit
-            électrique simple.
-          </p>
-
-        </div>
-
-
-        <div class="lesson">
-
-          <h3>2️⃣ La formule</h3>
+          <h4>📐 La formule</h4>
 
           <div class="formula">
             U = R × I
@@ -355,29 +375,110 @@
 
         </div>
 
-
         <div class="lesson">
 
-          <h3>3️⃣ Exemple</h3>
+          <h4>💡 Exemple</h4>
 
           <p>
-            Une résistance de <strong>10 Ω</strong>
-            est traversée par un courant de
-            <strong>2 A</strong>.
-          </p>
-
-          <p>
-            Pour trouver la tension :
+            Une résistance de 10 Ω est traversée par un courant de 2 A.
           </p>
 
           <div class="formula">
-            U = R × I<br>
-            U = 10 × 2<br>
-            U = 20 V
+            U = 10 × 2 = 20 V
           </div>
 
+        </div>
+
+        <div class="exercise">
+
+          <strong>Exercice 1</strong>
+
           <p>
-            ✅ La tension est donc de <strong>20 V</strong>.
+            R = 5 Ω et I = 2 A. Trouve U.
+          </p>
+
+          <button class="answer-button"
+                  onclick="afficherReponse('rep41')">
+            Voir la réponse
+          </button>
+
+          <div id="rep41" class="answer">
+            U = 5 × 2 = 10 V.
+          </div>
+
+        </div>
+
+        <div class="exercise">
+
+          <strong>Exercice 2</strong>
+
+          <p>
+            U = 12 V et R = 6 Ω. Trouve I.
+          </p>
+
+          <button class="answer-button"
+                  onclick="afficherReponse('rep42')">
+            Voir la réponse
+          </button>
+
+          <div id="rep42" class="answer">
+            I = 12 ÷ 6 = 2 A.
+          </div>
+
+        </div>
+
+        <div class="exercise">
+
+          <strong>Exercice 3</strong>
+
+          <p>
+            U = 20 V et I = 4 A. Trouve R.
+          </p>
+
+          <button class="answer-button"
+                  onclick="afficherReponse('rep43')">
+            Voir la réponse
+          </button>
+
+          <div id="rep43" class="answer">
+            R = 20 ÷ 4 = 5 Ω.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- COURS 5 -->
+
+    <div class="course-card">
+
+      <h3>💡 Cours 5 — La puissance électrique</h3>
+
+      <p>
+        Découvre ce qu'est la puissance électrique et comment la calculer.
+      </p>
+
+      <button class="course-button" onclick="ouvrirCours('cours5')">
+        ▶️ Commencer le cours
+      </button>
+
+      <div id="cours5" class="course-content">
+
+        <div class="lesson">
+
+          <h4>⚡ Qu'est-ce que la puissance électrique ?</h4>
+
+          <p>
+            La puissance électrique indique la quantité d'énergie
+            électrique utilisée ou fournie par un appareil pendant
+            un certain temps.
+          </p>
+
+          <p>
+            Elle se mesure en <strong>watts (W)</strong>.
           </p>
 
         </div>
@@ -385,31 +486,81 @@
 
         <div class="lesson">
 
-          <h3>4️⃣ Trouver le courant</h3>
-
-          <p>
-            Si on connaît la tension et la résistance,
-            on peut calculer le courant :
-          </p>
+          <h4>📐 La formule de la puissance</h4>
 
           <div class="formula">
-            I = U ÷ R
+            P = U × I
           </div>
+
+          <p>
+            <strong>P</strong> = puissance en watts (W)
+          </p>
+
+          <p>
+            <strong>U</strong> = tension en volts (V)
+          </p>
+
+          <p>
+            <strong>I</strong> = courant en ampères (A)
+          </p>
 
         </div>
 
 
         <div class="lesson">
 
-          <h3>5️⃣ Trouver la résistance</h3>
+          <h4>💡 Exemple 1</h4>
 
           <p>
-            Si on connaît la tension et le courant,
-            on peut calculer la résistance :
+            Une lampe fonctionne sous 12 V et consomme 2 A.
           </p>
 
           <div class="formula">
-            R = U ÷ I
+            P = 12 × 2 = 24 W
+          </div>
+
+          <p>
+            La puissance de la lampe est donc de <strong>24 W</strong>.
+          </p>
+
+        </div>
+
+
+        <div class="lesson">
+
+          <h4>💡 Exemple 2</h4>
+
+          <p>
+            Un appareil fonctionne sous 20 V avec un courant de 3 A.
+          </p>
+
+          <div class="formula">
+            P = 20 × 3 = 60 W
+          </div>
+
+          <p>
+            Sa puissance est de <strong>60 W</strong>.
+          </p>
+
+        </div>
+
+
+        <div class="exercise">
+
+          <strong>📝 Exercice 1</strong>
+
+          <p>
+            Une lampe fonctionne sous 10 V et utilise 2 A.
+            Quelle est sa puissance ?
+          </p>
+
+          <button class="answer-button"
+                  onclick="afficherReponse('rep51')">
+            Voir la réponse
+          </button>
+
+          <div id="rep51" class="answer">
+            P = 10 × 2 = 20 W.
           </div>
 
         </div>
@@ -417,65 +568,42 @@
 
         <div class="exercise">
 
-          <h3>🧠 Exercice 1</h3>
+          <strong>📝 Exercice 2</strong>
 
           <p>
-            Une résistance de 5 Ω est traversée
-            par un courant de 2 A.
-            Quelle est la tension ?
+            Un moteur fonctionne sous 12 V et utilise 5 A.
+            Quelle est sa puissance ?
           </p>
 
-          <button class="course-btn"
-            onclick="afficherReponse('rep5')">
+          <button class="answer-button"
+                  onclick="afficherReponse('rep52')">
             Voir la réponse
           </button>
 
-          <p id="rep5" class="answer">
-            ✅ U = R × I = 5 × 2 = 10 V.
-          </p>
+          <div id="rep52" class="answer">
+            P = 12 × 5 = 60 W.
+          </div>
 
         </div>
 
 
         <div class="exercise">
 
-          <h3>🧠 Exercice 2</h3>
+          <strong>📝 Exercice 3</strong>
 
           <p>
-            Une tension de 12 V est appliquée
-            à une résistance de 6 Ω.
-            Quel est le courant ?
+            Un appareil possède une tension de 24 V et une puissance
+            de 48 W. Quel courant utilise-t-il ?
           </p>
 
-          <button class="course-btn"
-            onclick="afficherReponse('rep6')">
+          <button class="answer-button"
+                  onclick="afficherReponse('rep53')">
             Voir la réponse
           </button>
 
-          <p id="rep6" class="answer">
-            ✅ I = U ÷ R = 12 ÷ 6 = 2 A.
-          </p>
-
-        </div>
-
-
-        <div class="exercise">
-
-          <h3>🧠 Exercice 3</h3>
-
-          <p>
-            Une tension de 20 V produit un courant
-            de 4 A. Quelle est la résistance ?
-          </p>
-
-          <button class="course-btn"
-            onclick="afficherReponse('rep7')">
-            Voir la réponse
-          </button>
-
-          <p id="rep7" class="answer">
-            ✅ R = U ÷ I = 20 ÷ 4 = 5 Ω.
-          </p>
+          <div id="rep53" class="answer">
+            I = P ÷ U = 48 ÷ 24 = 2 A.
+          </div>
 
         </div>
 
@@ -488,21 +616,27 @@
 
   <!-- MESURES -->
 
-  <section id="mesures" class="search-card">
+  <section id="mesures">
 
-    <span class="badge">📏 MESURES ÉLECTRIQUES</span>
+    <h2>📏 Mesures électriques</h2>
 
-    <h2>Les grandeurs essentielles</h2>
+    <div class="lesson">
 
-    <div class="details" style="display:block;">
+      <p>
+        ⚡ Tension → volt (V)
+      </p>
 
-      <p><strong>⚡ Tension :</strong> volt (V)</p>
+      <p>
+        🔌 Courant → ampère (A)
+      </p>
 
-      <p><strong>🔌 Courant :</strong> ampère (A)</p>
+      <p>
+        🧱 Résistance → ohm (Ω)
+      </p>
 
-      <p><strong>Ω Résistance :</strong> ohm (Ω)</p>
-
-      <p><strong>💡 Puissance :</strong> watt (W)</p>
+      <p>
+        💡 Puissance → watt (W)
+      </p>
 
     </div>
 
@@ -513,14 +647,16 @@
 
   <section id="composants">
 
+    <h2>🔎 Recherche des composants</h2>
+
     <div class="search-card">
 
       <label for="recherche">
-        🔎 Rechercher un composant
+        Rechercher un composant
       </label>
 
       <input
-        type="search"
+        type="text"
         id="recherche"
         placeholder="Exemple : lampe, moteur, résistance..."
       >
@@ -534,24 +670,21 @@
 
   <!-- CONSEILS -->
 
-  <section id="conseils" class="search-card">
+  <section id="conseils">
 
-    <span class="badge">💡 CONSEILS</span>
+    <h2>💡 Conseils pour apprendre</h2>
 
-    <h2>À retenir</h2>
+    <div class="lesson">
 
-    <div class="details" style="display:block;">
+      <p>📚 Étudie régulièrement.</p>
 
-      <p>🔹 Apprends progressivement.</p>
+      <p>🧠 Comprends les formules avant de les mémoriser.</p>
 
-      <p>🔹 Comprends le rôle de chaque composant.</p>
+      <p>📝 Fais beaucoup d'exercices.</p>
 
-      <p>🔹 Respecte les règles de sécurité électrique.</p>
+      <p>⚡ Apprends toujours les règles de sécurité électrique.</p>
 
-      <p>
-        🔹 Pour les manipulations électriques,
-        travaille avec un adulte ou un professionnel.
-      </p>
+      <p>🔧 Observe et comprends les composants électriques.</p>
 
     </div>
 
@@ -566,7 +699,9 @@
 
   <strong>Dictionnaire Électricien SK</strong>
 
-  <p>Apprendre l'électricité simplement.</p>
+  <p>
+    Apprendre • Comprendre • Pratiquer
+  </p>
 
 </footer>
 
@@ -616,4 +751,4 @@ function afficherReponse(id) {
 </script>
 
 </body>
-  </html> 
+          </html> 
