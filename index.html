@@ -2,236 +2,550 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08345a">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0759b5">
   <title>Dictionnaire Électricien SK</title>
   <link rel="stylesheet" href="style.css">
+
   <style>
     body {
-      font-size: 17px;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
     }
 
-    .course-directory {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin: 20px 0;
+    .section {
+      padding: 20px;
+      margin: 15px auto;
+      max-width: 900px;
+    }
+
+    .carte, .course-entry, .lecon-ouverte {
+      background: white;
+      border-radius: 14px;
+      padding: 18px;
+      margin: 12px 0;
+      box-shadow: 0 3px 12px #00000012;
     }
 
     .course-entry {
       display: block;
-      padding: 18px;
-      border-radius: 16px;
-      background: white;
-      border: 1px solid #dbe5ef;
-      box-shadow: 0 5px 16px rgba(0,0,0,.06);
-      color: #172033;
+      color: inherit;
       text-decoration: none;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
     }
 
     .course-entry strong {
       display: block;
-      color: #08345a;
-      font-size: 18px;
-      margin-bottom: 5px;
+      font-size: 17px;
     }
 
     .course-entry span {
+      display: block;
       color: #64748b;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .course-entry:active {
-      background: #eaf4ff;
+      background: #eaf3ff;
     }
 
-    .course-entry.unavailable {
-      opacity: .7;
+    .lecon-ouverte {
+      border-left: 5px solid #0759b5;
+      background: #f8fbff;
     }
 
-    .course-notice {
-      padding: 15px;
-      border-radius: 12px;
-      background: #eaf4ff;
-      margin: 15px 0;
+    .lecon-ouverte h3 {
+      color: #0759b5;
+    }
+
+    .lecon-ouverte h4 {
+      margin-bottom: 4px;
+    }
+
+    .bouton-cours {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 15px;
+      background: #0759b5;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      margin: 5px 5px 5px 0;
+    }
+
+    .reponse-exercice {
+      display: none;
+      background: #e8f7ec;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 10px;
+    }
+
+    .grille {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .petit-titre {
+      color: #0759b5;
+      font-weight: bold;
+    }
+
+    .avertissement {
+      background: #fff4db;
+      padding: 12px;
+      border-radius: 8px;
+      border-left: 4px solid #f0ad25;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #64748b;
     }
   </style>
 </head>
 
 <body>
 
-  <header class="hero">
-    <div class="logo">⚡</div>
-    <p class="surtitle">APPRENDRE • COMPRENDRE • PRATIQUER</p>
-    <h1>Dictionnaire Électricien SK</h1>
-    <p class="subtitle">Ton guide pour apprendre l'électricité</p>
+  <header class="section" id="accueil">
+    <h1>🔌 Dictionnaire Électricien SK</h1>
+    <p>Apprends l’électricité simplement, étape par étape.</p>
   </header>
 
-  <main class="container">
+  <main>
 
-    <section class="welcome">
-      <span class="badge">BIENVENUE</span>
-      <h2>Apprenons l'électricité !</h2>
-      <p>Retrouve les cours, les mesures et les composants électriques.</p>
+    <section class="section">
+      <h2>📚 Menu principal</h2>
+
+      <div class="grille">
+        <a class="course-entry" href="#composants">
+          <strong>🔌 Composants</strong>
+          <span>Découvre les composants électriques.</span>
+        </a>
+
+        <a class="course-entry" href="#mesures">
+          <strong>📐 Mesures</strong>
+          <span>Comprends les unités électriques.</span>
+        </a>
+
+        <a class="course-entry" href="#securite">
+          <strong>🛡️ Sécurité</strong>
+          <span>Apprends les règles de sécurité.</span>
+        </a>
+
+        <a class="course-entry" href="#cours-electricite">
+          <strong>📚 Cours d’électricité</strong>
+          <span>Ouvre les 12 leçons et fais les exercices.</span>
+        </a>
+      </div>
     </section>
 
-    <section class="categories">
-      <a href="#cours-electricite" class="category-card">
-        <div class="category-icon">📚</div>
-        <h3>Cours d'électricité</h3>
-        <p>Découvre les leçons et les exercices.</p>
-      </a>
+    <section class="section" id="composants">
+      <h2>🔌 Dictionnaire des composants</h2>
+      <p>Recherche un composant électrique par son nom.</p>
 
-      <a href="#mesures" class="category-card">
-        <div class="category-icon">📐</div>
-        <h3>Mesures</h3>
-        <p>Tension, courant, résistance et puissance.</p>
-      </a>
+      <input
+        type="search"
+        id="recherche"
+        placeholder="Exemple : lampe, prise, disjoncteur..."
+        aria-label="Rechercher un composant"
+      >
 
-      <a href="#composants" class="category-card">
-        <div class="category-icon">🔌</div>
-        <h3>Composants</h3>
-        <p>Découvre les composants électriques.</p>
-      </a>
+      <div id="liste-composants">
+        <div class="carte">
+          <h3>💡 Lampe</h3>
+          <p><strong>Rôle :</strong> transforme l’énergie électrique en lumière.</p>
+        </div>
 
-      <a href="#securite" class="category-card">
-        <div class="category-icon">🛡️</div>
-        <h3>Sécurité</h3>
-        <p>Apprends les principes essentiels de sécurité.</p>
-      </a>
+        <div class="carte">
+          <h3>🎚️ Interrupteur</h3>
+          <p><strong>Rôle :</strong> permet d’ouvrir ou de fermer un circuit.</p>
+        </div>
+
+        <div class="carte">
+          <h3>🔌 Prise électrique</h3>
+          <p><strong>Rôle :</strong> permet de raccorder un appareil à une installation électrique.</p>
+        </div>
+
+        <div class="carte">
+          <h3>🛡️ Disjoncteur</h3>
+          <p><strong>Rôle :</strong> coupe le courant lorsqu’une situation anormale le nécessite.</p>
+        </div>
+
+        <div class="carte">
+          <h3>🔋 Batterie</h3>
+          <p><strong>Rôle :</strong> stocke et fournit de l’énergie électrique.</p>
+        </div>
+
+        <div class="carte">
+          <h3>🧱 Résistance</h3>
+          <p><strong>Rôle :</strong> s’oppose au passage du courant électrique.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="cours-electricite">
-      <span class="badge">APPRENTISSAGE</span>
-      <h2>📚 Cours d'électricité</h2>
-      <p>Choisis un cours dans la liste ci-dessous.</p>
+    <section class="section" id="mesures">
+      <h2>📐 Les mesures électriques</h2>
 
-      <div class="course-notice">
-        💡 Les boutons permettent d'accéder aux cours déjà présents
-        dans la page. Si un cours ne s'ouvre pas, il faudra vérifier
-        son identifiant dans le code.
+      <div class="grille">
+        <div class="carte">
+          <h3>⚡ Tension</h3>
+          <p><strong>Unité :</strong> volt (V).</p>
+          <p>La tension représente la différence de potentiel électrique entre deux points.</p>
+        </div>
+
+        <div class="carte">
+          <h3>🔌 Courant</h3>
+          <p><strong>Unité :</strong> ampère (A).</p>
+          <p>Le courant électrique correspond au déplacement des charges électriques.</p>
+        </div>
+
+        <div class="carte">
+          <h3>🧱 Résistance</h3>
+          <p><strong>Unité :</strong> ohm (Ω).</p>
+          <p>La résistance s’oppose au passage du courant.</p>
+        </div>
+
+        <div class="carte">
+          <h3>💡 Puissance</h3>
+          <p><strong>Unité :</strong> watt (W).</p>
+          <p>La puissance indique la quantité d’énergie transférée par seconde.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="securite">
+      <h2>🛡️ Sécurité électrique</h2>
+
+      <div class="avertissement">
+        <strong>⚠️ Attention :</strong>
+        l’électricité peut provoquer des blessures graves.
+        Ne manipule jamais une installation sous tension.
       </div>
 
-      <div class="course-directory">
+      <ul>
+        <li>Ne touche jamais un fil dénudé.</li>
+        <li>Ne manipule pas une prise ou un tableau électrique sous tension.</li>
+        <li>Fais vérifier les installations par un électricien qualifié.</li>
+        <li>Avant toute intervention, l’alimentation doit être coupée et l’absence de tension vérifiée avec un appareil adapté par une personne compétente.</li>
+        <li>Ne considère jamais un fil comme sûr simplement parce qu’un interrupteur est éteint.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="cours-electricite">
+      <h2>📚 Cours d’électricité</h2>
+      <p>
+        Choisis une leçon ci-dessous. Chaque cours contient une explication,
+        un exemple et un exercice corrigé.
+      </p>
+
+      <div id="liste-cours">
 
         <a class="course-entry" href="#cours1">
-          <strong>⚡ Cours 1 — Introduction à l'électricité</strong>
-          <span>Découvrir les bases de l'électricité.</span>
+          <strong>📘 Cours 1 — Introduction à l’électricité</strong>
+          <span>Découvre ce qu’est l’électricité.</span>
         </a>
 
         <a class="course-entry" href="#cours2">
-          <strong>🔋 Cours 2 — Tension, courant et résistance</strong>
-          <span>Comprendre les grandeurs électriques.</span>
+          <strong>⚡ Cours 2 — Tension, courant et résistance</strong>
+          <span>Comprends les trois grandeurs essentielles.</span>
         </a>
 
         <a class="course-entry" href="#cours3">
-          <strong>🔌 Cours 3 — Les circuits électriques</strong>
-          <span>Comprendre les circuits.</span>
+          <strong>🔄 Cours 3 — Le circuit électrique</strong>
+          <span>Découvre les circuits ouverts et fermés.</span>
         </a>
 
         <a class="course-entry" href="#cours4">
-          <strong>📐 Cours 4 — La loi d'Ohm</strong>
-          <span>Comprendre la relation entre tension, courant et résistance.</span>
+          <strong>🧮 Cours 4 — La loi d’Ohm</strong>
+          <span>Apprends à relier tension, courant et résistance.</span>
         </a>
 
         <a class="course-entry" href="#cours5">
-          <strong>⚡ Cours 5 — La puissance électrique</strong>
-          <span>Découvrir la puissance électrique.</span>
+          <strong>💡 Cours 5 — La puissance électrique</strong>
+          <span>Comprends le watt et le calcul de puissance.</span>
         </a>
 
         <a class="course-entry" href="#cours6">
-          <strong>🔋 Cours 6 — Énergie et consommation</strong>
-          <span>Comprendre les Wh et les kWh.</span>
+          <strong>🔋 Cours 6 — L’énergie électrique</strong>
+          <span>Découvre l’énergie consommée par un appareil.</span>
         </a>
 
         <a class="course-entry" href="#cours7">
-          <strong>🔗 Cours 7 — Les circuits en série</strong>
-          <span>Étudier les composants en série.</span>
+          <strong>🔗 Cours 7 — Les résistances en série</strong>
+          <span>Comprends comment les résistances s’additionnent.</span>
         </a>
 
         <a class="course-entry" href="#cours8">
           <strong>🔀 Cours 8 — Les circuits en parallèle</strong>
-          <span>Étudier les circuits à plusieurs branches.</span>
+          <span>Découvre les branches et la tension en parallèle.</span>
         </a>
 
         <a class="course-entry" href="#cours9">
-          <strong>📏 Cours 9 — Utiliser un multimètre</strong>
-          <span>Apprendre à mesurer les grandeurs électriques.</span>
+          <strong>📏 Cours 9 — Le multimètre</strong>
+          <span>Découvre les fonctions de cet appareil de mesure.</span>
         </a>
 
         <a class="course-entry" href="#cours10">
-          <strong>🛡️ Cours 10 — Les protections électriques</strong>
-          <span>Découvrir les dispositifs de protection.</span>
+          <strong>🛡️ Cours 10 — Les dispositifs de protection</strong>
+          <span>Comprends le rôle des protections électriques.</span>
         </a>
 
         <a class="course-entry" href="#cours11">
-          <strong>🔧 Cours 11 — Le câblage électrique</strong>
-          <span>Comprendre le rôle des conducteurs.</span>
+          <strong>🟢 Cours 11 — La terre et les conducteurs</strong>
+          <span>Découvre les fonctions des conducteurs.</span>
         </a>
 
         <a class="course-entry" href="#cours12">
-          <strong>💡 Cours 12 — Les interrupteurs et les commandes</strong>
-          <span>Comprendre la commande des circuits.</span>
+          <strong>🎚️ Cours 12 — Les interrupteurs</strong>
+          <span>Comprends leur rôle dans un circuit.</span>
         </a>
 
       </div>
-    </section>
 
-    <section id="mesures">
-      <h2>📐 Mesures électriques</h2>
-      <div class="course-directory">
-        <div class="course-entry">
-          <strong>⚡ Tension — Volt (V)</strong>
-          <span>La différence de potentiel électrique.</span>
-        </div>
-        <div class="course-entry">
-          <strong>🔌 Courant — Ampère (A)</strong>
-          <span>L'intensité du courant électrique.</span>
-        </div>
-        <div class="course-entry">
-          <strong>🧱 Résistance — Ohm (Ω)</strong>
-          <span>L'opposition au passage du courant.</span>
-        </div>
-        <div class="course-entry">
-          <strong>💡 Puissance — Watt (W)</strong>
-          <span>La puissance électrique d'un appareil.</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="composants">
-      <h2>🔌 Recherche des composants</h2>
-
-      <div class="search-card">
-        <label for="recherche">Rechercher un composant</label>
-        <input id="recherche" type="search"
-               placeholder="Ex. : lampe, disjoncteur…">
-      </div>
-
-      <div id="liste-composants"></div>
-    </section>
-
-    <section id="securite">
-      <h2>🛡️ Conseils de sécurité</h2>
-      <div class="course-entry">
-        <strong>⚠️ Attention à l'électricité</strong>
-        <span>
-          Ne travaille jamais sur un circuit sous tension.
-          Pour les installations réelles, demande l'aide d'un adulte
-          qualifié ou d'un électricien compétent.
-        </span>
-      </div>
+      <div id="zone-lecon" aria-live="polite"></div>
     </section>
 
   </main>
 
   <footer>
-    <div>⚡</div>
-    <strong>Dictionnaire Électricien SK</strong>
-    <p>Apprendre l'électricité pas à pas.</p>
+    <p>🔌 Dictionnaire Électricien SK</p>
+    <p>Apprendre aujourd’hui pour mieux comprendre demain.</p>
   </footer>
 
+  <!-- Fichier JavaScript existant -->
   <script src="script.js"></script>
 
-</body>
-</html>
+  <!-- Contenu des 12 cours -->
+  <script>
+    const leconsElectricite = {
+      cours1: {
+        titre: "Cours 1 — Introduction à l’électricité",
+        contenu: `
+          <h4>1. Qu’est-ce que l’électricité ?</h4>
+          <p>L’électricité est liée à la présence et au déplacement des charges électriques. Elle permet de faire fonctionner les lampes, les téléphones et de nombreux appareils.</p>
+          <h4>2. Les éléments d’un circuit simple</h4>
+          <p>Un circuit peut comprendre une source d’énergie, des fils conducteurs, un récepteur comme une lampe et un dispositif de commande comme un interrupteur.</p>
+          <p><strong>Exemple :</strong> une pile reliée correctement à une petite lampe peut l’allumer si le circuit est fermé.</p>
+          <h4>Exercice</h4>
+          <p>Cite deux appareils qui utilisent l’électricité.</p>
+          <p><strong>Réponse :</strong> une lampe et un téléphone.</p>
+        `
+      },
+
+      cours2: {
+        titre: "Cours 2 — Tension, courant et résistance",
+        contenu: `
+          <h4>1. La tension (U)</h4>
+          <p>Elle se mesure en volts (V).</p>
+          <h4>2. Le courant (I)</h4>
+          <p>Il se mesure en ampères (A).</p>
+          <h4>3. La résistance (R)</h4>
+          <p>Elle se mesure en ohms (Ω) et s’oppose au passage du courant.</p>
+          <p><strong>À retenir :</strong> tension en volts, courant en ampères, résistance en ohms.</p>
+          <h4>Exercice</h4>
+          <p>Quelle est l’unité de la tension ?</p>
+          <p><strong>Réponse :</strong> le volt (V).</p>
+        `
+      },
+
+      cours3: {
+        titre: "Cours 3 — Le circuit électrique",
+        contenu: `
+          <h4>1. Circuit fermé</h4>
+          <p>Le chemin électrique est complet. Le courant peut circuler si les conditions électriques sont réunies.</p>
+          <h4>2. Circuit ouvert</h4>
+          <p>Le chemin est interrompu. Le courant ne circule pas dans ce circuit.</p>
+          <p><strong>Schéma simple :</strong> source → interrupteur → lampe → retour à la source.</p>
+          <h4>Exercice</h4>
+          <p>Que se passe-t-il lorsqu’un interrupteur ouvre le circuit d’une lampe ?</p>
+          <p><strong>Réponse :</strong> le courant ne circule plus dans ce circuit et la lampe s’éteint.</p>
+        `
+      },
+
+      cours4: {
+        titre: "Cours 4 — La loi d’Ohm",
+        contenu: `
+          <h4>La formule</h4>
+          <p><strong>U = R × I</strong></p>
+          <p>U est la tension en volts, R la résistance en ohms et I le courant en ampères.</p>
+          <h4>Exemple</h4>
+          <p>Si R = 4 Ω et I = 2 A, alors U = 4 × 2 = 8 V.</p>
+          <h4>Exercice</h4>
+          <p>Une résistance de 5 Ω est traversée par un courant de 2 A. Quelle est la tension ?</p>
+          <p><strong>Réponse :</strong> U = 5 × 2 = 10 V.</p>
+        `
+      },
+
+      cours5: {
+        titre: "Cours 5 — La puissance électrique",
+        contenu: `
+          <h4>La formule</h4>
+          <p><strong>P = U × I</strong></p>
+          <p>P est la puissance en watts, U la tension en volts et I le courant en ampères.</p>
+          <h4>Exemple</h4>
+          <p>Pour un appareil fonctionnant sous 12 V avec un courant de 2 A, P = 12 × 2 = 24 W.</p>
+          <h4>Exercice</h4>
+          <p>Un appareil utilise 10 V et 3 A. Quelle est sa puissance ?</p>
+          <p><strong>Réponse :</strong> P = 10 × 3 = 30 W.</p>
+        `
+      },
+
+      cours6: {
+        titre: "Cours 6 — L’énergie électrique",
+        contenu: `
+          <h4>1. Qu’est-ce que l’énergie électrique ?</h4>
+          <p>C’est l’énergie transférée ou consommée par un appareil lorsqu’il fonctionne.</p>
+          <h4>2. Calcul simple</h4>
+          <p>Pour une puissance constante : <strong>E = P × t</strong>, où E est l’énergie, P la puissance et t la durée.</p>
+          <p>En utilisant les watts et les heures, le résultat est en wattheures (Wh).</p>
+          <h4>Exemple</h4>
+          <p>Un appareil de 100 W fonctionne pendant 2 heures : E = 100 × 2 = 200 Wh.</p>
+          <h4>Exercice</h4>
+          <p>Une lampe de 20 W fonctionne pendant 3 heures. Quelle énergie consomme-t-elle ?</p>
+          <p><strong>Réponse :</strong> E = 20 × 3 = 60 Wh.</p>
+        `
+      },
+
+      cours7: {
+        titre: "Cours 7 — Les résistances en série",
+        contenu: `
+          <h4>1. Définition</h4>
+          <p>Des résistances sont en série lorsqu’elles se suivent sur un même chemin électrique.</p>
+          <h4>2. Résistance totale</h4>
+          <p><strong>R totale = R1 + R2 + R3...</strong></p>
+          <h4>Exemple</h4>
+          <p>Deux résistances de 3 Ω et 5 Ω en série donnent : R totale = 3 + 5 = 8 Ω.</p>
+          <h4>Exercice</h4>
+          <p>Deux résistances de 4 Ω et 6 Ω sont en série. Quelle est leur résistance totale ?</p>
+          <p><strong>Réponse :</strong> 4 + 6 = 10 Ω.</p>
+        `
+      },
+
+      cours8: {
+        titre: "Cours 8 — Les circuits en parallèle",
+        contenu: `
+          <h4>1. Définition</h4>
+          <p>Dans un circuit en parallèle, plusieurs branches sont raccordées entre les mêmes deux points.</p>
+          <h4>2. Tension</h4>
+          <p>Dans un circuit idéal en parallèle, la tension est la même aux bornes de chaque branche.</p>
+          <h4>3. Courant</h4>
+          <p>Le courant total se répartit entre les branches. Dans un modèle simple, le courant total est la somme des courants de branche.</p>
+          <p><strong>Exemple :</strong> si deux branches prennent respectivement 1 A et 2 A, le courant total est 3 A.</p>
+          <h4>Exercice</h4>
+          <p>Deux branches prennent 0,5 A et 1,5 A. Quel est le courant total ?</p>
+          <p><strong>Réponse :</strong> 0,5 + 1,5 = 2 A.</p>
+        `
+      },
+
+      cours9: {
+        titre: "Cours 9 — Le multimètre",
+        contenu: `
+          <h4>1. À quoi sert-il ?</h4>
+          <p>Un multimètre peut mesurer différentes grandeurs, par exemple la tension, le courant ou la résistance, selon son modèle et son réglage.</p>
+          <h4>2. Les précautions</h4>
+          <p>Il faut sélectionner la bonne fonction, la bonne borne et un calibre adapté. Une erreur de branchement peut être dangereuse ou endommager l’appareil.</p>
+          <div class="avertissement">
+            <strong>Sécurité :</strong> n’effectue pas de mesure sur une installation domestique sous tension sans formation et supervision qualifiée. La résistance se mesure uniquement sur un circuit hors tension, après vérification de l’absence de tension.
+          </div>
+          <h4>Exercice</h4>
+          <p>Quelle fonction utilise-t-on pour mesurer une résistance ?</p>
+          <p><strong>Réponse :</strong> la fonction ohmmètre (Ω), sur un circuit hors tension.</p>
+        `
+      },
+
+      cours10: {
+        titre: "Cours 10 — Les dispositifs de protection",
+        contenu: `
+          <h4>1. Le disjoncteur</h4>
+          <p>Il coupe automatiquement le circuit dans certaines conditions anormales, notamment en cas de surcharge ou de court-circuit, selon son type.</p>
+          <h4>2. Le dispositif différentiel</h4>
+          <p>Il détecte certains courants de fuite et contribue à la protection des personnes. Il ne remplace pas les autres protections.</p>
+          <h4>3. Le fusible</h4>
+          <p>Il interrompt le circuit lorsqu’un courant trop important provoque la fusion de son élément prévu à cet effet.</p>
+          <h4>Exercice</h4>
+          <p>Quel est le rôle principal d’un disjoncteur ?</p>
+          <p><strong>Réponse :</strong> interrompre le circuit lorsqu’une condition électrique anormale relevant de sa protection apparaît.</p>
+        `
+      },
+
+      cours11: {
+        titre: "Cours 11 — La terre et les conducteurs",
+        contenu: `
+          <h4>1. Le conducteur de phase</h4>
+          <p>Il transporte l’énergie électrique vers le récepteur dans une installation appropriée.</p>
+          <h4>2. Le neutre</h4>
+          <p>Dans de nombreuses installations, il participe au retour du courant. Il ne faut jamais supposer qu’il est sans danger.</p>
+          <h4>3. Le conducteur de protection</h4>
+          <p>Le conducteur de protection, souvent vert et jaune selon les normes applicables, relie les masses métalliques prévues à la terre afin de contribuer à la sécurité.</p>
+          <div class="avertissement">
+            Ne te fie pas uniquement à la couleur des fils. Une installation doit être identifiée et contrôlée par une personne qualifiée.
+          </div>
+          <h4>Exercice</h4>
+          <p>À quoi sert le conducteur de protection ?</p>
+          <p><strong>Réponse :</strong> il contribue à la protection contre les chocs électriques en cas de défaut.</p>
+        `
+      },
+
+      cours12: {
+        titre: "Cours 12 — Les interrupteurs",
+        contenu: `
+          <h4>1. Rôle de l’interrupteur</h4>
+          <p>Un interrupteur commande l’ouverture ou la fermeture d’un circuit.</p>
+          <h4>2. Interrupteur simple</h4>
+          <p>Il permet généralement de commander une lampe depuis un seul endroit.</p>
+          <h4>3. Va-et-vient</h4>
+          <p>Un montage va-et-vient permet de commander un même éclairage depuis deux endroits à l’aide de dispositifs adaptés et d’un câblage correct.</p>
+          <div class="avertissement">
+            Les travaux de câblage doivent être réalisés hors tension et selon les règles locales par une personne compétente.
+          </div>
+          <h4>Exercice</h4>
+          <p>Quel est le rôle d’un interrupteur dans un circuit simple ?</p>
+          <p><strong>Réponse :</strong> ouvrir ou fermer le circuit pour commander le récepteur.</p>
+        `
+      }
+    };
+
+    const listeCours = document.getElementById("liste-cours");
+    const zoneLecon = document.getElementById("zone-lecon");
+
+    listeCours.addEventListener("click", function (event) {
+      const lien = event.target.closest('a[href^="#cours"]');
+      if (!lien) return;
+
+      event.preventDefault();
+
+      const identifiant = lien.getAttribute("href").substring(1);
+      const lecon = leconsElectricite[identifiant];
+
+      if (!lecon) return;
+
+      zoneLecon.innerHTML = `
+        <article class="lecon-ouverte">
+          <h3>${lecon.titre}</h3>
+          ${lecon.contenu}
+          <button class="bouton-cours" type="button" id="bouton-reponse">
+            Afficher / masquer les réponses
+          </button>
+          <button class="bouton-cours" type="button" id="fermer-lecon">
+            Fermer le cours
+          </button>
+          <div class="reponse-exercice" id="bloc-reponse">
+            Les réponses sont indiquées à la fin de chaque exercice dans cette leçon.
+          </div>
+        </article>
+      `;
+
+      document.getElementById("fermer-lecon").addEventListene
