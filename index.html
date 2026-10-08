@@ -1,208 +1,237 @@
-<!-- COURS 9 -->
-<div class="course-card">
-  <h3>📏 Cours 9 — Utiliser un multimètre</h3>
-  <p>Apprends à utiliser un multimètre pour mesurer les principales grandeurs électriques.</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08345a">
+  <title>Dictionnaire Électricien SK</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-size: 17px;
+    }
 
-  <button class="course-button" onclick="ouvrirCours('cours9')">
-    ▶️ Commencer le cours
-  </button>
+    .course-directory {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin: 20px 0;
+    }
 
-  <div id="cours9" class="course-content">
+    .course-entry {
+      display: block;
+      padding: 18px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid #dbe5ef;
+      box-shadow: 0 5px 16px rgba(0,0,0,.06);
+      color: #172033;
+      text-decoration: none;
+    }
 
-    <div class="lesson">
-      <h4>📏 Qu'est-ce qu'un multimètre ?</h4>
-      <p>Un multimètre est un appareil de mesure utilisé pour vérifier différentes grandeurs électriques.</p>
-      <p>Il peut notamment mesurer :</p>
-      <p>⚡ La tension (V)</p>
-      <p>🔌 Le courant (A)</p>
-      <p>🧱 La résistance (Ω)</p>
-    </div>
+    .course-entry strong {
+      display: block;
+      color: #08345a;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
 
-    <div class="lesson">
-      <h4>⚡ Mesurer une tension</h4>
-      <p>Pour mesurer une tension, on utilise le mode voltmètre. Le multimètre se branche en parallèle avec le circuit ou le composant à mesurer.</p>
+    .course-entry span {
+      color: #64748b;
+      font-size: 15px;
+    }
 
-      <div class="schema">
-        🔋 ─────── 💡 ───────
-        <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│
-        <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;└── 📏 V ──┘
+    .course-entry:active {
+      background: #eaf4ff;
+    }
+
+    .course-entry.unavailable {
+      opacity: .7;
+    }
+
+    .course-notice {
+      padding: 15px;
+      border-radius: 12px;
+      background: #eaf4ff;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="logo">⚡</div>
+    <p class="surtitle">APPRENDRE • COMPRENDRE • PRATIQUER</p>
+    <h1>Dictionnaire Électricien SK</h1>
+    <p class="subtitle">Ton guide pour apprendre l'électricité</p>
+  </header>
+
+  <main class="container">
+
+    <section class="welcome">
+      <span class="badge">BIENVENUE</span>
+      <h2>Apprenons l'électricité !</h2>
+      <p>Retrouve les cours, les mesures et les composants électriques.</p>
+    </section>
+
+    <section class="categories">
+      <a href="#cours-electricite" class="category-card">
+        <div class="category-icon">📚</div>
+        <h3>Cours d'électricité</h3>
+        <p>Découvre les leçons et les exercices.</p>
+      </a>
+
+      <a href="#mesures" class="category-card">
+        <div class="category-icon">📐</div>
+        <h3>Mesures</h3>
+        <p>Tension, courant, résistance et puissance.</p>
+      </a>
+
+      <a href="#composants" class="category-card">
+        <div class="category-icon">🔌</div>
+        <h3>Composants</h3>
+        <p>Découvre les composants électriques.</p>
+      </a>
+
+      <a href="#securite" class="category-card">
+        <div class="category-icon">🛡️</div>
+        <h3>Sécurité</h3>
+        <p>Apprends les principes essentiels de sécurité.</p>
+      </a>
+    </section>
+
+    <section id="cours-electricite">
+      <span class="badge">APPRENTISSAGE</span>
+      <h2>📚 Cours d'électricité</h2>
+      <p>Choisis un cours dans la liste ci-dessous.</p>
+
+      <div class="course-notice">
+        💡 Les boutons permettent d'accéder aux cours déjà présents
+        dans la page. Si un cours ne s'ouvre pas, il faudra vérifier
+        son identifiant dans le code.
       </div>
 
-      <p>Exemple : une batterie indique environ 12 V.</p>
-    </div>
+      <div class="course-directory">
 
-    <div class="lesson">
-      <h4>🧱 Mesurer une résistance</h4>
-      <p>Pour mesurer une résistance, on utilise le mode Ω.</p>
-      <p>⚠️ Le circuit doit être hors tension avant de mesurer une résistance.</p>
-      <p>Exemple : une résistance peut mesurer 100 Ω.</p>
-    </div>
+        <a class="course-entry" href="#cours1">
+          <strong>⚡ Cours 1 — Introduction à l'électricité</strong>
+          <span>Découvrir les bases de l'électricité.</span>
+        </a>
 
-    <div class="lesson">
-      <h4>🔌 Mesurer un courant</h4>
-      <p>Pour mesurer un courant, on utilise le mode ampèremètre. Le multimètre doit être placé en série dans le circuit.</p>
-      <p>⚠️ Il faut toujours choisir le bon branchement et le bon calibre avant une mesure.</p>
-    </div>
+        <a class="course-entry" href="#cours2">
+          <strong>🔋 Cours 2 — Tension, courant et résistance</strong>
+          <span>Comprendre les grandeurs électriques.</span>
+        </a>
 
-    <div class="lesson">
-      <h4>🔢 Les principaux symboles</h4>
-      <p><strong>V</strong> → tension</p>
-      <p><strong>A</strong> → courant</p>
-      <p><strong>Ω</strong> → résistance</p>
-      <p><strong>⏚</strong> → borne commune selon le modèle</p>
-    </div>
+        <a class="course-entry" href="#cours3">
+          <strong>🔌 Cours 3 — Les circuits électriques</strong>
+          <span>Comprendre les circuits.</span>
+        </a>
 
-    <div class="lesson">
-      <h4>🧠 À retenir</h4>
-      <p>📏 Tension → mesure en parallèle.</p>
-      <p>🔌 Courant → mesure en série.</p>
-      <p>🧱 Résistance → circuit hors tension.</p>
-    </div>
+        <a class="course-entry" href="#cours4">
+          <strong>📐 Cours 4 — La loi d'Ohm</strong>
+          <span>Comprendre la relation entre tension, courant et résistance.</span>
+        </a>
 
-    <div class="exercise">
-      <strong>📝 Exercice 1</strong>
-      <p>Quelle unité utilise-t-on pour mesurer une résistance ?</p>
+        <a class="course-entry" href="#cours5">
+          <strong>⚡ Cours 5 — La puissance électrique</strong>
+          <span>Découvrir la puissance électrique.</span>
+        </a>
 
-      <button class="answer-button" onclick="afficherReponse('rep91')">
-        Voir la réponse
-      </button>
+        <a class="course-entry" href="#cours6">
+          <strong>🔋 Cours 6 — Énergie et consommation</strong>
+          <span>Comprendre les Wh et les kWh.</span>
+        </a>
 
-      <div id="rep91" class="answer">
-        La résistance se mesure en ohms (Ω).
+        <a class="course-entry" href="#cours7">
+          <strong>🔗 Cours 7 — Les circuits en série</strong>
+          <span>Étudier les composants en série.</span>
+        </a>
+
+        <a class="course-entry" href="#cours8">
+          <strong>🔀 Cours 8 — Les circuits en parallèle</strong>
+          <span>Étudier les circuits à plusieurs branches.</span>
+        </a>
+
+        <a class="course-entry" href="#cours9">
+          <strong>📏 Cours 9 — Utiliser un multimètre</strong>
+          <span>Apprendre à mesurer les grandeurs électriques.</span>
+        </a>
+
+        <a class="course-entry" href="#cours10">
+          <strong>🛡️ Cours 10 — Les protections électriques</strong>
+          <span>Découvrir les dispositifs de protection.</span>
+        </a>
+
+        <a class="course-entry" href="#cours11">
+          <strong>🔧 Cours 11 — Le câblage électrique</strong>
+          <span>Comprendre le rôle des conducteurs.</span>
+        </a>
+
+        <a class="course-entry" href="#cours12">
+          <strong>💡 Cours 12 — Les interrupteurs et les commandes</strong>
+          <span>Comprendre la commande des circuits.</span>
+        </a>
+
       </div>
-    </div>
+    </section>
 
-    <div class="exercise">
-      <strong>📝 Exercice 2</strong>
-      <p>Pour mesurer une tension, le multimètre se branche-t-il en série ou en parallèle ?</p>
-
-      <button class="answer-button" onclick="afficherReponse('rep92')">
-        Voir la réponse
-      </button>
-
-      <div id="rep92" class="answer">
-        Il se branche en parallèle.
+    <section id="mesures">
+      <h2>📐 Mesures électriques</h2>
+      <div class="course-directory">
+        <div class="course-entry">
+          <strong>⚡ Tension — Volt (V)</strong>
+          <span>La différence de potentiel électrique.</span>
+        </div>
+        <div class="course-entry">
+          <strong>🔌 Courant — Ampère (A)</strong>
+          <span>L'intensité du courant électrique.</span>
+        </div>
+        <div class="course-entry">
+          <strong>🧱 Résistance — Ohm (Ω)</strong>
+          <span>L'opposition au passage du courant.</span>
+        </div>
+        <div class="course-entry">
+          <strong>💡 Puissance — Watt (W)</strong>
+          <span>La puissance électrique d'un appareil.</span>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="exercise">
-      <strong>📝 Exercice 3</strong>
-      <p>Peut-on mesurer une résistance sur un circuit sous tension ?</p>
+    <section id="composants">
+      <h2>🔌 Recherche des composants</h2>
 
-      <button class="answer-button" onclick="afficherReponse('rep93')">
-        Voir la réponse
-      </button>
-
-      <div id="rep93" class="answer">
-        Non. Pour une mesure de résistance, le circuit doit être hors tension.
+      <div class="search-card">
+        <label for="recherche">Rechercher un composant</label>
+        <input id="recherche" type="search"
+               placeholder="Ex. : lampe, disjoncteur…">
       </div>
-    </div>
 
-  </div>
-</div>
+      <div id="liste-composants"></div>
+    </section>
 
-
-<!-- COURS 10 -->
-<div class="course-card">
-  <h3>🛡️ Cours 10 — Les protections électriques</h3>
-  <p>Découvre comment protéger les circuits électriques et les personnes contre les dangers électriques.</p>
-
-  <button class="course-button" onclick="ouvrirCours('cours10')">
-    ▶️ Commencer le cours
-  </button>
-
-  <div id="cours10" class="course-content">
-
-    <div class="lesson">
-      <h4>🛡️ Pourquoi protéger une installation électrique ?</h4>
-      <p>Une installation électrique doit être protégée contre les défauts qui peuvent provoquer une surchauffe, endommager les appareils ou créer un risque d'incendie.</p>
-      <p>Les protections permettent également de réduire les risques pour les personnes.</p>
-    </div>
-
-    <div class="lesson">
-      <h4>⚡ Le disjoncteur</h4>
-      <p>Le disjoncteur est un appareil de protection qui peut couper automatiquement le courant lorsqu'une situation anormale est détectée.</p>
-      <p>Il peut notamment protéger un circuit contre certaines surintensités.</p>
-    </div>
-
-    <div class="lesson">
-      <h4>🔥 Le fusible</h4>
-      <p>Le fusible est également un dispositif de protection. Lorsqu'un courant trop important le traverse, son élément fusible fond et ouvre le circuit.</p>
-      <p>Un fusible qui a fonctionné doit généralement être remplacé par un modèle adapté.</p>
-    </div>
-
-    <div class="lesson">
-      <h4>👤 La protection des personnes</h4>
-      <p>La sécurité électrique ne concerne pas seulement les appareils. Elle vise aussi à protéger les personnes contre les contacts dangereux.</p>
-      <p>La mise à la terre et les dispositifs différentiels jouent un rôle important dans la sécurité des installations.</p>
-    </div>
-
-    <div class="lesson">
-      <h4>🔌 Les surintensités</h4>
-      <p>Une surintensité correspond à un courant supérieur à celui prévu pour le circuit.</p>
-      <p>Elle peut être provoquée notamment par une surcharge ou un court-circuit.</p>
-
-      <div class="schema">
-        ⚡ Courant trop important
-        <br>
-        ↓
-        <br>
-        🛡️ Protection
-        <br>
-        ↓
-        <br>
-        🔌 Coupure du circuit
+    <section id="securite">
+      <h2>🛡️ Conseils de sécurité</h2>
+      <div class="course-entry">
+        <strong>⚠️ Attention à l'électricité</strong>
+        <span>
+          Ne travaille jamais sur un circuit sous tension.
+          Pour les installations réelles, demande l'aide d'un adulte
+          qualifié ou d'un électricien compétent.
+        </span>
       </div>
-    </div>
+    </section>
 
-    <div class="lesson">
-      <h4>🧠 À retenir</h4>
-      <p>🛡️ Le disjoncteur protège les circuits.</p>
-      <p>🔥 Le fusible peut interrompre le circuit en cas de courant trop important.</p>
-      <p>👤 La protection électrique doit aussi protéger les personnes.</p>
-      <p>⚡ Une installation doit utiliser des protections adaptées.</p>
-    </div>
+  </main>
 
-    <div class="exercise">
-      <strong>📝 Exercice 1</strong>
-      <p>Quel est le rôle principal d'un disjoncteur ?</p>
+  <footer>
+    <div>⚡</div>
+    <strong>Dictionnaire Électricien SK</strong>
+    <p>Apprendre l'électricité pas à pas.</p>
+  </footer>
 
-      <button class="answer-button" onclick="afficherReponse('rep101')">
-        Voir la réponse
-      </button>
+  <script src="script.js"></script>
 
-      <div id="rep101" class="answer">
-        Il permet notamment d'interrompre automatiquement un circuit lorsqu'une situation anormale est détectée.
-      </div>
-    </div>
-
-    <div class="exercise">
-      <strong>📝 Exercice 2</strong>
-      <p>Que se passe-t-il lorsqu'un fusible fond ?</p>
-
-      <button class="answer-button" onclick="afficherReponse('rep102')">
-        Voir la réponse
-      </button>
-
-      <div id="rep102" class="answer">
-        Le circuit est ouvert et le courant ne circule plus.
-      </div>
-    </div>
-
-    <div class="exercise">
-      <strong>📝 Exercice 3</strong>
-      <p>Cite deux éléments qui participent à la sécurité électrique.</p>
-
-      <button class="answer-button" onclick="afficherReponse('rep103')">
-        Voir la réponse
-      </button>
-
-      <div id="rep103" class="answer">
-        Par exemple : les protections contre les surintensités et les dispositifs de protection des personnes.
-      </div>
-    </div>
-
-  </div>
-</div>
+</body>
+</html>
