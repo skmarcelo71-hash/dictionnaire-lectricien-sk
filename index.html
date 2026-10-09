@@ -6,670 +6,213 @@
   <meta name="theme-color" content="#0759b5">
   <title>Dictionnaire Électricien SK</title>
   <link rel="stylesheet" href="style.css">
-
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      background: #f3f7fc;
-      color: #172033;
-    }
-
-    header {
-      padding: 35px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #0759b5, #06365c);
-      color: white;
-    }
-
-    header h1 { font-size: 30px; }
-
-    .section {
-      padding: 20px;
-      margin: 15px auto;
-      max-width: 900px;
-    }
-
-    .carte, .course-entry, .lecon-ouverte {
-      background: white;
-      border-radius: 18px;
-      padding: 20px;
-      margin: 16px 0;
-      box-shadow: 0 5px 20px #00000010;
-    }
-
-    .carte, .course-entry {
-      display: block;
-      color: #172033;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .carte h3, .course-entry h3 { margin-top: 0; }
-
-    .course-entry:active, .carte:active {
-      background: #e8f2ff;
-    }
-
-    .course-entry p, .carte p {
-      color: #667085;
-      margin-bottom: 0;
-    }
-
-    .lecon-ouverte {
-      border-top: 5px solid #0759b5;
-      overflow-wrap: anywhere;
-    }
-
-    .lecon-ouverte h2 { color: #0759b5; }
-
-    .lecon-ouverte h3 { margin-top: 22px; }
-
-    .lecon-ouverte li { margin-bottom: 8px; }
-
-    .bouton-cours {
-      display: inline-block;
-      background: #0759b5;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      padding: 13px 18px;
-      margin: 10px 8px 5px 0;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .reponse-exercice {
-      display: none;
-      background: #eaf7ed;
-      padding: 15px;
-      margin-top: 12px;
-      border-radius: 10px;
-    }
-
-    input {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #bbb;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 15px;
-      background: #06365c;
-      color: white;
-      margin-top: 40px;
-    }
-
-    .message-securite {
-      background: #fff4df;
-      padding: 15px;
-      border-radius: 10px;
-    }
-
-    html { scroll-behavior: smooth; }
+    body{font-family:Arial,sans-serif;line-height:1.6;margin:0;background:#f3f7fc;color:#172033}
+    header{padding:35px 20px;text-align:center;background:linear-gradient(135deg,#0759b5,#06365c);color:#fff}
+    header h1{font-size:30px}
+    .section{padding:20px;margin:15px auto;max-width:900px}
+    .carte,.course-entry,.lecon-ouverte{background:#fff;border-radius:18px;padding:20px;margin:16px 0;box-shadow:0 5px 20px #00000010}
+    .carte,.course-entry{display:block;color:#172033;text-decoration:none;cursor:pointer}
+    .carte h3,.course-entry h3{margin-top:0}
+    .course-entry:active,.carte:active{background:#e8f2ff}
+    .course-entry p,.carte p{color:#667085;margin-bottom:0}
+    .lecon-ouverte{border-top:5px solid #0759b5;overflow-wrap:anywhere}
+    .lecon-ouverte h2{color:#0759b5}.lecon-ouverte h3{margin-top:22px}
+    .lecon-ouverte li{margin-bottom:8px}
+    .bouton-cours,.bouton-quiz{display:inline-block;background:#0759b5;color:#fff;border:0;border-radius:10px;padding:13px 18px;margin:10px 8px 5px 0;font-size:16px;cursor:pointer}
+    .bouton-quiz{width:100%;text-align:left;background:#eef4fc;color:#172033;border:1px solid #cbd5e1}
+    .bouton-quiz:disabled{opacity:1}
+    .reponse-exercice{display:none;background:#eaf7ed;padding:15px;margin-top:12px;border-radius:10px}
+    input{box-sizing:border-box;width:100%;padding:14px;border:1px solid #bbb;border-radius:10px;font-size:16px}
+    footer{text-align:center;padding:30px 15px;background:#06365c;color:#fff;margin-top:40px}
+    .message-securite{background:#fff4df;padding:15px;border-radius:10px}
+    html{scroll-behavior:smooth}
+    .quiz-resultat{font-weight:bold;margin-top:14px}
   </style>
 </head>
-
 <body>
-
 <header>
   <h1>🔌 Dictionnaire Électricien SK</h1>
   <p>Apprends l’électricité simplement, étape par étape.</p>
 </header>
-
 <main>
-
   <section class="section" id="menu">
     <h2>📚 Menu principal</h2>
-
-    <a class="carte" href="#composants">
-      <h3>🔌 Composants</h3>
-      <p>Découvre les composants électriques.</p>
-    </a>
-
-    <a class="carte" href="#mesures">
-      <h3>📐 Mesures</h3>
-      <p>Comprends les unités électriques.</p>
-    </a>
-
-    <a class="carte" href="#securite">
-      <h3>🛡️ Sécurité</h3>
-      <p>Apprends les règles de sécurité.</p>
-    </a>
-
-    <a class="carte" href="#cours-electricite">
-      <h3>📚 Cours d’électricité</h3>
-      <p>Ouvre les 12 leçons et fais les exercices.</p>
-    </a>
+    <a class="carte" href="#composants"><h3>🔌 Composants</h3><p>Découvre les composants électriques.</p></a>
+    <a class="carte" href="#mesures"><h3>📐 Mesures</h3><p>Comprends les unités électriques.</p></a>
+    <a class="carte" href="#securite"><h3>🛡️ Sécurité</h3><p>Apprends les règles de sécurité.</p></a>
+    <a class="carte" href="#cours-electricite"><h3>📚 Cours d’électricité</h3><p>Ouvre les 12 leçons et fais les exercices.</p></a>
+    <a class="carte" href="#section-quiz"><h3>⚡ Quiz d’électricité</h3><p>Teste tes connaissances et découvre ton score.</p></a>
   </section>
 
   <section class="section" id="composants">
     <h2>🔌 Dictionnaire des composants</h2>
-    <input id="recherche" type="search"
-      placeholder="Rechercher un composant...">
-
+    <input id="recherche" type="search" placeholder="Rechercher un composant..." aria-label="Rechercher un composant">
     <div id="liste-composants">
-      <article class="carte">
-        <h3>💡 Lampe</h3>
-        <p>Transforme l’énergie électrique en lumière.</p>
-      </article>
-
-      <article class="carte">
-        <h3>🔘 Interrupteur</h3>
-        <p>Permet d’ouvrir ou de fermer un circuit.</p>
-      </article>
-
-      <article class="carte">
-        <h3>🔌 Prise électrique</h3>
-        <p>Permet de brancher un appareil électrique.</p>
-      </article>
-
-      <article class="carte">
-        <h3>🛡️ Disjoncteur</h3>
-        <p>Coupe le courant en cas de défaut selon sa fonction.</p>
-      </article>
-
-      <article class="carte">
-        <h3>🔋 Batterie</h3>
-        <p>Fournit de l’énergie électrique.</p>
-      </article>
-
-      <article class="carte">
-        <h3>🧱 Résistance</h3>
-        <p>Limite le courant dans un circuit.</p>
-      </article>
+      <article class="carte"><h3>💡 Lampe</h3><p>Transforme l’énergie électrique en lumière.</p></article>
+      <article class="carte"><h3>🔘 Interrupteur</h3><p>Permet d’ouvrir ou de fermer un circuit.</p></article>
+      <article class="carte"><h3>🔌 Prise électrique</h3><p>Permet de brancher un appareil électrique.</p></article>
+      <article class="carte"><h3>🛡️ Disjoncteur</h3><p>Coupe le courant en cas de défaut selon sa fonction.</p></article>
+      <article class="carte"><h3>🔋 Batterie</h3><p>Fournit de l’énergie électrique.</p></article>
+      <article class="carte"><h3>🧱 Résistance</h3><p>Limite le courant dans un circuit.</p></article>
     </div>
   </section>
 
   <section class="section" id="mesures">
     <h2>📐 Les mesures électriques</h2>
-
-    <article class="carte">
-      <h3>⚡ Tension — Volt (V)</h3>
-      <p>La tension représente la différence de potentiel électrique.</p>
-    </article>
-
-    <article class="carte">
-      <h3>🔌 Courant — Ampère (A)</h3>
-      <p>L’intensité indique le débit du courant électrique.</p>
-    </article>
-
-    <article class="carte">
-      <h3>🧱 Résistance — Ohm (Ω)</h3>
-      <p>La résistance s’oppose au passage du courant.</p>
-    </article>
-
-    <article class="carte">
-      <h3>💡 Puissance — Watt (W)</h3>
-      <p>La puissance indique le rythme de consommation ou de transfert d’énergie.</p>
-    </article>
+    <article class="carte"><h3>⚡ Tension — Volt (V)</h3><p>La tension représente la différence de potentiel électrique.</p></article>
+    <article class="carte"><h3>🔌 Courant — Ampère (A)</h3><p>L’intensité indique le débit du courant électrique.</p></article>
+    <article class="carte"><h3>🧱 Résistance — Ohm (Ω)</h3><p>La résistance s’oppose au passage du courant.</p></article>
+    <article class="carte"><h3>💡 Puissance — Watt (W)</h3><p>La puissance indique le rythme de consommation ou de transfert d’énergie.</p></article>
   </section>
 
   <section class="section" id="securite">
     <h2>🛡️ Sécurité électrique</h2>
-
-    <article class="carte">
-      <h3>⚠️ Avant toute intervention</h3>
-      <p>Coupe l’alimentation, empêche sa remise sous tension et fais vérifier l’absence de tension par une personne compétente.</p>
-    </article>
-
-    <article class="carte">
-      <h3>🧤 Équipement de protection</h3>
-      <p>Utilise les protections adaptées et respecte les consignes de sécurité.</p>
-    </article>
-
-    <article class="carte">
-      <h3>🚫 Ne touche jamais un fil dénudé</h3>
-      <p>Ne réalise pas de manipulation sous tension. Apprends avec un adulte qualifié.</p>
-    </article>
+    <article class="carte"><h3>⚠️ Avant toute intervention</h3><p>Coupe l’alimentation, empêche sa remise sous tension et fais vérifier l’absence de tension par une personne compétente.</p></article>
+    <article class="carte"><h3>🧤 Équipement de protection</h3><p>Utilise les protections adaptées et respecte les consignes de sécurité.</p></article>
+    <article class="carte"><h3>🚫 Ne touche jamais un fil dénudé</h3><p>Ne réalise pas de manipulation sous tension. Apprends avec un adulte qualifié.</p></article>
   </section>
 
   <section class="section" id="cours-electricite">
     <h2>📚 Cours d’électricité</h2>
     <p>Appuie une seule fois sur une leçon pour l’ouvrir.</p>
-
     <div id="liste-cours">
-
-      <a class="course-entry" href="#cours1">
-        <h3>⚡ Cours 1 — Introduction à l’électricité</h3>
-        <p>Découvre les bases de l’électricité.</p>
-      </a>
-
-      <a class="course-entry" href="#cours2">
-        <h3>🔋 Cours 2 — Tension, courant et résistance</h3>
-        <p>Comprends les trois grandeurs essentielles.</p>
-      </a>
-
-      <a class="course-entry" href="#cours3">
-        <h3>🔄 Cours 3 — Le circuit électrique</h3>
-        <p>Découvre les circuits ouverts et fermés.</p>
-      </a>
-
-      <a class="course-entry" href="#cours4">
-        <h3>🧮 Cours 4 — La loi d’Ohm</h3>
-        <p>Apprends à calculer tension, courant et résistance.</p>
-      </a>
-
-      <a class="course-entry" href="#cours5">
-        <h3>💡 Cours 5 — La puissance électrique</h3>
-        <p>Découvre la puissance des appareils.</p>
-      </a>
-
-      <a class="course-entry" href="#cours6">
-        <h3>🔋 Cours 6 — L’énergie électrique</h3>
-        <p>Comprends l’énergie consommée par un appareil.</p>
-      </a>
-
-      <a class="course-entry" href="#cours7">
-        <h3>🔗 Cours 7 — Les résistances en série</h3>
-        <p>Comprends comment les résistances s’additionnent.</p>
-      </a>
-
-      <a class="course-entry" href="#cours8">
-        <h3>🔀 Cours 8 — Les circuits en parallèle</h3>
-        <p>Découvre les branches et la tension en parallèle.</p>
-      </a>
-
-      <a class="course-entry" href="#cours9">
-        <h3>📏 Cours 9 — Le multimètre</h3>
-        <p>Découvre les fonctions de cet appareil de mesure.</p>
-      </a>
-
-      <a class="course-entry" href="#cours10">
-        <h3>🛡️ Cours 10 — Les dispositifs de protection</h3>
-        <p>Comprends le rôle des protections électriques.</p>
-      </a>
-
-      <a class="course-entry" href="#cours11">
-        <h3>🟢 Cours 11 — La terre et les conducteurs</h3>
-        <p>Découvre les fonctions des conducteurs.</p>
-      </a>
-
-      <a class="course-entry" href="#cours12">
-        <h3>🎚️ Cours 12 — Les interrupteurs</h3>
-        <p>Comprends leur rôle dans un circuit.</p>
-      </a>
-
+      <a class="course-entry" href="#cours1"><h3>⚡ Cours 1 — Introduction à l’électricité</h3><p>Découvre les bases de l’électricité.</p></a>
+      <a class="course-entry" href="#cours2"><h3>🔋 Cours 2 — Tension, courant et résistance</h3><p>Comprends les trois grandeurs essentielles.</p></a>
+      <a class="course-entry" href="#cours3"><h3>🔄 Cours 3 — Le circuit électrique</h3><p>Découvre les circuits ouverts et fermés.</p></a>
+      <a class="course-entry" href="#cours4"><h3>🧮 Cours 4 — La loi d’Ohm</h3><p>Apprends à calculer tension, courant et résistance.</p></a>
+      <a class="course-entry" href="#cours5"><h3>💡 Cours 5 — La puissance électrique</h3><p>Découvre la puissance des appareils.</p></a>
+      <a class="course-entry" href="#cours6"><h3>🔋 Cours 6 — L’énergie électrique</h3><p>Comprends l’énergie consommée par un appareil.</p></a>
+      <a class="course-entry" href="#cours7"><h3>🔗 Cours 7 — Les résistances en série</h3><p>Comprends comment les résistances s’additionnent.</p></a>
+      <a class="course-entry" href="#cours8"><h3>🔀 Cours 8 — Les circuits en parallèle</h3><p>Découvre les branches et la tension en parallèle.</p></a>
+      <a class="course-entry" href="#cours9"><h3>📏 Cours 9 — Le multimètre</h3><p>Découvre les fonctions de cet appareil de mesure.</p></a>
+      <a class="course-entry" href="#cours10"><h3>🛡️ Cours 10 — Les dispositifs de protection</h3><p>Comprends le rôle des protections électriques.</p></a>
+      <a class="course-entry" href="#cours11"><h3>🟢 Cours 11 — La terre et les conducteurs</h3><p>Découvre les fonctions des conducteurs.</p></a>
+      <a class="course-entry" href="#cours12"><h3>🎚️ Cours 12 — Les interrupteurs</h3><p>Comprends leur rôle dans un circuit.</p></a>
     </div>
-
     <div id="zone-lecon" aria-live="polite"></div>
   </section>
 
+  <section class="section" id="section-quiz">
+    <h2>⚡ Quiz d’électricité</h2>
+    <p>Choisis une réponse pour chaque question. À la fin, tu verras ton score.</p>
+    <div id="quiz-question" class="carte" aria-live="polite"></div>
+    <div id="quiz-reponses"></div>
+    <p id="quiz-resultat" class="quiz-resultat" aria-live="polite"></p>
+    <button id="quiz-suivant" class="bouton-cours" type="button" style="display:none">Question suivante ➡️</button>
+    <p id="quiz-score"></p>
+    <button id="quiz-recommencer" class="bouton-cours" type="button" style="display:none">Recommencer 🔄</button>
+  </section>
 </main>
-
-<footer>
-  <p>🔌 Dictionnaire Électricien SK</p>
-  <p>Apprendre aujourd’hui pour mieux comprendre demain.</p>
-</footer>
+<footer><p>🔌 Dictionnaire Électricien SK</p><p>Apprendre aujourd’hui pour mieux comprendre demain.</p></footer>
 
 <script>
 (function () {
   const lecons = {
-    cours1: {
-      titre: "Cours 1 — Introduction à l’électricité",
-      explication: `
-        <h3>Qu’est-ce que l’électricité ?</h3>
-        <p>L’électricité est liée à la présence et au déplacement des charges électriques.</p>
-        <p>Elle permet notamment d’alimenter les lampes, les téléphones et les moteurs.</p>
-        <h3>Les éléments d’un circuit simple</h3>
-        <ul>
-          <li>Une source d’énergie.</li>
-          <li>Des conducteurs.</li>
-          <li>Un récepteur, comme une lampe.</li>
-          <li>Éventuellement un interrupteur.</li>
-        </ul>`,
-      question: "Cite deux appareils qui utilisent l’électricité.",
-      reponse: "Une lampe et un téléphone, par exemple."
-    },
-
-    cours2: {
-      titre: "Cours 2 — Tension, courant et résistance",
-      explication: `
-        <h3>1. La tension</h3>
-        <p>Symbole : U. Unité : volt (V).</p>
-        <h3>2. L’intensité du courant</h3>
-        <p>Symbole : I. Unité : ampère (A).</p>
-        <h3>3. La résistance</h3>
-        <p>Symbole : R. Unité : ohm (Ω).</p>
-        <p>Dans un circuit simple, ces trois grandeurs sont liées par la loi d’Ohm.</p>`,
-      question: "Quelle est l’unité de la tension ?",
-      reponse: "Le volt (V)."
-    },
-
-    cours3: {
-      titre: "Cours 3 — Le circuit électrique",
-      explication: `
-        <h3>Le circuit fermé</h3>
-        <p>Le chemin électrique est complet. Le courant peut circuler si une tension est appliquée.</p>
-        <h3>Le circuit ouvert</h3>
-        <p>Le chemin est interrompu. Le courant ne circule pas dans ce chemin.</p>
-        <p>Un interrupteur permet d’ouvrir ou de fermer le circuit.</p>`,
-      question: "Que se passe-t-il lorsqu’un circuit est ouvert ?",
-      reponse: "Le courant ne circule pas dans le chemin interrompu."
-    },
-
-    cours4: {
-      titre: "Cours 4 — La loi d’Ohm",
-      explication: `
-        <h3>La formule</h3>
-        <p><strong>U = R × I</strong></p>
-        <ul>
-          <li>U : tension en volts.</li>
-          <li>R : résistance en ohms.</li>
-          <li>I : courant en ampères.</li>
-        </ul>
-        <p>Exemple : si R = 4 Ω et I = 2 A, alors U = 4 × 2 = 8 V.</p>`,
-      question: "Une résistance de 3 Ω est traversée par 2 A. Quelle est la tension ?",
-      reponse: "U = R × I = 3 × 2 = 6 V."
-    },
-
-    cours5: {
-      titre: "Cours 5 — La puissance électrique",
-      explication: `
-        <h3>La formule</h3>
-        <p><strong>P = U × I</strong></p>
-        <p>P se mesure en watts (W), U en volts (V) et I en ampères (A).</p>
-        <p>Exemple : un appareil alimenté sous 12 V et traversé par 2 A reçoit une puissance électrique de 24 W.</p>`,
-      question: "Un appareil fonctionne sous 10 V avec un courant de 3 A. Quelle est sa puissance ?",
-      reponse: "P = 10 × 3 = 30 W."
-    },
-
-    cours6: {
-      titre: "Cours 6 — L’énergie électrique",
-      explication: `
-        <h3>Comprendre l’énergie</h3>
-        <p>L’énergie électrique consommée dépend de la puissance de l’appareil et de la durée d’utilisation.</p>
-        <p><strong>E = P × t</strong></p>
-        <p>Avec P en watts et t en heures, l’énergie est exprimée en wattheures (Wh).</p>
-        <p>Exemple : un appareil de 100 W utilisé pendant 2 heures consomme 200 Wh, soit 0,2 kWh.</p>`,
-      question: "Un appareil de 50 W fonctionne pendant 4 heures. Quelle énergie consomme-t-il ?",
-      reponse: "E = 50 × 4 = 200 Wh, soit 0,2 kWh."
-    },
-
-    cours7: {
-      titre: "Cours 7 — Les résistances en série",
-      explication: `
-        <h3>Principe</h3>
-        <p>Dans un montage en série, les résistances sont placées les unes à la suite des autres.</p>
-        <p>La résistance équivalente est la somme des résistances :</p>
-        <p><strong>R totale = R1 + R2 + R3</strong></p>
-        <p>Exemple : 2 Ω + 3 Ω = 5 Ω.</p>`,
-      question: "Deux résistances de 4 Ω et 6 Ω sont en série. Quelle est leur résistance totale ?",
-      reponse: "R totale = 4 + 6 = 10 Ω."
-    },
-
-    cours8: {
-      titre: "Cours 8 — Les circuits en parallèle",
-      explication: `
-        <h3>Principe</h3>
-        <p>Dans un montage en parallèle, plusieurs branches sont reliées aux mêmes deux points.</p>
-        <p>Dans un circuit idéal, la tension est la même aux bornes de chaque branche.</p>
-        <p>Le courant total se répartit entre les branches.</p>
-        <p>Dans une installation domestique, les récepteurs sont généralement branchés en parallèle.</p>`,
-      question: "Dans un circuit parallèle idéal, quelle grandeur est identique aux bornes des branches ?",
-      reponse: "La tension."
-    },
-
-    cours9: {
-      titre: "Cours 9 — Le multimètre",
-      explication: `
-        <h3>À quoi sert-il ?</h3>
-        <p>Un multimètre peut mesurer différentes grandeurs électriques selon son mode et ses branchements.</p>
-        <ul>
-          <li>V : tension.</li>
-          <li>A : intensité du courant.</li>
-          <li>Ω : résistance.</li>
-        </ul>
-        <p class="message-securite">Sécurité : une mauvaise position ou un mauvais branchement peut être dangereux. N’effectue pas de mesure sur un circuit sous tension sans formation et supervision qualifiée. Une résistance se mesure sur un circuit hors tension, après vérification de l’absence de tension.</p>`,
-      question: "Quel symbole désigne la mesure de résistance ?",
-      reponse: "Le symbole Ω."
-    },
-
-    cours10: {
-      titre: "Cours 10 — Les dispositifs de protection",
-      explication: `
-        <h3>Le disjoncteur</h3>
-        <p>Il coupe le circuit lorsqu’une condition de défaut prévue par sa conception est détectée, notamment une surcharge ou un court-circuit.</p>
-        <h3>Le dispositif différentiel</h3>
-        <p>Il détecte un déséquilibre de courant et peut réduire certains risques d’électrocution. Il ne remplace pas toutes les autres protections.</p>
-        <h3>Le fusible</h3>
-        <p>Il interrompt le courant lorsqu’il dépasse une valeur prévue, en fondant son élément fusible.</p>
-        <p class="message-securite">Une protection qui déclenche ne doit pas être contournée. Il faut rechercher la cause du défaut avec une personne qualifiée.</p>`,
-      question: "Quel appareil protège notamment contre les surcharges et les courts-circuits ?",
-      reponse: "Le disjoncteur adapté au circuit."
-    },
-
-    cours11: {
-      titre: "Cours 11 — La terre et les conducteurs",
-      explication: `
-        <h3>La phase</h3>
-        <p>Elle peut présenter une tension dangereuse par rapport à la terre.</p>
-        <h3>Le neutre</h3>
-        <p>Il participe au circuit électrique. Il ne faut jamais supposer qu’il est sans danger.</p>
-        <h3>Le conducteur de protection</h3>
-        <p>Le conducteur de terre relie les parties métalliques prévues à cet effet au système de protection de l’installation.</p>
-        <p>Les couleurs doivent être respectées selon les normes applicables. La couleur seule ne prouve jamais qu’un conducteur est sans tension.</p>`,
-      question: "Quel est le rôle du conducteur de protection ?",
-      reponse: "Il contribue à la protection contre les chocs électriques en reliant les parties concernées au système de terre."
-    },
-
-    cours12: {
-      titre: "Cours 12 — Les interrupteurs",
-      explication: `
-        <h3>Le rôle de l’interrupteur</h3>
-        <p>Un interrupteur permet de commander un circuit en ouvrant ou en fermant le chemin électrique prévu.</p>
-        <h3>Exemple</h3>
-        <p>Dans un circuit d’éclairage, l’interrupteur permet généralement d’allumer ou d’éteindre la lampe.</p>
-        <h3>Commande depuis deux endroits</h3>
-        <p>Un montage va-et-vient permet de commander un même éclairage depuis deux endroits. Son câblage doit être appris et réalisé hors tension par une personne qualifiée.</p>`,
-      question: "Quel est le rôle d’un interrupteur dans un circuit simple ?",
-      reponse: "Ouvrir ou fermer le circuit pour commander le récepteur."
-    }
+    cours1:{titre:"Cours 1 — Introduction à l’électricité",explication:`<h3>Qu’est-ce que l’électricité ?</h3><p>L’électricité est liée à la présence et au déplacement des charges électriques.</p><p>Elle permet notamment d’alimenter les lampes, les téléphones et les moteurs.</p><h3>Les éléments d’un circuit simple</h3><ul><li>Une source d’énergie.</li><li>Des conducteurs.</li><li>Un récepteur, comme une lampe.</li><li>Éventuellement un interrupteur.</li></ul>`,question:"Cite deux appareils qui utilisent l’électricité.",reponse:"Une lampe et un téléphone, par exemple."},
+    cours2:{titre:"Cours 2 — Tension, courant et résistance",explication:`<h3>1. La tension</h3><p>Symbole : U. Unité : volt (V).</p><h3>2. L’intensité du courant</h3><p>Symbole : I. Unité : ampère (A).</p><h3>3. La résistance</h3><p>Symbole : R. Unité : ohm (Ω).</p><p>Dans un circuit simple, ces trois grandeurs sont liées par la loi d’Ohm.</p>`,question:"Quelle est l’unité de la tension ?",reponse:"Le volt (V)."},
+    cours3:{titre:"Cours 3 — Le circuit électrique",explication:`<h3>Le circuit fermé</h3><p>Le chemin électrique est complet. Le courant peut circuler si une tension est appliquée.</p><h3>Le circuit ouvert</h3><p>Le chemin est interrompu. Le courant ne circule pas dans ce chemin.</p><p>Un interrupteur permet d’ouvrir ou de fermer le circuit.</p>`,question:"Que se passe-t-il lorsqu’un circuit est ouvert ?",reponse:"Le courant ne circule pas dans le chemin interrompu."},
+    cours4:{titre:"Cours 4 — La loi d’Ohm",explication:`<h3>La formule</h3><p><strong>U = R × I</strong></p><ul><li>U : tension en volts.</li><li>R : résistance en ohms.</li><li>I : courant en ampères.</li></ul><p>Exemple : si R = 4 Ω et I = 2 A, alors U = 4 × 2 = 8 V.</p>`,question:"Une résistance de 3 Ω est traversée par 2 A. Quelle est la tension ?",reponse:"U = R × I = 3 × 2 = 6 V."},
+    cours5:{titre:"Cours 5 — La puissance électrique",explication:`<h3>La formule</h3><p><strong>P = U × I</strong></p><p>P se mesure en watts (W), U en volts (V) et I en ampères (A).</p><p>Exemple : un appareil alimenté sous 12 V et traversé par 2 A reçoit une puissance électrique de 24 W.</p>`,question:"Un appareil fonctionne sous 10 V avec un courant de 3 A. Quelle est sa puissance ?",reponse:"P = 10 × 3 = 30 W."},
+    cours6:{titre:"Cours 6 — L’énergie électrique",explication:`<h3>Comprendre l’énergie</h3><p>L’énergie électrique consommée dépend de la puissance de l’appareil et de la durée d’utilisation.</p><p><strong>E = P × t</strong></p><p>Avec P en watts et t en heures, l’énergie est exprimée en wattheures (Wh).</p><p>Exemple : un appareil de 100 W utilisé pendant 2 heures consomme 200 Wh, soit 0,2 kWh.</p>`,question:"Un appareil de 50 W fonctionne pendant 4 heures. Quelle énergie consomme-t-il ?",reponse:"E = 50 × 4 = 200 Wh, soit 0,2 kWh."},
+    cours7:{titre:"Cours 7 — Les résistances en série",explication:`<h3>Principe</h3><p>Dans un montage en série, les résistances sont placées les unes à la suite des autres.</p><p>La résistance équivalente est la somme des résistances :</p><p><strong>R totale = R1 + R2 + R3</strong></p><p>Exemple : 2 Ω + 3 Ω = 5 Ω.</p>`,question:"Deux résistances de 4 Ω et 6 Ω sont en série. Quelle est leur résistance totale ?",reponse:"R totale = 4 + 6 = 10 Ω."},
+    cours8:{titre:"Cours 8 — Les circuits en parallèle",explication:`<h3>Principe</h3><p>Dans un montage en parallèle, plusieurs branches sont reliées aux mêmes deux points.</p><p>Dans un circuit idéal, la tension est la même aux bornes de chaque branche.</p><p>Le courant total se répartit entre les branches.</p><p>Dans une installation domestique, les récepteurs sont généralement branchés en parallèle.</p>`,question:"Dans un circuit parallèle idéal, quelle grandeur est identique aux bornes des branches ?",reponse:"La tension."},
+    cours9:{titre:"Cours 9 — Le multimètre",explication:`<h3>À quoi sert-il ?</h3><p>Un multimètre peut mesurer différentes grandeurs électriques selon son mode et ses branchements.</p><ul><li>V : tension.</li><li>A : intensité du courant.</li><li>Ω : résistance.</li></ul><p class="message-securite">Sécurité : une mauvaise position ou un mauvais branchement peut être dangereux. N’effectue pas de mesure sur un circuit sous tension sans formation et supervision qualifiée. Une résistance se mesure sur un circuit hors tension, après vérification de l’absence de tension.</p>`,question:"Quel symbole désigne la mesure de résistance ?",reponse:"Le symbole Ω."},
+    cours10:{titre:"Cours 10 — Les dispositifs de protection",explication:`<h3>Le disjoncteur</h3><p>Il coupe le circuit lorsqu’une condition de défaut prévue par sa conception est détectée, notamment une surcharge ou un court-circuit.</p><h3>Le dispositif différentiel</h3><p>Il détecte un déséquilibre de courant et peut réduire certains risques d’électrocution. Il ne remplace pas toutes les autres protections.</p><h3>Le fusible</h3><p>Il interrompt le courant lorsqu’il dépasse une valeur prévue, en fondant son élément fusible.</p><p class="message-securite">Une protection qui déclenche ne doit pas être contournée. Il faut rechercher la cause du défaut avec une personne qualifiée.</p>`,question:"Quel appareil protège notamment contre les surcharges et les courts-circuits ?",reponse:"Le disjoncteur adapté au circuit."},
+    cours11:{titre:"Cours 11 — La terre et les conducteurs",explication:`<h3>La phase</h3><p>Elle peut présenter une tension dangereuse par rapport à la terre.</p><h3>Le neutre</h3><p>Il participe au circuit électrique. Il ne faut jamais supposer qu’il est sans danger.</p><h3>Le conducteur de protection</h3><p>Le conducteur de terre relie les parties métalliques prévues à cet effet au système de protection de l’installation.</p><p>Les couleurs doivent être respectées selon les normes applicables. La couleur seule ne prouve jamais qu’un conducteur est sans tension.</p>`,question:"Quel est le rôle du conducteur de protection ?",reponse:"Il contribue à la protection contre les chocs électriques en reliant les parties concernées au système de terre."},
+    cours12:{titre:"Cours 12 — Les interrupteurs",explication:`<h3>Le rôle de l’interrupteur</h3><p>Un interrupteur permet de commander un circuit en ouvrant ou en fermant le chemin électrique prévu.</p><h3>Exemple</h3><p>Dans un circuit d’éclairage, l’interrupteur permet généralement d’allumer ou d’éteindre la lampe.</p><h3>Commande depuis deux endroits</h3><p>Un montage va-et-vient permet de commander un même éclairage depuis deux endroits. Son câblage doit être appris et réalisé hors tension par une personne qualifiée.</p>`,question:"Quel est le rôle d’un interrupteur dans un circuit simple ?",reponse:"Ouvrir ou fermer le circuit pour commander le récepteur."}
   };
 
-  const listeCours = document.getElementById("liste-cours");
-  const zoneLecon = document.getElementById("zone-lecon");
-
-  listeCours.addEventListener("click", function (event) {
-    const lien = event.target.closest('a[href^="#cours"]');
-    if (!lien) return;
-
+  const listeCours=document.getElementById("liste-cours");
+  const zoneLecon=document.getElementById("zone-lecon");
+  listeCours.addEventListener("click",function(event){
+    const lien=event.target.closest('a[href^="#cours"]');
+    if(!lien)return;
     event.preventDefault();
-
-    const identifiant = lien.getAttribute("href").substring(1);
-    const lecon = lecons[identifiant];
-    if (!lecon) return;
-
-    zoneLecon.innerHTML = `
-      <article class="lecon-ouverte">
-        <h2>${lecon.titre}</h2>
-        ${lecon.explication}
-
-        <h3>✍️ Exercice</h3>
-        <p>${lecon.question}</p>
-
-        <button class="bouton-cours" id="afficher-reponse" type="button">
-          Afficher la réponse
-        </button>
-
-        <div class="reponse-exercice" id="reponse-exercice">
-          <strong>✅ Réponse :</strong>
-          <p>${lecon.reponse}</p>
-        </div>
-
-        <button class="bouton-cours" id="fermer-lecon" type="button">
-          Fermer le cours
-        </button>
-      </article>
-    `;
-
-    document.getElementById("afficher-reponse").addEventListener("click", function () {
-      const bloc = document.getElementById("reponse-exercice");
-      const estVisible = bloc.style.display === "block";
-      bloc.style.display = estVisible ? "none" : "block";
-      this.textContent = estVisible ? "Afficher la réponse" : "Masquer la réponse";
+    const lecon=lecons[lien.getAttribute("href").slice(1)];
+    if(!lecon)return;
+    zoneLecon.innerHTML=`<article class="lecon-ouverte"><h2>${lecon.titre}</h2>${lecon.explication}<h3>✍️ Exercice</h3><p>${lecon.question}</p><button class="bouton-cours" id="afficher-reponse" type="button">Afficher la réponse</button><div class="reponse-exercice" id="reponse-exercice"><strong>✅ Réponse :</strong><p>${lecon.reponse}</p></div><button class="bouton-cours" id="fermer-lecon" type="button">Fermer le cours</button></article>`;
+    document.getElementById("afficher-reponse").addEventListener("click",function(){
+      const bloc=document.getElementById("reponse-exercice");
+      const visible=bloc.style.display==="block";
+      bloc.style.display=visible?"none":"block";
+      this.textContent=visible?"Afficher la réponse":"Masquer la réponse";
     });
-
-    document.getElementById("fermer-lecon").addEventListener("click", function () {
-      zoneLecon.innerHTML = "";
-      lien.scrollIntoView({ behavior: "smooth", block: "center" });
+    document.getElementById("fermer-lecon").addEventListener("click",function(){
+      zoneLecon.innerHTML="";
+      lien.scrollIntoView({behavior:"smooth",block:"center"});
     });
-
-    zoneLecon.scrollIntoView({ behavior: "smooth", block: "start" });
+    zoneLecon.scrollIntoView({behavior:"smooth",block:"start"});
   });
 
-  const recherche = document.getElementById("recherche");
-  const composants = document.querySelectorAll("#liste-composants .carte");
-
-  recherche.addEventListener("input", function () {
-    const mot = recherche.value.toLowerCase().trim();
-
-    composants.forEach(function (composant) {
-      composant.style.display =
-        composant.textContent.toLowerCase().includes(mot) ? "block" : "none";
+  document.getElementById("recherche").addEventListener("input",function(){
+    const mot=this.value.toLowerCase().trim();
+    document.querySelectorAll("#liste-composants .carte").forEach(function(carte){
+      carte.style.display=carte.textContent.toLowerCase().includes(mot)?"block":"none";
     });
   });
-})();
-</script>
 
-</body>
-</html>
-<!-- QUIZ D'ÉLECTRICITÉ -->
-<section id="section-quiz" style="display:none; padding:20px; max-width:600px; margin:auto;">
-  <h2>⚡ Quiz d'électricité</h2>
-  <p>Teste tes connaissances en électricité !</p>
-
-  <div id="quiz-question" style="font-size:18px; font-weight:bold; margin:20px 0;">
-  </div>
-
-  <div id="quiz-reponses"></div>
-
-  <p id="quiz-resultat" style="font-weight:bold;"></p>
-
-  <button id="quiz-suivant" style="display:none; padding:12px 20px; margin-top:15px;">
-    Question suivante ➡️
-  </button>
-
-  <p id="quiz-score"></p>
-</section>
-
-<script>
-(function () {
-  const questions = [
-    {
-      question: "Quelle est l'unité de la tension électrique ?",
-      reponses: ["Ampère (A)", "Volt (V)", "Ohm (Ω)"],
-      correcte: 1
-    },
-    {
-      question: "Quelle est l'unité du courant électrique ?",
-      reponses: ["Watt (W)", "Volt (V)", "Ampère (A)"],
-      correcte: 2
-    },
-    {
-      question: "Quel appareil protège un circuit contre les surintensités ?",
-      reponses: ["Disjoncteur", "Lampe", "Interrupteur"],
-      correcte: 0
-    },
-    {
-      question: "Quelle est l'unité de la résistance électrique ?",
-      reponses: ["Ohm (Ω)", "Watt (W)", "Volt (V)"],
-      correcte: 0
-    },
-    {
-      question: "Quel appareil transforme l'énergie électrique en lumière ?",
-      reponses: ["Prise", "Lampe", "Disjoncteur"],
-      correcte: 1
-    }
+  const questions=[
+    {question:"Quelle est l’unité de la tension électrique ?",reponses:["Ampère (A)","Volt (V)","Ohm (Ω)"],correcte:1},
+    {question:"Quelle est l’unité de l’intensité du courant ?",reponses:["Watt (W)","Volt (V)","Ampère (A)"],correcte:2},
+    {question:"Quel appareil protège notamment contre les surcharges et les courts-circuits ?",reponses:["Disjoncteur adapté","Lampe","Interrupteur simple"],correcte:0},
+    {question:"Quelle est l’unité de la résistance électrique ?",reponses:["Ohm (Ω)","Watt (W)","Volt (V)"],correcte:0},
+    {question:"Quel appareil transforme l’énergie électrique en lumière ?",reponses:["Prise","Lampe","Disjoncteur"],correcte:1},
+    {question:"Quelle formule exprime la loi d’Ohm ?",reponses:["U = R × I","P = U + I","R = U × I"],correcte:0},
+    {question:"Quelle est l’unité de la puissance électrique ?",reponses:["Ampère","Watt","Ohm"],correcte:1},
+    {question:"Dans un circuit parallèle idéal, quelle grandeur est identique sur chaque branche ?",reponses:["La tension","La résistance totale","La puissance totale"],correcte:0},
+    {question:"Quel symbole correspond à la résistance ?",reponses:["V","A","Ω"],correcte:2},
+    {question:"Que faire si un disjoncteur déclenche à plusieurs reprises ?",reponses:["Le bloquer en position marche","Chercher la cause avec une personne qualifiée","Le remplacer par un fil"],correcte:1}
   ];
+  let numero=0,score=0,repondu=false;
+  const questionEl=document.getElementById("quiz-question");
+  const reponsesEl=document.getElementById("quiz-reponses");
+  const resultatEl=document.getElementById("quiz-resultat");
+  const suivantBtn=document.getElementById("quiz-suivant");
+  const scoreEl=document.getElementById("quiz-score");
+  const recommencerBtn=document.getElementById("quiz-recommencer");
 
-  let numero = 0;
-  let score = 0;
-  let repondu = false;
-
-  const section = document.getElementById("section-quiz");
-  const questionEl = document.getElementById("quiz-question");
-  const reponsesEl = document.getElementById("quiz-reponses");
-  const resultatEl = document.getElementById("quiz-resultat");
-  const suivantBtn = document.getElementById("quiz-suivant");
-  const scoreEl = document.getElementById("quiz-score");
-
-  function afficherQuestion() {
-    repondu = false;
-    const q = questions[numero];
-
-    questionEl.textContent =
-      "Question " + (numero + 1) + "/" + questions.length + " : " + q.question;
-
-    reponsesEl.innerHTML = "";
-    resultatEl.textContent = "";
-    suivantBtn.style.display = "none";
-    scoreEl.textContent = "Score : " + score;
-
-    q.reponses.forEach(function (texte, index) {
-      const bouton = document.createElement("button");
-      bouton.textContent = texte;
-      bouton.style.cssText =
-        "display:block;width:100%;padding:12px;margin:8px 0;border-radius:8px;border:1px solid #ccc;background:#f3f6fa;color:#111;font-size:16px;";
-
-      bouton.addEventListener("click", function () {
-        if (repondu) return;
-        repondu = true;
-
-        if (index === q.correcte) {
-          score++;
-          resultatEl.textContent = "✅ Bonne réponse !";
-        } else {
-          resultatEl.textContent =
-            "❌ Pas tout à fait. Bonne réponse : " + q.reponses[q.correcte];
-        }
-
-        scoreEl.textContent = "Score : " + score;
-        suivantBtn.style.display = "inline-block";
-
-        Array.from(reponsesEl.children).forEach(function (b) {
-          b.disabled = true;
-          b.style.opacity = "0.7";
-        });
+  function afficherQuestion(){
+    repondu=false;
+    const q=questions[numero];
+    questionEl.textContent="Question "+(numero+1)+"/"+questions.length+" : "+q.question;
+    reponsesEl.innerHTML="";
+    resultatEl.textContent="";
+    suivantBtn.style.display="none";
+    recommencerBtn.style.display="none";
+    scoreEl.textContent="Score actuel : "+score;
+    q.reponses.forEach(function(texte,index){
+      const bouton=document.createElement("button");
+      bouton.type="button";
+      bouton.className="bouton-quiz";
+      bouton.textContent=texte;
+      bouton.addEventListener("click",function(){
+        if(repondu)return;
+        repondu=true;
+        if(index===q.correcte){score++;resultatEl.textContent="✅ Bonne réponse !";}
+        else{resultatEl.textContent="❌ Bonne réponse : "+q.reponses[q.correcte];}
+        scoreEl.textContent="Score : "+score+"/"+questions.length;
+        Array.from(reponsesEl.children).forEach(function(b){b.disabled=true;});
+        suivantBtn.textContent=numero===questions.length-1?"Voir mon résultat 🏆":"Question suivante ➡️";
+        suivantBtn.style.display="inline-block";
       });
-
       reponsesEl.appendChild(bouton);
     });
-
-    suivantBtn.textContent =
-      numero === questions.length - 1 ? "Voir mon résultat 🏆" : "Question suivante ➡️";
   }
-
-  suivantBtn.addEventListener("click", function () {
-    if (numero < questions.length - 1) {
-      numero++;
-      afficherQuestion();
-    } else {
-      questionEl.textContent = "🏆 Quiz terminé !";
-      reponsesEl.innerHTML = "";
-      resultatEl.textContent =
-        "Tu as obtenu " + score + "/" + questions.length + ".";
-      suivantBtn.textContent = "Recommencer 🔄";
-      suivantBtn.onclick = function () {
-        numero = 0;
-        score = 0;
-        afficherQuestion();
-        suivantBtn.onclick = null;
-      };
+  suivantBtn.addEventListener("click",function(){
+    if(numero<questions.length-1){numero++;afficherQuestion();}
+    else{
+      questionEl.textContent="🏆 Quiz terminé !";
+      reponsesEl.innerHTML="";
+      resultatEl.textContent="Tu as obtenu "+score+"/"+questions.length+". "+(score===questions.length?"Excellent travail !":"Continue à apprendre, tu vas progresser !");
+      scoreEl.textContent="";
+      suivantBtn.style.display="none";
+      recommencerBtn.style.display="inline-block";
     }
   });
-
-  window.ouvrirQuizElectricite = function () {
-    section.style.display = "block";
-    numero = 0;
-    score = 0;
-    afficherQuestion();
-    section.scrollIntoView({ behavior: "smooth" });
-  };
+  recommencerBtn.addEventListener("click",function(){numero=0;score=0;afficherQuestion();});
+  afficherQuestion();
 })();
 </script>
+</body>
+</html>
