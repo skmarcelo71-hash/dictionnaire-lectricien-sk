@@ -539,3 +539,137 @@
 
 </body>
 </html>
+<!-- QUIZ D'ÉLECTRICITÉ -->
+<section id="section-quiz" style="display:none; padding:20px; max-width:600px; margin:auto;">
+  <h2>⚡ Quiz d'électricité</h2>
+  <p>Teste tes connaissances en électricité !</p>
+
+  <div id="quiz-question" style="font-size:18px; font-weight:bold; margin:20px 0;">
+  </div>
+
+  <div id="quiz-reponses"></div>
+
+  <p id="quiz-resultat" style="font-weight:bold;"></p>
+
+  <button id="quiz-suivant" style="display:none; padding:12px 20px; margin-top:15px;">
+    Question suivante ➡️
+  </button>
+
+  <p id="quiz-score"></p>
+</section>
+
+<script>
+(function () {
+  const questions = [
+    {
+      question: "Quelle est l'unité de la tension électrique ?",
+      reponses: ["Ampère (A)", "Volt (V)", "Ohm (Ω)"],
+      correcte: 1
+    },
+    {
+      question: "Quelle est l'unité du courant électrique ?",
+      reponses: ["Watt (W)", "Volt (V)", "Ampère (A)"],
+      correcte: 2
+    },
+    {
+      question: "Quel appareil protège un circuit contre les surintensités ?",
+      reponses: ["Disjoncteur", "Lampe", "Interrupteur"],
+      correcte: 0
+    },
+    {
+      question: "Quelle est l'unité de la résistance électrique ?",
+      reponses: ["Ohm (Ω)", "Watt (W)", "Volt (V)"],
+      correcte: 0
+    },
+    {
+      question: "Quel appareil transforme l'énergie électrique en lumière ?",
+      reponses: ["Prise", "Lampe", "Disjoncteur"],
+      correcte: 1
+    }
+  ];
+
+  let numero = 0;
+  let score = 0;
+  let repondu = false;
+
+  const section = document.getElementById("section-quiz");
+  const questionEl = document.getElementById("quiz-question");
+  const reponsesEl = document.getElementById("quiz-reponses");
+  const resultatEl = document.getElementById("quiz-resultat");
+  const suivantBtn = document.getElementById("quiz-suivant");
+  const scoreEl = document.getElementById("quiz-score");
+
+  function afficherQuestion() {
+    repondu = false;
+    const q = questions[numero];
+
+    questionEl.textContent =
+      "Question " + (numero + 1) + "/" + questions.length + " : " + q.question;
+
+    reponsesEl.innerHTML = "";
+    resultatEl.textContent = "";
+    suivantBtn.style.display = "none";
+    scoreEl.textContent = "Score : " + score;
+
+    q.reponses.forEach(function (texte, index) {
+      const bouton = document.createElement("button");
+      bouton.textContent = texte;
+      bouton.style.cssText =
+        "display:block;width:100%;padding:12px;margin:8px 0;border-radius:8px;border:1px solid #ccc;background:#f3f6fa;color:#111;font-size:16px;";
+
+      bouton.addEventListener("click", function () {
+        if (repondu) return;
+        repondu = true;
+
+        if (index === q.correcte) {
+          score++;
+          resultatEl.textContent = "✅ Bonne réponse !";
+        } else {
+          resultatEl.textContent =
+            "❌ Pas tout à fait. Bonne réponse : " + q.reponses[q.correcte];
+        }
+
+        scoreEl.textContent = "Score : " + score;
+        suivantBtn.style.display = "inline-block";
+
+        Array.from(reponsesEl.children).forEach(function (b) {
+          b.disabled = true;
+          b.style.opacity = "0.7";
+        });
+      });
+
+      reponsesEl.appendChild(bouton);
+    });
+
+    suivantBtn.textContent =
+      numero === questions.length - 1 ? "Voir mon résultat 🏆" : "Question suivante ➡️";
+  }
+
+  suivantBtn.addEventListener("click", function () {
+    if (numero < questions.length - 1) {
+      numero++;
+      afficherQuestion();
+    } else {
+      questionEl.textContent = "🏆 Quiz terminé !";
+      reponsesEl.innerHTML = "";
+      resultatEl.textContent =
+        "Tu as obtenu " + score + "/" + questions.length + ".";
+      suivantBtn.textContent = "Recommencer 🔄";
+      suivantBtn.onclick = function () {
+        numero = 0;
+        score = 0;
+        afficherQuestion();
+        suivantBtn.onclick = null;
+      };
+    }
+  });
+
+  window.ouvrirQuizElectricite = function () {
+    section.style.display = "block";
+    numero = 0;
+    score = 0;
+    afficherQuestion();
+    section.scrollIntoView({ behavior: "smooth" });
+  };
+})();
+</script>
