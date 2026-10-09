@@ -549,3 +549,26 @@
       `;
 
       document.getElementById("fermer-lecon").addEventListene
+        function () {
+          zoneLecon.innerHTML = "";
+        }
+      );
+
+      document.getElementById("bouton-reponse").addEventListener(
+        "click",
+        function () {
+          const bloc = document.getElementById("bloc-reponse");
+          bloc.style.display =
+            bloc.style.display === "block" ? "none" : "block";
+        }
+      );
+
+      zoneLecon.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  </script>
+
+</body>
+</html>
